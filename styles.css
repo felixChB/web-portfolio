@@ -1,3 +1,11 @@
+:root {
+    --highlight-color: #E60032;
+    --bg-color: #111111;
+    --text-color: #FFFFFF;
+    --full-black-color: #000000;
+    --cursor-size: 30px;
+}
+
 html {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,42 +15,49 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     position: relative;
 }
 
 .cursor {
     position: fixed;
-    width: 50px;
-    height: 50px;
-    top: -25px;
-    left: -25px;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    top: calc(var(--cursor-size) / -2);
+    left: calc(var(--cursor-size) / -2);
     background-color: transparent;
     pointer-events: none;
     z-index: 100;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: right;
+    justify-content: end;
     transition: transform 0.2s cubic-bezier(.22,.61,.36,1);
 }
 
 .cursor .cursor-bubble {
-    width: 20%;
-    height: 20%;
-    background-color: blue;
-    border-radius: 50%;
+    width: 30%;
+    height: 30%;
+    background-color: var(--highlight-color);
+    /* border-radius: 50%; */
     box-sizing: border-box;
     /* filter: blur(4px); */
     backdrop-filter: blur(4px) invert(1);
     transition: all 0.2s cubic-bezier(.22,.61,.36,1);
+    position: relative;
 }
 
-/* .cursor.active {
-    mix-blend-mode: difference;
-} */
+.cursor .cursor-bubble .cursor-text {
+    position: absolute;
+    top: -10px;
+    right: -30px;
+    font-size: 8px;
+    color: var(--text-color);
+    font-weight: normal;
+    pointer-events: none;
+}
 
 .cursor.active .cursor-bubble{
-    background-color: rgba(255, 255, 255, 0.301);
     width: 100%;
     height: 100%;
 }
@@ -51,7 +66,7 @@ a {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
-    padding: 5px;
+    padding: 0;
 }
 
 .margin-sides {
@@ -64,32 +79,78 @@ a {
     padding-right: 30px;
 }
 
-#header {
+header {
     position: fixed;
     top: 0;
     left: 0;
-    width: calc(100vw - 20px);
-    height: 50px;
+    width: 100vw;
+    height: auto;
     z-index: 10;
-    margin: 10px;
-    background-color: rgba(215, 215, 215, 0.51);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
+    margin: 0px;
 }
 
 #header-wrapper {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     height: 100%;
     width: auto;
 }
 
 #logo {
+    height: 50px;
+    width: 50px;
+    background: var(--highlight-color);
     font-size: 12px;
     font-weight: bold;
     display: block;
     line-height: 12px;
+    margin: 10px 0 0 10px;
+    overflow:visible;
+    padding: 2px;
+    white-space: nowrap;
+}
+
+nav {
+    display: block;
+    margin-top: 20px;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 20px;
+    background: var(--full-black-color);
+    color: var(--text-color);
+    position: relative;
+    margin-left: 1px;
+}
+
+nav a span {
+    position: relative;
+    z-index: 1;
+}
+
+nav a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0px;
+    background: var(--highlight-color);
+    transition: height .3s;
+    z-index: 0;
+}
+
+nav a:hover::after {
+    height: 100%;
+}
+
+.colored-dot {
+    color: var(--highlight-color);
 }
 
 #home {
@@ -97,7 +158,7 @@ a {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-color: azure;
+    /* background-color: azure; */
 }
 
 #home-wrapper {
@@ -114,6 +175,7 @@ h1 {
     font-size: 220px;
     margin: 0;
     padding: 0;
+    letter-spacing: -16px;
 }
 
 h2 {
@@ -129,7 +191,7 @@ h2 {
     width: auto;
     height: 100vh;
     overflow: hidden;
-    background-color: rgb(0, 0, 0);
+    /* background-color: rgb(219, 219, 219); */
 }
 
 #projects {
@@ -137,15 +199,21 @@ h2 {
     width: auto;
     height: 100vh;
     overflow: hidden;
-    background-color: rgb(255, 12, 12);
+    /* background-color: rgb(255, 12, 12); */
+}
+
+.projets-headline {
+    text-align: center;
+    margin-top: 200px;
 }
 
 #contact {
     position: relative;
     width: auto;
-    height: calc(100vh - 15px);
+    height: calc(80vh - 15px);
     overflow: hidden;
-    background-color: rgb(34, 34, 34);
+    color: var(--full-black-color);
+    background-color: rgb(228, 228, 228);
     margin: 15px 15px 0 15px;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
@@ -162,11 +230,11 @@ h2 {
 .contact-left {
     display: grid;
     grid-template-rows: 5fr 1fr;
-    border-right: 1px solid white;
+    border-right: 1px solid var(--full-black-color);
 }
 
 .contact-info {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--full-black-color);
     margin: 0;
 }
 

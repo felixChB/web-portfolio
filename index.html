@@ -10,47 +10,50 @@
 </head>
 
 <body>
-    <main>
-        <!-- The floating header -->
-        <div id="header">
-            <div id="header-wrapper" class="margin-sides">
-                <a href="">
-                    <span id="logo">
-                        <span>Portfolio of</span><br>
-                        <span>Felix</span><br>
-                        <span>Brunn.</span>
-                    </span>
-                </a>
-                <div id="nav">
-                    <a href="#projects">Projects</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
+    <!-- The floating header -->
+    <header>
+        <div id="header-wrapper">
+            <a href="">
+                <span id="logo">
+                    <span>Portfolio</span><br>
+                    <span>of</span><br>
+                    <span>Felix Brunn.</span>
+                </span>
+            </a>
+            <nav>
+                <a href="#projects"><span>Projects</span></a><a href="#about"><span>About</span></a><a href="#contact"><span>Contact</span></a>
+            </nav>
         </div>
+    </header>
+    <main>
 
         <section id="home">
             <div id="home-wrapper" class="padding-sides">
                 <h1 class="home-headline">
                     Hello,<br>
-                    I'm Felix.
+                    I'm Felix<span class="colored-dot">.</span>
                 </h1>
             </div>
         </section>
 
-        <section id="projects" class="padding-sides">
-            <h2 class="projets-headline">projects</h2>
+        <section id="about" class="padding-sides">
+            <h2 class="about-headline">about<span class="colored-dot">.</span></h2>
         </section>
 
-        <section id="about" class="padding-sides">
-            <h2 class="about-headline">about me</h2>
+        <section id="projects" class="padding-sides">
+            <h2 class="projets-headline">projects<span class="colored-dot">.</span></h2>
+            <div id="project-wrapper">
+                <div class="project-card">
+                    <img src="" alt="">
+                </div>
+            </div>
         </section>
 
         <section id="contact">
             <div id="contact-wrapper">
                 <div class="contact-left">
                     <div class="contact-info">
-                        <h2 class="contact-headline">Contact</h2>
+                        <h2 class="contact-headline">Contact<span class="colored-dot">.</span></h2>
                     </div>
                     <div class="sitemap">
                         <div>
@@ -71,7 +74,9 @@
         </section>
     </main>
     <div id="cursor" class="cursor">
-        <div class="cursor-bubble"></div>
+        <div class="cursor-bubble">
+            <div class="cursor-text">POONG</div>
+        </div>
     </div>
 </body>
 

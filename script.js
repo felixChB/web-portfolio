@@ -31,3 +31,11 @@ function dotEventlisteners(element) {
         }
     });
 }
+
+window.addEventListener("scroll", () => {
+    console.log(window.scrollY);
+    let scrollPosition = window.scrollY;
+    let windowHeight = window.innerHeight;
+
+    let scrollDelta = scrollPosition / windowHeight;
+});
