@@ -87,14 +87,8 @@ header {
     height: auto;
     z-index: 10;
     margin: 0px;
-}
-
-#header-wrapper {
     display: flex;
-    align-items: start;
     justify-content: space-between;
-    height: 100%;
-    width: auto;
 }
 
 #logo {
@@ -113,11 +107,10 @@ header {
 
 nav {
     display: block;
-    margin-top: 20px;
 }
 
-nav a {
-    font-size: 14px;
+.nav-link {
+    font-size: 10px;
     font-weight: normal;
     text-transform: uppercase;
     padding: 20px;
@@ -125,14 +118,15 @@ nav a {
     color: var(--text-color);
     position: relative;
     margin-left: 1px;
+    display: inline-block;
 }
 
-nav a span {
+.nav-link span {
     position: relative;
     z-index: 1;
 }
 
-nav a::after {
+.nav-link::after {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -145,7 +139,7 @@ nav a::after {
     z-index: 0;
 }
 
-nav a:hover::after {
+.nav-link:hover::after {
     height: 100%;
 }
 
@@ -172,10 +166,10 @@ nav a:hover::after {
 }
 
 h1 {
-    font-size: 220px;
+    font-size: 160px;
     margin: 0;
     padding: 0;
-    letter-spacing: -16px;
+    letter-spacing: -14px;
 }
 
 h2 {
@@ -184,6 +178,12 @@ h2 {
     padding: 0;
     text-transform: uppercase;
     letter-spacing: -12px;
+    filter: blur(4px);
+    transition: filter 0.5s ease-out;
+}
+
+h2.visible {
+    filter: blur(0);
 }
 
 #about {
