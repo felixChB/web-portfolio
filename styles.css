@@ -10,6 +10,7 @@ html {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -32,7 +33,7 @@ body {
     display: flex;
     align-items: right;
     justify-content: end;
-    transition: transform 0.2s cubic-bezier(.22,.61,.36,1);
+    transition: transform 0.2s cubic-bezier(.22, .61, .36, 1);
 }
 
 .cursor .cursor-bubble {
@@ -43,7 +44,7 @@ body {
     box-sizing: border-box;
     /* filter: blur(4px); */
     backdrop-filter: blur(4px) invert(1);
-    transition: all 0.2s cubic-bezier(.22,.61,.36,1);
+    transition: all 0.2s cubic-bezier(.22, .61, .36, 1);
     position: relative;
 }
 
@@ -57,7 +58,7 @@ body {
     pointer-events: none;
 }
 
-.cursor.active .cursor-bubble{
+.cursor.active .cursor-bubble {
     width: 100%;
     height: 100%;
 }
@@ -100,7 +101,7 @@ header {
     display: block;
     line-height: 12px;
     margin: 10px 0 0 10px;
-    overflow:visible;
+    overflow: visible;
     padding: 2px;
     white-space: nowrap;
 }
@@ -153,6 +154,7 @@ nav {
     height: 100vh;
     overflow: hidden;
     /* background-color: azure; */
+    margin-bottom: 30vh;
 }
 
 #home-wrapper {
@@ -174,24 +176,45 @@ h1 {
 
 h2 {
     font-size: 110px;
+    height: 110px;
     margin: 0;
     padding: 0;
     text-transform: uppercase;
     letter-spacing: -12px;
     filter: blur(4px);
-    transition: filter 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    opacity: 0;
+    overflow-y: clip;
 }
 
-h2.visible {
+.headline-text {
+    display: block;
+    transform: translateY(110px);
+    transition: transform 0.5s ease-out;
+}
+
+h2.inview {
     filter: blur(0);
+    opacity: 1;
+}
+
+h2.inview .headline-text {
+    transform: translateY(0px);
 }
 
 #about {
     position: relative;
     width: auto;
-    height: 100vh;
     overflow: hidden;
-    /* background-color: rgb(219, 219, 219); */
+}
+
+#about-wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #about p {
@@ -235,13 +258,13 @@ h2.visible {
 
 .project-card img {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
 }
 
 .project-card .project-card-title {
     opacity: 0;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     margin: 10px;
     position: absolute;
@@ -277,7 +300,9 @@ h2.visible {
     opacity: 1;
 }
 
-.project-card
+.project-card:hover img {
+    filter: blur(4px);
+}
 
 #contact {
     position: relative;
