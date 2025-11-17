@@ -1,10 +1,10 @@
 const cursor = document.getElementById("cursor");
 const aElements = document.querySelectorAll("a");
 
-const h1Elements = document.querySelectorAll("h1");
+const h2Elements = document.querySelectorAll("h2");
 
-h1Elements.forEach((h1) => {
-    dotEventlisteners(h1);
+h2Elements.forEach((h2) => {
+    dotEventlisteners(h2);
 });
 
 aElements.forEach((a) => {
@@ -36,8 +36,17 @@ window.addEventListener("scroll", () => {
     //console.log(window.scrollY);
     let scrollPosition = window.scrollY;
     let windowHeight = window.innerHeight;
-
     let scrollDelta = scrollPosition / windowHeight;
+
+
+
+    h2Elements.forEach((h2) => {
+        if (h2.classList.contains("visible")) {
+            let elementsCurrentScroll = h2.dataset.scrollY;
+            let scrolled = window.scrollY - elementsCurrentScroll;
+            h2.style.transform = `translateY(${scrolled * 0.2}px)`;
+        }
+    });
 });
 
 
@@ -48,8 +57,15 @@ function onEntry(entry) {
         console.log(change);
         if (change.isIntersecting) {
             change.target.classList.add('visible');
+
+            let currentScroll = window.scrollY;
+
+            change.target.dataset.scrollY = currentScroll;
         } else {
             change.target.classList.remove('visible');
+            change.target.style.transform = ``;
+
+            change.target.dataset.scrollY = 0;
         }
     });
 }
@@ -57,8 +73,8 @@ function onEntry(entry) {
 // list of options
 let options = {
     root: null,
-    threshold: 0.7,
-    rootMargin: "-20% 0% -20% 0%"
+    threshold: 1.0,
+    rootMargin: "0% 0% -20% 0%"
 };
 
 // instantiate a new Intersection Observer

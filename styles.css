@@ -194,18 +194,90 @@ h2.visible {
     /* background-color: rgb(219, 219, 219); */
 }
 
+#about p {
+    font-size: 32px;
+    line-height: 1.6;
+}
+
 #projects {
     position: relative;
     width: auto;
-    height: 100vh;
     overflow: hidden;
     /* background-color: rgb(255, 12, 12); */
+    margin-bottom: 30vh;
 }
 
 .projets-headline {
     text-align: center;
     margin-top: 200px;
 }
+
+#project-wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.project-card {
+    background-color: rgb(240, 240, 240);
+    border: 1px solid var(--full-black-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+}
+
+.project-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.project-card .project-card-title {
+    opacity: 0;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.project-card .view-project {
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    background-color: var(--highlight-color);
+    color: var(--full-black-color);
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 10px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .view-project {
+    opacity: 1;
+    bottom: 10px;
+}
+
+.project-card:hover .project-card-title {
+    opacity: 1;
+}
+
+.project-card
 
 #contact {
     position: relative;
