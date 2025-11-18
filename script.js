@@ -123,27 +123,33 @@ imgObserver.observe(elem);
 ///// NEW SCROLL EFFECT CODE /////
 window.addEventListener("scroll", () => {
 
-    //for (let elem of imgs) {
+    // for (let elem of imgs) {
     console.log(elem.getBoundingClientRect().top);
 
     if (!elem.classList.contains("inview")) return;
 
-    let min2 = window.innerHeight; // 0%
-    let max2 = -elem.getBoundingClientRect().height; // 100%
+    let imgMin = window.innerHeight; // 0%
+    let imgMax = -elem.getBoundingClientRect().height; // 100%
 
-    const scrollDelta = elem.getBoundingClientRect().top - min2; // Current scroll position relative to element center
-    const maxParallaxDelta = window.innerHeight - max2; // Maximum parallax movement
+    const scrollDelta = elem.getBoundingClientRect().top - imgMin; // Current scroll position relative to element center
+    const maxParallaxDelta = imgMin - imgMax; // Maximum parallax movement
 
     const percentage = (scrollDelta / maxParallaxDelta) * -100;
-    console.log(parseFloat(percentage) + "%");
+    // console.log(parseFloat(percentage) + "%");
 
     elem.dataset.percentage = percentage;
 
     let positionPercentage = Math.max(Math.min(percentage, 100), 0);
 
+    // for a smooth animation
     elem.animate({
-        objectPosition: `50% ${30 - positionPercentage * 0.3}%`
+        objectPosition: `50% ${30 - (20 * positionPercentage / 100)}%`
     }, { duration: 600, fill: "forwards" });
+
+    // elem.style.objectPosition = `50% ${30 - (20 * positionPercentage / 100)}%`; // From 30% to 10%
+    // 30 is the starting position in CSS
+    // 20 ist the total movement range
+    // because of the minus in front of (20 * ...), the movement is upwards when scrolling down
 
 
     // const scrollDelta = parseFloat(elem.dataset.inviewScroll) - elem.getBoundingClientRect().top;
@@ -159,7 +165,7 @@ window.addEventListener("scroll", () => {
     // elem.dataset.percentage = nextPercentage;
 
     // elem.style.objectPosition = `${nextPercentage}% 50%`;
-    // //}
+    // }
 
 
 });
