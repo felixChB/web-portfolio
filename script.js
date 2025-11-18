@@ -3,11 +3,15 @@ const aElements = document.querySelectorAll("a");
 
 const h2Elems = document.querySelectorAll("h2");
 
+const imgs = document.querySelectorAll("img");
+
+const elem = document.getElementById("parallax-img");
+
 // list of options for the observer
 let options = {
     root: null,
     threshold: 0.5,
-    rootMargin: "-10% 0% -10% 0%"
+    rootMargin: "10% 0% -10% 0%"
 };
 
 h2Elems.forEach((h2) => {
@@ -20,9 +24,15 @@ aElements.forEach((a) => {
 
 ////// Cursor Movement //////
 document.addEventListener("mousemove", (event) => {
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-    cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    cursor.animate({
+        transform: `translate(${event.clientX}px, ${event.clientY}px)`
+    }, {
+        duration: 200,
+        fill: "forwards"
+    });
+    // const mouseX = event.clientX;
+    // const mouseY = event.clientY;
+    // cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
 });
 
 ////// Cursor Events //////
@@ -60,7 +70,6 @@ for (let card of projectCards) {
 ////// Inview appear Events //////
 function onEntry(entry) {
     entry.forEach((change) => {
-        console.log(change);
         if (change.isIntersecting) {
             change.target.classList.add('inview');
         } else {
@@ -72,11 +81,89 @@ function onEntry(entry) {
 let observer = new IntersectionObserver(onEntry, options);
 
 // loop through all h2s
-for (let elm of h2Elems) {
-    observer.observe(elm);
+for (let elem of h2Elems) {
+    observer.observe(elem);
 }
 
 
+// list of options for the observer
+let imgOptions = {
+    root: null,
+    threshold: 0.0,
+    rootMargin: "0% 0% 0% 0%"
+};
+function onImgEntry(entry) {
+    entry.forEach((change) => {
+        // console.log(change);
+
+        let elemtOffsetTop = change.target.getBoundingClientRect().top;
+
+        if (elemtOffsetTop > window.innerHeight) {
+            change.target.dataset.percentage = 0;
+        } else if (elemtOffsetTop < 0) {
+            change.target.dataset.percentage = 100;
+        }
+
+        if (change.isIntersecting) {
+            change.target.classList.add('inview');
+        } else {
+            change.target.classList.remove('inview');
+        }
+    });
+}
+
+let imgObserver = new IntersectionObserver(onImgEntry, imgOptions);
+
+// loop through all imgs
+// for (let elem of imgs) {
+imgObserver.observe(elem);
+// }
+
+
+///// NEW SCROLL EFFECT CODE /////
+window.addEventListener("scroll", () => {
+
+    //for (let elem of imgs) {
+    console.log(elem.getBoundingClientRect().top);
+
+    if (!elem.classList.contains("inview")) return;
+
+    let min2 = window.innerHeight; // 0%
+    let max2 = -elem.getBoundingClientRect().height; // 100%
+
+    const scrollDelta = elem.getBoundingClientRect().top - min2; // Current scroll position relative to element center
+    const maxParallaxDelta = window.innerHeight - max2; // Maximum parallax movement
+
+    const percentage = (scrollDelta / maxParallaxDelta) * -100;
+    console.log(parseFloat(percentage) + "%");
+
+    elem.dataset.percentage = percentage;
+
+    let positionPercentage = Math.max(Math.min(percentage, 100), 0);
+
+    elem.animate({
+        objectPosition: `${positionPercentage}% 50%`
+    }, { duration: 600, fill: "forwards" });
+
+
+    // const scrollDelta = parseFloat(elem.dataset.inviewScroll) - elem.getBoundingClientRect().top;
+    // // console.log(scrollDelta);
+    // const maxParallaxDelta = window.innerHeight; // Maximum parallax movement (20% of viewport height)
+
+    // const percentage = (scrollDelta / maxParallaxDelta) * 100;
+    // console.log(parseFloat(percentage) + "%");
+    // const nextPercentageUnconstrained = parseFloat(elem.dataset.percentage) + percentage;
+    // const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 100), 0);
+    // // const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+
+    // elem.dataset.percentage = nextPercentage;
+
+    // elem.style.objectPosition = `${nextPercentage}% 50%`;
+    // //}
+
+
+});
+///// NEW SCROLL EFFECT CODE /////
 
 //////////////////////////// OLD SCROLL EFFECT CODE ////////////////////////////
 /*
@@ -132,8 +219,8 @@ let h2s = document.querySelectorAll('h2');
 // loop through all h2s
 // pass each element to observe method
 // ES2015 for-of loop can traverse through DOM h2s
-for (let elm of h2s) {
-    observer.observe(elm);
+for (let elem of h2s) {
+    observer.observe(elem);
 }
 */
 //////////////////////////// OLD SCROLL EFFECT CODE ////////////////////////////
