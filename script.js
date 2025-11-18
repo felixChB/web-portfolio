@@ -124,7 +124,7 @@ imgObserver.observe(elem);
 window.addEventListener("scroll", () => {
 
     // for (let elem of imgs) {
-    console.log(elem.getBoundingClientRect().top);
+    // console.log(elem.getBoundingClientRect().top);
 
     if (!elem.classList.contains("inview")) return;
 
