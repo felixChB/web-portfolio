@@ -351,7 +351,7 @@ h2.inview .headline-text {
     width: 80%;
     aspect-ratio: 4 / 3;
     pointer-events: none;
-    object-fit: cover;
-    object-position: 0% 50%;
+    object-fit: none;
+    object-position: 50% 30%;
     background-color: violet;
 }

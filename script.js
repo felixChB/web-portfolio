@@ -142,7 +142,7 @@ window.addEventListener("scroll", () => {
     let positionPercentage = Math.max(Math.min(percentage, 100), 0);
 
     elem.animate({
-        objectPosition: `${positionPercentage}% 50%`
+        objectPosition: `50% ${30 - positionPercentage * 0.3}%`
     }, { duration: 600, fill: "forwards" });
 
 
