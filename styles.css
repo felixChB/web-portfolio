@@ -4,10 +4,12 @@
     --text-color: #FFFFFF;
     --full-black-color: #000000;
     --cursor-size: 30px;
+    --main-font: 'Arial', sans-serif;
+    --text-font: 'Arial', sans-serif;
 }
 
 html {
-    font-family: Arial, sans-serif;
+    font-family: var(--main-font);
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
