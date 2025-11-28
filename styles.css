@@ -4,8 +4,11 @@
     --text-color: #FFFFFF;
     --full-black-color: #000000;
     --cursor-size: 30px;
-    --main-font: 'Arial', sans-serif;
-    --text-font: 'Arial', sans-serif;
+    --main-font: 'Alexandria', 'Arial', sans-serif;
+    --maint-font-weight: 900;
+    --text-font: 'Alexandria', 'Arial', sans-serif;
+    --text-font-weight: 400;
+    --type-font: 'Azeret Mono', monospace;
 }
 
 html {
@@ -21,6 +24,28 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     position: relative;
+}
+
+p {
+    margin: 0;
+}
+
+.main-font {
+    font-family: var(--main-font);
+    font-weight: var(--maint-font-weight);
+}
+
+.text-font {
+    font-family: var(--text-font);
+    font-weight: var(--text-font-weight);
+}
+
+.type-font {
+    font-family: var(--type-font);
+    font-weight: normal;
+    font-size: 14px;
+    color: #A3A3A3;
+    text-transform: uppercase;
 }
 
 .cursor {
@@ -95,17 +120,13 @@ header {
 }
 
 #logo {
-    height: 50px;
-    width: 50px;
-    background: var(--highlight-color);
-    font-size: 12px;
+    font-size: 22px;
     font-weight: bold;
     display: block;
-    line-height: 12px;
+    line-height: 20px;
     margin: 10px 0 0 10px;
     overflow: visible;
     padding: 2px;
-    white-space: nowrap;
 }
 
 nav {
@@ -113,9 +134,7 @@ nav {
 }
 
 .nav-link {
-    font-size: 10px;
     font-weight: normal;
-    text-transform: uppercase;
     padding: 20px;
     background: var(--full-black-color);
     color: var(--text-color);
@@ -173,7 +192,6 @@ h1 {
     font-size: 160px;
     margin: 0;
     padding: 0;
-    letter-spacing: -14px;
 }
 
 h2 {
@@ -183,7 +201,6 @@ h2 {
     margin: 0;
     padding: 0;
     text-transform: uppercase;
-    letter-spacing: -12px;
     filter: blur(4px);
     transition: all 0.5s ease-out;
     opacity: 0;
@@ -221,7 +238,7 @@ h2.inview .headline-text {
     justify-content: center;
 }
 
-#about p {
+.about-text p {
     font-size: 32px;
     line-height: 1.6;
 }
@@ -250,14 +267,15 @@ h2.inview .headline-text {
 }
 
 .project-card {
-    background-color: rgb(240, 240, 240);
-    border: 1px solid var(--full-black-color);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     position: relative;
     cursor: pointer;
+}
+
+.project-card-img-wrapper {
+    position: relative;
 }
 
 .project-card img {
@@ -265,22 +283,6 @@ h2.inview .headline-text {
     aspect-ratio: 4 / 3;
     object-fit: cover;
     object-position: 50% 40%;
-}
-
-.project-card .project-card-title {
-    opacity: 0;
-    font-size: 32px;
-    font-weight: bold;
-    margin: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
 }
 
 .project-card .view-project {
@@ -301,12 +303,15 @@ h2.inview .headline-text {
     bottom: 10px;
 }
 
-.project-card:hover .project-card-title {
-    opacity: 1;
-}
-
 .project-card:hover img {
     filter: blur(4px);
+}
+
+.project-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
 }
 
 #contact {

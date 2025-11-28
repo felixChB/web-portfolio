@@ -2,6 +2,7 @@ const cursor = document.getElementById("cursor");
 const aElements = document.querySelectorAll("a");
 
 const h2Elems = document.querySelectorAll("h2");
+const appearTextElems = document.getElementsByClassName("appear-text");
 
 const imgs = document.querySelectorAll("img");
 
