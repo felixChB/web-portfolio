@@ -24,8 +24,9 @@
             </span>
         </a>
         <nav class="type-font">
-            <a class="nav-link" href="#projects"><span>[Projects]</span></a><a class="nav-link"
-                href="#about"><span>[About]</span></a><a class="nav-link" href="#contact"><span>[Contact]</span></a>
+            <a class="nav-link" href="#about"><span>[About]</span></a><a class="nav-link"
+                href="#projects"><span>[Projects]</span></a><a class="nav-link"
+                href="#contact"><span>[Contact]</span></a>
         </nav>
     </header>
     <main>
@@ -33,8 +34,7 @@
         <section id="home">
             <div id="home-wrapper" class="padding-sides">
                 <h1 class="home-headline main-font">
-                    Hello,<br>
-                    I'm Felix
+                    Portfolio
                 </h1>
             </div>
         </section>
@@ -44,16 +44,20 @@
                 <div class="about-text-wrapper">
                     <p class="type-font">[about me]</p>
                     <div class="about-text">
-                        <p class="appear-text">I´m Felix, an interaction- and Web-Designer and Developer</p>
-                        <p class="appear-text">based in Germany. I recently graduated with a Masters</p>
-                        <p class="appear-text">Degree from the HFU in the beautiful black forest.</p>
-                        <p class="appear-text"> </p>
-                        <p class="appear-text">My main focus lies in designing and developing interactions</p>
-                        <p class="appear-text">and interfaces. I´m mostly home in the web working with</p>
-                        <p class="appear-text">javascript and typescript. I also did projects with XR, my</p>
-                        <p class="appear-text">latest project being a co-located Multiplayer VR-Game with</p>
-                        <p class="appear-text">WebXR.</p>
-                        <p class="appear-text">Right now i am looking for a full- or half-time job!</p>
+                        <p class="appear-text"><span>I´m Felix, an interaction- and Web-Designer and Developer</span>
+                        </p>
+                        <p class="appear-text"><span>based in Germany. I recently graduated with a Masters</span></p>
+                        <p class="appear-text"><span>Degree from the HFU in the beautiful black forest.</span></p>
+                        <p class="appear-text"><span> </span></p>
+                        <p class="appear-text"><span>My main focus lies in designing and developing interactions</span>
+                        </p>
+                        <p class="appear-text"><span>and interfaces. I´m mostly home in the web working with</span></p>
+                        <p class="appear-text"><span>javascript and typescript. I also did projects with XR, my</span>
+                        </p>
+                        <p class="appear-text"><span>latest project being a co-located Multiplayer VR-Game with</span>
+                        </p>
+                        <p class="appear-text"><span>WebXR.</span></p>
+                        <p class="appear-text"><span>Right now i am looking for a full- or half-time job!</span></p>
                     </div>
                 </div>
             </div>
@@ -61,9 +65,15 @@
         </section>
 
         <section id="projects" class="padding-sides">
-            <h2 class="projects-headline">
-                <span class="headline-text main-font">projects</span>
-            </h2>
+            <div class="headline-wrapper">
+                <p class="type-font">
+                    [collection of selected <br>
+                    projects i did during my studing]
+                </p>
+                <h2 class="projects-headline">
+                    <span class="headline-text main-font">projects</span>
+                </h2>
+            </div>
             <div id="project-wrapper">
                 <div class="project-card">
                     <div class="project-card-img-wrapper">
@@ -79,27 +89,42 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="./assets/3d-thumbnail.png" alt="">
-                    <h3 class="project-card-title">3D Constructor</h3>
-                    <div class="view-project">
-                        <span>View Project</span>
-                        <span class="arrow"></span>
+                    <div class="project-card-img-wrapper">
+                        <img src="./assets/rw-thumbnail.jpg" alt="">
+                        <div class="view-project">
+                            <span class="type-font">View Project</span>
+                            <span class="arrow"></span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="text-font">VR-Pong</span><span class="type-font">[web-app, VR, co-located,
+                            multiplayer]</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="./assets/vrpong-thumbnail.png" alt="">
-                    <h3 class="project-card-title">VR-Pong</h3>
-                    <div class="view-project">
-                        <span>View Project</span>
-                        <span class="arrow"></span>
+                    <div class="project-card-img-wrapper">
+                        <img src="./assets/rw-thumbnail.jpg" alt="">
+                        <div class="view-project">
+                            <span class="type-font">View Project</span>
+                            <span class="arrow"></span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="text-font">VR-Pong</span><span class="type-font">[web-app, VR, co-located,
+                            multiplayer]</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="./assets/uiverse-thumbnail.png" alt="">
-                    <h3 class="project-card-title">UI-verse</h3>
-                    <div class="view-project">
-                        <span>View Project</span>
-                        <span class="arrow"></span>
+                    <div class="project-card-img-wrapper">
+                        <img src="./assets/rw-thumbnail.jpg" alt="">
+                        <div class="view-project">
+                            <span class="type-font">View Project</span>
+                            <span class="arrow"></span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="text-font">VR-Pong</span><span class="type-font">[web-app, VR, co-located,
+                            multiplayer]</span>
                     </div>
                 </div>
             </div>
@@ -133,7 +158,7 @@
     </main>
     <div id="cursor" class="cursor">
         <div class="cursor-bubble">
-            <div class="cursor-text">POONG</div>
+            <div id="cursor-text"></div>
         </div>
     </div>
 </body>

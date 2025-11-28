@@ -1,4 +1,5 @@
 const cursor = document.getElementById("cursor");
+const cursorText = document.getElementById("cursor-text");
 const aElements = document.querySelectorAll("a");
 
 const h2Elems = document.querySelectorAll("h2");
@@ -50,6 +51,10 @@ function dotEventlisteners(element) {
             cursor.classList.remove("active");
         }
     });
+
+    if (element.classList.contains("project-card")) {
+        cursor.innerHTML = "View Project";
+    }
 }
 
 let projectCards = document.querySelectorAll(".project-card");
@@ -73,8 +78,18 @@ function onEntry(entry) {
     entry.forEach((change) => {
         if (change.isIntersecting) {
             change.target.classList.add('inview');
+
+            // if (change.target.classList.contains("appear-text")) {
+            //     let spanElem = change.target.querySelector("span");
+            //     spanElem.style.transform = "translateY(0px)";
+            // }
         } else {
             change.target.classList.remove('inview');
+
+            // if (change.target.classList.contains("appear-text")) {
+            //     let spanElem = change.target.querySelector("span");
+            //     spanElem.style.transform = "";
+            // }
         }
     });
 }
@@ -83,6 +98,10 @@ let observer = new IntersectionObserver(onEntry, options);
 
 // loop through all h2s
 for (let elem of h2Elems) {
+    observer.observe(elem);
+}
+
+for (let elem of appearTextElems) {
     observer.observe(elem);
 }
 
