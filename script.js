@@ -3,7 +3,7 @@ const cursorText = document.getElementById("cursor-text");
 const aElements = document.querySelectorAll("a");
 
 const h2Elems = document.querySelectorAll("h2");
-const appearTextElems = document.getElementsByClassName("appear-text");
+const appearTextElems = document.getElementsByClassName("appear-text-parts");
 
 const imgs = document.querySelectorAll("img");
 
