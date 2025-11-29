@@ -27,6 +27,20 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     position: relative;
+
+    /* 1. Define the size of the grid cell */
+    /* 100vw divided by 12 columns = 8.333vw */
+    /* This ensures exactly 12 symbols fit across the width */
+    background-size: calc(100vw / 14) calc(100vw / 14);
+
+    /* 2. The SVG Data URI */
+    /* I have encoded a simple black plus sign here */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='0.2'%3E%3Cpath d='M12 11V13M11 12H13'/%3E%3C/svg%3E");
+
+    /* 3. Behavior */
+    background-repeat: repeat;    /* Repeats infinitely */
+    background-attachment: scroll; /* Scrolls WITH the content */
+    background-position: initial; /* Aligns grid to the top */
 }
 
 p {
