@@ -306,7 +306,7 @@ header {
 }
 
 h1 {
-    font-size: 220px;
+    font-size: 16.5vw;
     text-transform: uppercase;
     margin: 0;
     padding: 0;
@@ -419,6 +419,8 @@ h2.inview .headline-text {
     height: 80vh;
     position: sticky;
     top: 10vh;
+    transition: all 0.3s ease;
+    transform: scale(0.5);
 }
 
 .project-card-img-wrapper {
