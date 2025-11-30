@@ -140,29 +140,55 @@ window.addEventListener("scroll", () => {
 ///// NEW SCROLL EFFECT CODE /////
 
 function projectCardScaleEffect() {
+    // projectCards.forEach((card) => {
+    //     if (!card.classList.contains("inview")) return;
+
+    //     let cardMin = window.innerHeight; // 0%
+    //     let cardMax = window.innerHeight - card.getBoundingClientRect().height; // 100%
+    //     console.log(card.getBoundingClientRect().top);
+
+    //     const scrollDelta = card.getBoundingClientRect().top - cardMin; // Current scroll position relative to element center
+    //     const maxParallaxDelta = cardMin - cardMax; // Maximum parallax movement
+
+    //     const percentage = (scrollDelta / maxParallaxDelta) * -100;
+    //     // console.log(parseFloat(percentage) + "%");
+
+    //     card.dataset.percentage = percentage;
+
+    //     let scalePercentage = Math.max(Math.min(percentage, 100), 0);
+
+    //     let scaleValue = 0.5 + (scalePercentage / 100);
+
+    //     // for a smooth animation
+    //     card.animate({
+    //         transform: `scale(${scaleValue})`
+    //     }, { duration: 600, fill: "forwards" });
+    // });
+
     projectCards.forEach((card) => {
         if (!card.classList.contains("inview")) return;
 
-        let cardMin = window.innerHeight; // 0%
-        let cardMax = window.innerHeight - card.getBoundingClientRect().height; // 100%
-        console.log(card.getBoundingClientRect().top);
+        const rect = card.getBoundingClientRect();
+        const vh = window.innerHeight;
 
-        const scrollDelta = card.getBoundingClientRect().top - cardMin; // Current scroll position relative to element center
-        const maxParallaxDelta = cardMin - cardMax; // Maximum parallax movement
+        // start when the card is minimally visible (top at viewport bottom)
+        const startTop = vh;
+        // end when card reaches sticky position top: 10vh
+        const endTop = vh * 0.18;
 
-        const percentage = (scrollDelta / maxParallaxDelta) * -100;
-        // console.log(parseFloat(percentage) + "%");
+        // compute progress where 0 = just visible, 1 = at sticky position
+        const progress = (startTop - rect.top) / (startTop - endTop);
+        const clamped = Math.min(Math.max(progress, 0), 1);
 
-        card.dataset.percentage = percentage;
+        // scale from 0.7 -> 1
+        const scaleValue = 0.7 + 0.3 * clamped;
 
-        let scalePercentage = Math.max(Math.min(percentage, 100), 0);
+        // apply immediately (smooth via CSS transition if desired)
+        card.style.transformOrigin = 'center center';
+        card.style.transform = `scale(${scaleValue})`;
 
-        let scaleValue = 0.5 + (scalePercentage / 100);
-
-        // for a smooth animation
-        card.animate({
-            transform: `scale(${scaleValue})`
-        }, { duration: 600, fill: "forwards" });
+        // optional: expose progress for debugging / CSS hooks
+        card.dataset.scaleProgress = (clamped * 100).toFixed(0);
     });
 }
 

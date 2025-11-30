@@ -408,7 +408,7 @@ h2.inview .headline-text {
     flex-direction: column;
     gap: 200px;
     box-sizing: border-box;
-    align-items: center;
+    align-items: start;
 }
 
 .project-card {
@@ -418,9 +418,10 @@ h2.inview .headline-text {
     cursor: pointer;
     height: 80vh;
     position: sticky;
-    top: 10vh;
-    transition: all 0.3s ease;
-    transform: scale(0.5);
+    top: 18vh;
+    /* transition: all 50ms ease; */
+    transform: scale(0.7);
+    aspect-ratio: 16 / 9;
 }
 
 .project-card-img-wrapper {
