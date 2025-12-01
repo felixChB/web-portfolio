@@ -18,57 +18,75 @@ let options = {
     rootMargin: "10% 0% -10% 0%"
 };
 
-h2Elems.forEach((h2) => {
-    dotEventlisteners(h2);
-});
+// h2Elems.forEach((h2) => {
+//     dotEventlisteners(h2);
+// });
 
-aElements.forEach((a) => {
-    dotEventlisteners(a);
-});
+// aElements.forEach((a) => {
+//     dotEventlisteners(a);
+// });
 
 ////// Cursor Movement //////
 document.addEventListener("mousemove", (event) => {
+    const interactableELem = event.target.closest(".interactable");
+    const interacting = interactableELem !== null;
+
+    animateCursor(event, interacting);
+});
+
+function animateCursor(event, interacting) {
+    if (interacting) {
+        cursorText.innerHTML = "[View Project]";
+        cursor.classList.add("active");
+    } else {
+        setTimeout(() => {
+            cursorText.innerHTML = "";
+            cursor.classList.remove("active");
+        }, 300);
+        
+    }
+
     cursor.animate({
         transform: `translate(${event.clientX}px, ${event.clientY}px)`
     }, {
         duration: 200,
         fill: "forwards"
     });
-});
+}
 
 ////// Cursor Events //////
-function dotEventlisteners(element) {
-    // Additional event listeners can be added here if needed
-    element.addEventListener("mouseenter", () => {
-        if (!cursor.classList.contains("active")) {
-            cursor.classList.add("active");
-        }
-    });
+// function dotEventlisteners(element) {
+//     // Additional event listeners can be added here if needed
+//     element.addEventListener("mouseenter", () => {
+//         if (!cursor.classList.contains("active")) {
+//             cursor.classList.add("active");
+//         }
+//     });
 
-    element.addEventListener("mouseleave", () => {
-        if (cursor.classList.contains("active")) {
-            cursor.classList.remove("active");
-        }
-    });
+//     element.addEventListener("mouseleave", () => {
+//         if (cursor.classList.contains("active")) {
+//             cursor.classList.remove("active");
+//         }
+//     });
 
-    if (element.classList.contains("project-card")) {
-        cursor.innerHTML = "View Project";
-    }
-}
+//     if (element.classList.contains("project-card")) {
+//         cursor.innerHTML = "View Project";
+//     }
+// }
 
-for (let card of projectCards) {
-    card.addEventListener("mouseenter", () => {
-        if (!cursor.classList.contains("active")) {
-            cursor.classList.add("active");
-        }
-    });
+// for (let card of projectCards) {
+//     card.addEventListener("mouseenter", () => {
+//         if (!cursor.classList.contains("active")) {
+//             cursor.classList.add("active");
+//         }
+//     });
 
-    card.addEventListener("mouseleave", () => {
-        if (cursor.classList.contains("active")) {
-            cursor.classList.remove("active");
-        }
-    });
-}
+//     card.addEventListener("mouseleave", () => {
+//         if (cursor.classList.contains("active")) {
+//             cursor.classList.remove("active");
+//         }
+//     });
+// }
 
 ////// Inview appear Events //////
 function onEntry(entry) {
