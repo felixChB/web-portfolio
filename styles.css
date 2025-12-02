@@ -68,7 +68,7 @@ a {
 
 #cursor {
     position: fixed;
-    width: 0;
+    width: auto;
     height: var(--cursor-size);
     top: calc(var(--cursor-size) / -2);
     left: calc(var(--cursor-size) / -2);
@@ -78,16 +78,32 @@ a {
     /* transition: transform 0.2s cubic-bezier(.22, .61, .36, 1); */
     font-size: 14px;
     color: var(--full-black-color);
-    transition: all 0.2s ease;
-    background-color: var(--highlight-color);
-    padding: 5px;
+    transition: all 0.1s ease;
+    padding: 2px;
     box-sizing: border-box;
     opacity: 0;
 }
 
+#cursor::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 0px;
+    height: 100%;
+    background: var(--text-color);
+    transition: all .3s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+
 #cursor.active {
     opacity: 1;
-    width: auto;
+}
+
+#cursor.active::after {
+    width: 100%;
 }
 
 .margin-sides {
@@ -121,41 +137,48 @@ header {
 }
 
 #main-nav {
-    display: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
 .nav-link {
     font-weight: normal;
-    padding: 20px;
+    padding: 2px;
     color: var(--text-color);
     position: relative;
     display: inline-block;
+    transition: all .3s ease;
 }
 
-.nav-link span {
+.nav-link > span {
     position: relative;
     z-index: 1;
 }
 
-.nav-link::after {
+.nav-link > span::after {
     position: absolute;
     bottom: 0;
     left: 0;
     content: '';
     display: block;
-    width: 100%;
-    height: 0px;
-    background: var(--highlight-color);
-    transition: height .3s;
-    z-index: 0;
+    width: 0px;
+    height: 100%;
+    background: var(--text-color);
+    transition: all .3s ease;
+    z-index: -1;
 }
 
-.nav-link:hover::after {
-    height: 100%;
+.nav-link:hover {
+    color: var(--full-black-color);
+}
+
+.nav-link:hover > span::after {
+    width: 100%;
 }
 
 #burger-nav {
-    display: block;
+    display: none;
 }
 
 #burger-icon {
@@ -417,6 +440,9 @@ h2.inview .headline-text {
     width: 100%;
     height: auto;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-card img {
@@ -424,6 +450,7 @@ h2.inview .headline-text {
     aspect-ratio: 16 / 9;
     object-fit: cover;
     object-position: 50% 40%;
+    transform: scale(0.8);
 }
 
 /* .project-card .view-project {
@@ -453,6 +480,19 @@ h2.inview .headline-text {
     justify-content: space-between;
     align-items: center;
     margin-top: 8px;
+}
+
+#vrpong-card > .project-card-img-wrapper {
+    background-color: #313957;
+}
+#uiverse-card > .project-card-img-wrapper {
+    background-color: #927a00;
+}
+#rising-weather-card > .project-card-img-wrapper {
+    background-color: #23004d;
+}
+#constructor-card > .project-card-img-wrapper {
+    background-color: #4f2f1d;
 }
 
 #contact {
