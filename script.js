@@ -231,3 +231,49 @@ function imgScrollEffect() {
         objectPosition: `50% ${30 - (20 * positionPercentage / 100)}%`
     }, { duration: 600, fill: "forwards" });
 }
+
+
+///// Hacker Effect on Nav Links /////
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+// store interval ids per element
+const hackerIntervals = new WeakMap();
+
+const linkTexts = document.getElementsByClassName("link-text");
+
+for (let link of linkTexts) {
+    link.onmouseover = event => {
+        hackerEffect(event);
+    };
+}
+
+function hackerEffect(event) {
+    let iteration = 0;
+
+    const existingInterval = hackerIntervals.get(event.target);
+    if (existingInterval) {
+        clearInterval(existingInterval);
+        hackerIntervals.delete(event.target);
+    }
+
+    const intervalId = setInterval(() => {
+        event.target.innerText = event.target.innerText
+            .split("")
+            .map((letter, index) => {
+                if (index < iteration) {
+                    return event.target.dataset.value[index];
+                }
+
+                return letters[Math.floor(Math.random() * 26)]
+            })
+            .join("");
+
+        if (iteration >= event.target.dataset.value.length) {
+            clearInterval(intervalId);
+            hackerIntervals.delete(event.target);
+        }
+
+        iteration += 1 / 3;
+    }, 30);
+}
+///// Hacker Effect on Nav Links /////
