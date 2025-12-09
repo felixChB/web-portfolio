@@ -5,7 +5,7 @@
     --full-black-color: #000000;
     --cursor-size: 30px;
     --main-font: 'Alexandria', 'Arial', sans-serif;
-    --maint-font-weight: 900;
+    --maint-font-weight: 500;
     --text-font: 'Alexandria', 'Arial', sans-serif;
     --text-font-weight: 400;
     --type-font: 'Azeret Mono', monospace;
@@ -30,7 +30,8 @@ body {
     background-size: calc(100vw / 10) calc(100vw / 10);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='0.2'%3E%3Cpath d='M12 11V13M11 12H13'/%3E%3C/svg%3E");
     background-repeat: repeat;
-    background-attachment: fixed; /* Scrolls or not */
+    background-attachment: fixed;
+    /* Scrolls or not */
     background-position: initial;
 }
 
@@ -44,6 +45,7 @@ a {
     cursor: pointer;
     padding: 0;
 }
+
 /* end - general Element styling */
 
 /* start - font styling */
@@ -64,6 +66,7 @@ a {
     color: #A3A3A3;
     text-transform: uppercase;
 }
+
 /* end - font styling */
 
 #cursor {
@@ -144,19 +147,35 @@ header {
 
 .nav-link {
     font-weight: normal;
-    padding: 2px;
+    padding: 4px;
     color: var(--text-color);
     position: relative;
     display: inline-block;
     transition: all .3s ease;
 }
 
-.nav-link > span {
+.nav-link::after {
+    opacity: 0;
+    background: linear-gradient(90deg, #fff 1px, transparent 0) 0 0, linear-gradient(180deg, #fff 1px, transparent 0) 0 0, linear-gradient(270deg, #fff 1px, transparent 0) 100% 0, linear-gradient(180deg, #fff 1px, transparent 0) 100% 0, linear-gradient(270deg, #fff 1px, transparent 0) 100% 100%, linear-gradient(0deg, #fff 1px, transparent 0) 100% 100%, linear-gradient(90deg, #fff 1px, transparent 0) 0 100%, linear-gradient(0deg, #fff 1px, transparent 0) 0 100%;
+    background-repeat: repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat;
+    background-size: auto, auto, auto, auto, auto, auto, auto, auto;
+    background-repeat: no-repeat;
+    background-size: 3px 3px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease;
+}
+
+.nav-link>span {
     position: relative;
     z-index: 1;
 }
 
-.nav-link > span::after {
+.nav-link>span::after {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -173,7 +192,11 @@ header {
     color: var(--full-black-color);
 }
 
-.nav-link:hover > span::after {
+.nav-link:hover::after {
+    opacity: 1;
+}
+
+.nav-link:hover>span::after {
     width: 100%;
 }
 
@@ -232,7 +255,7 @@ header {
 }
 
 .skill-bubbles {
-    content : none;
+    content: none;
     position: absolute;
     background-color: var(--highlight-color);
     color: var(--full-black-color);
@@ -366,7 +389,7 @@ h2.inview .headline-text {
     margin-top: 40px;
 }
 
-.about-text p.appear-text  {
+.about-text p.appear-text {
     font-size: 32px;
     line-height: 40px;
     height: 40px;
@@ -400,7 +423,8 @@ h2.inview .headline-text {
     background-size: calc(100vw / 10) calc(100vw / 10);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='0.2'%3E%3Cpath d='M12 11V13M11 12H13'/%3E%3C/svg%3E");
     background-repeat: repeat;
-    background-attachment: fixed; /* Scrolls or not */
+    background-attachment: fixed;
+    /* Scrolls or not */
     background-position: initial;
 }
 
@@ -482,16 +506,19 @@ h2.inview .headline-text {
     margin-top: 8px;
 }
 
-#vrpong-card > .project-card-img-wrapper {
+#vrpong-card>.project-card-img-wrapper {
     background-color: #313957;
 }
-#uiverse-card > .project-card-img-wrapper {
+
+#uiverse-card>.project-card-img-wrapper {
     background-color: #927a00;
 }
-#rising-weather-card > .project-card-img-wrapper {
+
+#rising-weather-card>.project-card-img-wrapper {
     background-color: #23004d;
 }
-#constructor-card > .project-card-img-wrapper {
+
+#constructor-card>.project-card-img-wrapper {
     background-color: #4f2f1d;
 }
 

@@ -202,8 +202,12 @@ function projectCardScaleEffect() {
         const scaleValue = 0.7 + 0.3 * clamped;
 
         // apply immediately (smooth via CSS transition if desired)
-        card.style.transformOrigin = 'center center';
-        card.style.transform = `scale(${scaleValue})`;
+        // card.style.transform = `scale(${scaleValue})`;
+
+        // for a smooth animation
+        card.animate({
+            transform: `scale(${scaleValue})`
+        }, { duration: 300, fill: "forwards" });
 
         // optional: expose progress for debugging / CSS hooks
         card.dataset.scaleProgress = (clamped * 100).toFixed(0);
