@@ -26,6 +26,75 @@ let options = {
 //     dotEventlisteners(a);
 // });
 
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM fully loaded and parsed");
+    console.log("Initial scrollY:", window.scrollY);
+
+    ////// Inview appear Events //////
+    function onEntry(entry) {
+        entry.forEach((change) => {
+            if (change.isIntersecting) {
+                change.target.classList.add('inview');
+            } else {
+                change.target.classList.remove('inview');
+            }
+        });
+    }
+
+    let observer = new IntersectionObserver(onEntry, options);
+
+    // loop through all h2s
+    for (let h2 of h2Elems) {
+        observer.observe(h2);
+    }
+
+    for (let elem of appearTextElems) {
+        observer.observe(elem);
+    }
+
+    // list of options for the observer
+    let imgOptions = {
+        root: null,
+        threshold: 0.0,
+        rootMargin: "0% 0% 0% 0%"
+    };
+    function onImgEntry(entry) {
+        entry.forEach((change) => {
+            // console.log(change);
+
+            let elemtOffsetTop = change.target.getBoundingClientRect().top;
+
+            if (elemtOffsetTop > window.innerHeight) {
+                change.target.dataset.percentage = 0;
+            } else if (elemtOffsetTop < 0) {
+                change.target.dataset.percentage = 100;
+            }
+
+            if (change.isIntersecting) {
+                change.target.classList.add('inview');
+            } else {
+                change.target.classList.remove('inview');
+            }
+        });
+    }
+
+    let imgObserver = new IntersectionObserver(onImgEntry, imgOptions);
+
+    // loop through all imgs
+    // for (let elem of imgs) {
+    imgObserver.observe(elem);
+    // }
+
+    for (let card of projectCards) {
+        imgObserver.observe(card);
+    }
+
+    // Check if the page is scrolled vertically
+    if (window.scrollY > 0) {
+        projectCardScaleEffect();
+    }
+});
+
 ////// Cursor Movement //////
 document.addEventListener("mousemove", (event) => {
     const interactableELem = event.target.closest(".interactable");
@@ -87,66 +156,6 @@ for (let card of projectCards) {
         }
     });
 }
-
-////// Inview appear Events //////
-function onEntry(entry) {
-    entry.forEach((change) => {
-        if (change.isIntersecting) {
-            change.target.classList.add('inview');
-        } else {
-            change.target.classList.remove('inview');
-        }
-    });
-}
-
-let observer = new IntersectionObserver(onEntry, options);
-
-// loop through all h2s
-for (let h2 of h2Elems) {
-    observer.observe(h2);
-}
-
-for (let elem of appearTextElems) {
-    observer.observe(elem);
-}
-
-// list of options for the observer
-let imgOptions = {
-    root: null,
-    threshold: 0.0,
-    rootMargin: "0% 0% 0% 0%"
-};
-function onImgEntry(entry) {
-    entry.forEach((change) => {
-        // console.log(change);
-
-        let elemtOffsetTop = change.target.getBoundingClientRect().top;
-
-        if (elemtOffsetTop > window.innerHeight) {
-            change.target.dataset.percentage = 0;
-        } else if (elemtOffsetTop < 0) {
-            change.target.dataset.percentage = 100;
-        }
-
-        if (change.isIntersecting) {
-            change.target.classList.add('inview');
-        } else {
-            change.target.classList.remove('inview');
-        }
-    });
-}
-
-let imgObserver = new IntersectionObserver(onImgEntry, imgOptions);
-
-// loop through all imgs
-// for (let elem of imgs) {
-imgObserver.observe(elem);
-// }
-
-for (let card of projectCards) {
-    imgObserver.observe(card);
-}
-
 
 ///// NEW SCROLL EFFECT CODE /////
 window.addEventListener("scroll", () => {
