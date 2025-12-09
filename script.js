@@ -245,7 +245,7 @@ function imgScrollEffect() {
     }, { duration: 600, fill: "forwards" });
 }
 
-
+/*
 ///// Hacker Effect on Nav Links /////
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -290,3 +290,4 @@ function hackerEffect(event) {
     }, 30);
 }
 ///// Hacker Effect on Nav Links /////
+*/

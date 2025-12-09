@@ -24,9 +24,10 @@
             </a>
         </span>
         <nav id="main-nav" class="type-font">
-            <a class="nav-link" href="#about"><span class="link-text" data-value="[About]">[About]</span></a><a class="nav-link"
-                href="#projects"><span class="link-text" data-value="[Projects]">[Projects]</span></a><a class="nav-link"
-                href="#contact"><span class="link-text" data-value="[Contact]">[Contact]</span></a>
+            <a class="nav-link" href="#about"><span class="link-text" data-value="[About]">[About]</span></a><a
+                class="nav-link" href="#projects"><span class="link-text"
+                    data-value="[Projects]">[Projects]</span></a><a class="nav-link" href="#contact"><span
+                    class="link-text" data-value="[Contact]">[Contact]</span></a>
         </nav>
         <nav id="burger-nav">
             <div id="burger-icon">
@@ -37,7 +38,8 @@
             </div>
             <div id="burger-menu" class="type-font">
                 <a class="nav-link" href="#about"><span class="link-text" data-value="[About]">[About]</span></a>
-                <a class="nav-link" href="#projects"><span class="link-text" data-value="[Projects]">[Projects]</span></a>
+                <a class="nav-link" href="#projects"><span class="link-text"
+                        data-value="[Projects]">[Projects]</span></a>
                 <a class="nav-link" href="#contact"><span class="link-text" data-value="[Contact]">[Contact]</span></a>
             </div>
         </nav>
@@ -50,15 +52,9 @@
                     Portfolio
                 </h1>
                 <div class="home-addons">
-                    <span></span>
                     <span>scroll to explore</span>
-                    <span></span>
                 </div>
             </div>
-            <div id="interface-bubble" class="skill-bubbles type-font"><span>[Interface Design]</span></div>
-            <div id="web-design-bubble" class="skill-bubbles type-font"><span>[Web Design]</span></div>
-            <div id="web-development-bubble" class="skill-bubbles type-font"><span>[Web Development]</span></div>
-            <div id="interaction-design-bubble" class="skill-bubbles type-font"><span>[Interaction Design]</span></div>
         </section>
 
         <section id="about" class="padding-sides">
@@ -97,56 +93,64 @@
 
         <section id="projects" class="padding-sides">
             <div class="headline-wrapper">
-                <p class="type-font">
-                    [collection of selected <br>
-                    projects i did during my studing]
-                </p>
                 <h2 class="projects-headline">
-                    <span class="headline-text main-font">projects<span class="projects-number">[4]</span></span>
+                    <span class="headline-text main-font">selected</span>
+                </h2>
+                <h2 class="projects-headline">
+                    <span class="headline-text main-font"><span>projects</span><span
+                            class="projects-number">[4]</span></span>
                 </h2>
             </div>
             <div id="project-wrapper">
                 <div id="vrpong-card" class="project-card interactable">
                     <div class="project-card-img-wrapper">
                         <img src="./assets/vrpong-thumbnail.png" alt="">
-                        <!-- <div class="view-project">
-                            <span class="type-font">View Project</span>
-                            <span class="arrow"></span>
-                        </div> -->
                     </div>
                     <div class="project-details">
-                        <span class="text-font">VR-Pong</span><span class="type-font">[web-app, VR, co-located,
-                            multiplayer]</span>
+                        <div class="project-text-wrapper">
+                            <div class="project-text-header">
+                                <span class="type-font">[web-app, VR, co-located, multiplayer]</span>
+                                <span class="text-font">VR-Pong</span>
+                            </div>
+                            <div class="project-text">
+                                <span class="type-font">A co-located multiplayer VR-Game built with
+                                    A-Frame/WebXR.</span>
+                            </div>
+                        </div>
+                        <div class="view-project">
+                            <span class="type-font">[View Project]</span>
+                            <span class="arrow"><img src="./assets/arrow.svg" alt="svg arrow"></span>
+                        </div>
                     </div>
                 </div>
                 <div id="uiverse-card" class="project-card interactable">
                     <div class="project-card-img-wrapper">
                         <img src="./assets/uiverse-thumbnail.png" alt="">
+                    </div>
+                    <div class="project-details">
+                        <span class="text-font">UI-verse</span><span class="type-font">[web-design, interactive,
+                            timeline]</span>
+                    </div>
                 </div>
-                <div class="project-details">
-                    <span class="text-font">UI-verse</span><span class="type-font">[web-design, interactive, timeline]</span>
+                <div id="rising-weather-card" class="project-card interactable">
+                    <div class="project-card-img-wrapper">
+                        <img src="./assets/rw-thumbnail.jpg" alt="">
+                    </div>
+                    <div class="project-details">
+                        <span class="text-font">Rising Weather</span><span class="type-font">[installation, interactive,
+                            visualisation,
+                            data-driven]</span>
+                    </div>
                 </div>
-            </div>
-            <div id="rising-weather-card" class="project-card interactable">
-                <div class="project-card-img-wrapper">
-                    <img src="./assets/rw-thumbnail.jpg" alt="">
+                <div id="constructor-card" class="project-card interactable">
+                    <div class="project-card-img-wrapper">
+                        <img src="./assets/3d-thumbnail.png" alt="">
+                    </div>
+                    <div class="project-details">
+                        <span class="text-font">3D-Constuctor</span><span class="type-font">[game-asset, 3D-modelling,
+                            texture-painting]</span>
+                    </div>
                 </div>
-                <div class="project-details">
-                    <span class="text-font">Rising Weather</span><span class="type-font">[installation, interactive, visualisation,
-                        data-driven]</span>
-                </div>
-            </div>
-            <div id="constructor-card" class="project-card interactable">
-                <div class="project-card-img-wrapper">
-                    <img src="./assets/3d-thumbnail.png" alt="">
-                </div>
-                <div class="project-details">
-                    <span class="text-font">3D-Constuctor</span><span class="type-font">[game-asset, 3D-modelling, texture-painting]</span>
-                </div>
-            </div>
-            <div class="project-card">
-
-            </div>
             </div>
         </section>
 
