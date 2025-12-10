@@ -1,6 +1,5 @@
-const cursor = document.getElementById("cursor");
-const cursorText = document.getElementById("cursor-text");
 const aElements = document.querySelectorAll("a");
+const htmlBody = document.querySelector("body");
 
 const h2Elems = document.querySelectorAll("h2");
 const appearTextElems = document.getElementsByClassName("appear-text-parts");
@@ -8,15 +7,9 @@ const appearTextElems = document.getElementsByClassName("appear-text-parts");
 const imgs = document.querySelectorAll("img");
 
 const elem = document.getElementById("parallax-img");
+const projectSection = document.getElementById("projects");
 const projectWrapper = document.getElementById("project-wrapper");
 let projectCards = document.querySelectorAll(".project-card");
-
-// list of options for the observer
-let options = {
-    root: null,
-    threshold: 0.5,
-    rootMargin: "10% 0% -10% 0%"
-};
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed");
@@ -33,7 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    let observer = new IntersectionObserver(onEntry, options);
+    // list of options for the observer
+    let textOptions = {
+        root: null,
+        threshold: 0.5,
+        rootMargin: "10% 0% -10% 0%"
+    };
+    let observer = new IntersectionObserver(onEntry, textOptions);
 
     // loop through all h2s
     for (let h2 of h2Elems) {
@@ -85,80 +84,68 @@ document.addEventListener('DOMContentLoaded', () => {
     // if (window.scrollY > 0) {
     //     projectCardScaleEffect();
     // }
-});
 
-////// Cursor Movement //////
-document.addEventListener("mousemove", (event) => {
-    const interactableELem = event.target.closest(".interactable");
-    const interacting = interactableELem !== null;
-
-    animateCursor(event, interacting);
-});
-
-function animateCursor(event, interacting) {
-    // if (interacting) {
-    //     cursorText.innerHTML = "[View Project]";
-    //     cursor.classList.add("active");
-    // } else {
-    //     setTimeout(() => {
-    //         cursorText.innerHTML = "";
-    //         cursor.classList.remove("active");
-    //     }, 300);
-
-    // }
-
-    cursor.animate({
-        transform: `translate(${event.clientX}px, ${event.clientY}px)`
-    }, {
-        duration: 200,
-        fill: "forwards"
-    });
-}
-
-//// Cursor Events //////
-function dotEventlisteners(element) {
-    // Additional event listeners can be added here if needed
-    element.addEventListener("mouseenter", () => {
-        if (!cursor.classList.contains("active")) {
-            cursor.classList.add("active");
-        }
-    });
-
-    element.addEventListener("mouseleave", () => {
-        if (cursor.classList.contains("active")) {
-            cursor.classList.remove("active");
-        }
-    });
-
-    if (element.classList.contains("project-card")) {
-        cursorText.innerHTML = "View Project";
+    ///// Sticky project wrapper observer /////
+    function getSticky(entry) {
+        entry.forEach((change) => {
+            if (change.isIntersecting) {
+                projectWrapper.classList.add('sticky');
+            } else {
+                projectWrapper.classList.remove('sticky');
+            }
+        });
     }
-}
+    let proWrapOptions = {
+        root: null,
+        threshold: [0.0, 1.0],
+        rootMargin: "0% 0% -100% 0%"
+    };
 
-for (let card of projectCards) {
-    card.addEventListener("mouseenter", () => {
-        if (!cursor.classList.contains("active")) {
-            cursor.classList.add("active");
-        }
-    });
+    let projectsObserver = new IntersectionObserver(getSticky, proWrapOptions);
 
-    card.addEventListener("mouseleave", () => {
-        if (cursor.classList.contains("active")) {
-            cursor.classList.remove("active");
-        }
-    });
+    projectsObserver.observe(projectSection);
+    ///// Sticky project wrapper observer /////
+});
+
+///// NEW SCROLL EFFECT CODE /////
+window.addEventListener("scroll", () => {
+    // console.log("ScrollY:", window.scrollY);
+    console.log("Projects Rect.top:", projectSection.getBoundingClientRect().top);
+    htmlBody.classList.toggle('scrolled', window.scrollY > 20)
+    // imgScrollEffect();
+    // projectCardScaleEffect();
+    projectWrapperHoricontalScroll();
+
+});
+///// NEW SCROLL EFFECT CODE /////
+
+function projectWrapperHoricontalScroll() {
+    if (!projectWrapper.classList.contains("sticky")) return;
+
+    // console.log("Project Wrapper Horizontal Scroll Effect");
+
+    const rect = projectSection.getBoundingClientRect();
+    const vh = window.innerHeight;
+
+    // start when section is at the top of viewport
+    const startTop = 0;
+    // end when card reaches sticky position top: 10vh
+    const endTop = -rect.height + vh;
+
+    // compute progress where 0 = just visible, 1 = at sticky position
+
+    const scrollDelta = rect.top - startTop;
+    const maxParallaxDelta = startTop - endTop; // Maximum parallax movement
+
+    const percentage = (scrollDelta / maxParallaxDelta) * -100;
+    console.log("Percentage:", percentage);
+
+    projectWrapper.dataset.percentage = percentage;
+
+    projectWrapper.style.transform = `translateX(-${percentage}%)`;
 }
 
 /*
-///// NEW SCROLL EFFECT CODE /////
-window.addEventListener("scroll", () => {
-
-    imgScrollEffect();
-    projectCardScaleEffect();
-
-});
-///// NEW SCROLL EFFECT CODE /////
-
 function projectCardScaleEffect() {
     projectCards.forEach((card) => {
         if (!card.classList.contains("inview")) return;
@@ -190,7 +177,6 @@ function projectCardScaleEffect() {
         card.dataset.scaleProgress = (clamped * 100).toFixed(0);
     });
 }
-*/
 
 function imgScrollEffect() {
     if (!elem.classList.contains("inview")) return;
@@ -213,50 +199,4 @@ function imgScrollEffect() {
         objectPosition: `50% ${30 - (20 * positionPercentage / 100)}%`
     }, { duration: 600, fill: "forwards" });
 }
-
-/*
-///// Hacker Effect on Nav Links /////
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-// store interval ids per element
-const hackerIntervals = new WeakMap();
-
-const linkTexts = document.getElementsByClassName("link-text");
-
-for (let link of linkTexts) {
-    link.onmouseover = event => {
-        hackerEffect(event);
-    };
-}
-
-function hackerEffect(event) {
-    let iteration = 0;
-
-    const existingInterval = hackerIntervals.get(event.target);
-    if (existingInterval) {
-        clearInterval(existingInterval);
-        hackerIntervals.delete(event.target);
-    }
-
-    const intervalId = setInterval(() => {
-        event.target.innerText = event.target.innerText
-            .split("")
-            .map((letter, index) => {
-                if (index < iteration) {
-                    return event.target.dataset.value[index];
-                }
-
-                return letters[Math.floor(Math.random() * 26)]
-            })
-            .join("");
-
-        if (iteration >= event.target.dataset.value.length) {
-            clearInterval(intervalId);
-            hackerIntervals.delete(event.target);
-        }
-
-        iteration += 1 / 3;
-    }, 30);
-}
-///// Hacker Effect on Nav Links /////
 */
