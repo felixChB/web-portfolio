@@ -18,14 +18,6 @@ let options = {
     rootMargin: "10% 0% -10% 0%"
 };
 
-// h2Elems.forEach((h2) => {
-//     dotEventlisteners(h2);
-// });
-
-// aElements.forEach((a) => {
-//     dotEventlisteners(a);
-// });
-
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed");
     console.log("Initial scrollY:", window.scrollY);
@@ -90,9 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Check if the page is scrolled vertically
-    if (window.scrollY > 0) {
-        projectCardScaleEffect();
-    }
+    // if (window.scrollY > 0) {
+    //     projectCardScaleEffect();
+    // }
 });
 
 ////// Cursor Movement //////
@@ -157,6 +149,7 @@ for (let card of projectCards) {
     });
 }
 
+/*
 ///// NEW SCROLL EFFECT CODE /////
 window.addEventListener("scroll", () => {
 
@@ -167,31 +160,6 @@ window.addEventListener("scroll", () => {
 ///// NEW SCROLL EFFECT CODE /////
 
 function projectCardScaleEffect() {
-    // projectCards.forEach((card) => {
-    //     if (!card.classList.contains("inview")) return;
-
-    //     let cardMin = window.innerHeight; // 0%
-    //     let cardMax = window.innerHeight - card.getBoundingClientRect().height; // 100%
-    //     console.log(card.getBoundingClientRect().top);
-
-    //     const scrollDelta = card.getBoundingClientRect().top - cardMin; // Current scroll position relative to element center
-    //     const maxParallaxDelta = cardMin - cardMax; // Maximum parallax movement
-
-    //     const percentage = (scrollDelta / maxParallaxDelta) * -100;
-    //     // console.log(parseFloat(percentage) + "%");
-
-    //     card.dataset.percentage = percentage;
-
-    //     let scalePercentage = Math.max(Math.min(percentage, 100), 0);
-
-    //     let scaleValue = 0.5 + (scalePercentage / 100);
-
-    //     // for a smooth animation
-    //     card.animate({
-    //         transform: `scale(${scaleValue})`
-    //     }, { duration: 600, fill: "forwards" });
-    // });
-
     projectCards.forEach((card) => {
         if (!card.classList.contains("inview")) return;
 
@@ -222,6 +190,7 @@ function projectCardScaleEffect() {
         card.dataset.scaleProgress = (clamped * 100).toFixed(0);
     });
 }
+*/
 
 function imgScrollEffect() {
     if (!elem.classList.contains("inview")) return;

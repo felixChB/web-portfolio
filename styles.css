@@ -13,9 +13,10 @@
     --about-text-size: 34px;
 
     --bg-blur: blur(4px);
-    --bg-blur-color: #1c1c1c47;
+    --bg-blur-color: #00000057;
     --lined-border: 1px solid var(--grey-color);
     --border-radius-general: 6px;
+    --hover-transition: all 400ms cubic-bezier(.45,.19,.36,1);
 }
 
 /* start - general Element styling */
@@ -32,12 +33,11 @@ body {
     background-color: var(--full-black-color);
     color: var(--text-color);
     position: relative;
-    background-size: calc(100vw / 10) calc(100vw / 10);
+    /* background-size: calc(100vw / 10) calc(100vw / 10);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='0.2'%3E%3Cpath d='M12 11V13M11 12H13'/%3E%3C/svg%3E");
     background-repeat: repeat;
     background-attachment: fixed;
-    /* Scrolls or not */
-    background-position: initial;
+    background-position: initial; */
 }
 
 p {
@@ -164,7 +164,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all .3s ease;
+    transition: var(--hover-transition);
     border-left: solid 1px var(--grey-color);
 }
 
@@ -177,7 +177,7 @@ header {
     width: 0px;
     height: 100%;
     background: var(--highlight-color);
-    transition: all 400ms ease;
+    transition: var(--hover-transition);
     z-index: -1;
 }
 
@@ -357,12 +357,11 @@ h2.inview .headline-text {
     padding-bottom: 100px;
     margin-bottom: 30vh;
 
-    background-size: calc(100vw / 10) calc(100vw / 10);
+    /* background-size: calc(100vw / 10) calc(100vw / 10);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='0.2'%3E%3Cpath d='M12 11V13M11 12H13'/%3E%3C/svg%3E");
     background-repeat: repeat;
     background-attachment: fixed;
-    /* Scrolls or not */
-    background-position: initial;
+    background-position: initial; */
 }
 
 .headline-wrapper {
@@ -445,9 +444,10 @@ h2.inview .headline-text {
     display: flex;
     flex-direction: row;
     cursor: pointer;
-    height: 80vh;
+    max-height: 90vh;
+    width: 100%;
     /* transition: all 50ms ease; */
-    transform: scale(0.7);
+    /* transform: scale(0.7); */
     aspect-ratio: 16 / 9;
     border: var(--lined-border);
     border-radius: var(--border-radius-general);
@@ -456,7 +456,7 @@ h2.inview .headline-text {
 }
 
 .project-card-img-wrapper {
-    width: 100%;
+    width: 65%;
     height: auto;
     overflow: hidden;
     display: flex;
@@ -465,14 +465,15 @@ h2.inview .headline-text {
 }
 
 .project-card-img-wrapper img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 100%;
+    /* aspect-ratio: 16 / 9; */
     object-fit: cover;
     object-position: 50% 40%;
-    transform: scale(0.8);
+    /* transform: scale(0.8); */
 }
 
 .project-details {
+    width: 35%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -485,9 +486,9 @@ h2.inview .headline-text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 90%;
+    height: 85%;
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -496,19 +497,22 @@ h2.inview .headline-text {
     flex-direction: column;
     gap: 10px;
     font-size: 28px;
-    margin-bottom: 10px;
 }
 
 .project-details .view-project {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 10%;
-    padding: 10px;
+    height: 15%;
+    padding: 20px;
     box-sizing: border-box;
     border-top: var(--lined-border);
+}
+
+.project-details .view-project > span:first-child {
     color: var(--text-color) !important;
 }
 
@@ -520,6 +524,24 @@ h2.inview .headline-text {
     transform: rotate(-45deg);
     width: 14px;
     height: 14px;
+}
+
+.project-details .view-project::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 0px;
+    height: 100%;
+    background: var(--highlight-color);
+    transition: var(--hover-transition);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.project-card:hover .view-project::after {
+    width: 100%;
 }
 
 #vrpong-card>.project-card-img-wrapper {
