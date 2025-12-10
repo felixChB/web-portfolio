@@ -8,7 +8,7 @@ const appearTextElems = document.getElementsByClassName("appear-text-parts");
 const imgs = document.querySelectorAll("img");
 
 const elem = document.getElementById("parallax-img");
-
+const projectWrapper = document.getElementById("project-wrapper");
 let projectCards = document.querySelectorAll(".project-card");
 
 // list of options for the observer

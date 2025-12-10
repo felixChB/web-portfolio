@@ -564,7 +564,6 @@ h2.inview .headline-text {
     position: relative;
     width: auto;
     height: calc(80vh - 15px);
-    overflow: hidden;
     color: var(--full-black-color);
     background-color: rgb(228, 228, 228);
     margin: 15px 15px 0 15px;
