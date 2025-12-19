@@ -96,35 +96,73 @@ window.addEventListener("scroll", () => {
 
 function projectCardScaleEffect() {
     projectCards.forEach((card) => {
-        if (!card.classList.contains("inview")) return;
-
         const rect = card.getBoundingClientRect();
         const vh = window.innerHeight;
 
-        // start when the card is minimally visible (top at viewport bottom)
-        const startTop = vh;
-        // end when card reaches sticky position top: 10vh
-        const endTop = vh * 0.18;
+        const startTop = vh;             // element just enters viewport (bottom)
+        const midTop = vh * 0.5 + rect.height * 0.5;         // middle of the screen
+        const endTop = -rect.height;     // completely out of view above
 
-        // compute progress where 0 = just visible, 1 = at sticky position
-        const progress = (startTop - rect.top) / (startTop - endTop);
-        const clamped = Math.min(Math.max(progress, 0), 1);
+        let scaleValue = 0.7;
 
-        // scale from 0.7 -> 1
-        const scaleValue = 0.7 + 0.3 * clamped;
+        if (rect.top >= startTop) {
+            // not yet entered
+            scaleValue = 0.7;
+        } else if (rect.top >= midTop) {
+            // scaling up: 0.7 -> 1 between startTop and midTop
+            const progress = (startTop - rect.top) / (startTop - midTop);
+            const clamped = Math.min(Math.max(progress, 0), 1);
+            scaleValue = 0.7 + 0.3 * clamped;
+        } else if (rect.top > endTop) {
+            // scaling down: 1 -> 0.7 between midTop and endTop (leaving)
+            const progress = (midTop - rect.top) / (midTop - endTop);
+            const clamped = Math.min(Math.max(progress, 0), 1);
+            scaleValue = 1 - 0.3 * clamped;
+        } else {
+            // completely out of view
+            scaleValue = 0.7;
+        }
 
-        // apply immediately (smooth via CSS transition if desired)
-        // card.style.transform = `scale(${scaleValue})`;
+        // apply transform (use CSS transition for smoothness)
+        card.style.transform = `scale(${scaleValue})`;
 
-        // for a smooth animation
-        card.animate({
-            transform: `scale(${scaleValue})`
-        }, { duration: 300, fill: "forwards" });
-
-        // optional: expose progress for debugging / CSS hooks
-        card.dataset.scaleProgress = (clamped * 100).toFixed(0);
+        // expose progress (0..100) where 0=0.7, 100=1
+        const progressPercent = Math.round(((scaleValue - 0.7) / 0.3) * 100);
+        card.dataset.scaleProgress = Math.max(0, Math.min(100, progressPercent));
     });
 }
+
+// function projectCardScaleEffect() {
+//     projectCards.forEach((card) => {
+//         if (!card.classList.contains("inview")) return;
+
+//         const rect = card.getBoundingClientRect();
+//         const vh = window.innerHeight;
+
+//         // start when the card is minimally visible (top at viewport bottom)
+//         const startTop = vh;
+//         // end when card reaches sticky position top: 10vh
+//         const endTop = vh * 0.18;
+
+//         // compute progress where 0 = just visible, 1 = at sticky position
+//         const progress = (startTop - rect.top) / (startTop - endTop);
+//         const clamped = Math.min(Math.max(progress, 0), 1);
+
+//         // scale from 0.7 -> 1
+//         const scaleValue = 0.7 + 0.3 * clamped;
+
+//         // apply immediately (smooth via CSS transition if desired)
+//         // card.style.transform = `scale(${scaleValue})`;
+
+//         // for a smooth animation
+//         card.animate({
+//             transform: `scale(${scaleValue})`
+//         }, { duration: 300, fill: "forwards" });
+
+//         // optional: expose progress for debugging / CSS hooks
+//         card.dataset.scaleProgress = (clamped * 100).toFixed(0);
+//     });
+// }
 
 /*
 function imgScrollEffect() {
