@@ -7,9 +7,11 @@ const appearTextElems = document.getElementsByClassName("appear-text-parts");
 const imgs = document.querySelectorAll("img");
 
 const elem = document.getElementById("parallax-img");
-const projectSection = document.getElementById("projects");
-const projectWrapper = document.getElementById("project-wrapper");
-let projectCards = document.querySelectorAll(".project-card");
+const projectsSection = document.getElementById("projects");
+const projectsWrapper = document.getElementById("project-wrapper");
+const projectCards = document.querySelectorAll(".project-card");
+
+const headerElem = document.querySelector("header");
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed");
@@ -26,29 +28,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // list of options for the observer
-    let textOptions = {
-        root: null,
-        threshold: 0.5,
-        rootMargin: "10% 0% -10% 0%"
-    };
-    let observer = new IntersectionObserver(onEntry, textOptions);
+    // Observer options
+    let appearTextOptions = { root: null, threshold: 0.5, rootMargin: "10% 0% -10% 0%" };
+    let parallaxImgOptions = { root: null, threshold: 0.0, rootMargin: "0% 0% 0% 0%" };
+    let projectsElemOptions = { root: null, threshold: 0.0, rootMargin: "-50% 0% -5% 0%" };
 
-    // loop through all h2s
+    // create all Oberservers
+    let appearTextObserver = new IntersectionObserver(onEntry, appearTextOptions);
+    let parallaxImgObserver = new IntersectionObserver(onImgEntry, parallaxImgOptions);
+    let projectsElemObserver = new IntersectionObserver(onEntry, projectsElemOptions);
+
+    // let Observers observe Elemenets
     for (let h2 of h2Elems) {
-        observer.observe(h2);
+        appearTextObserver.observe(h2);
     }
 
     for (let elem of appearTextElems) {
-        observer.observe(elem);
+        appearTextObserver.observe(elem);
     }
 
-    // list of options for the observer
-    let imgOptions = {
-        root: null,
-        threshold: 0.0,
-        rootMargin: "0% 0% 0% 0%"
-    };
+    parallaxImgObserver.observe(elem);
+
+    for (let card of projectCards) {
+        parallaxImgObserver.observe(card);
+    }
+
+    projectsElemObserver.observe(projectsSection);
+
+
     function onImgEntry(entry) {
         entry.forEach((change) => {
             // console.log(change);
@@ -69,16 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    let imgObserver = new IntersectionObserver(onImgEntry, imgOptions);
 
-    // loop through all imgs
-    // for (let elem of imgs) {
-    imgObserver.observe(elem);
-    // }
-
-    for (let card of projectCards) {
-        imgObserver.observe(card);
-    }
 
     // Check if the page is scrolled vertically
     // if (window.scrollY > 0) {
@@ -89,8 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
 ///// NEW SCROLL EFFECT CODE /////
 window.addEventListener("scroll", () => {
     // console.log("ScrollY:", window.scrollY);
-    console.log("ProjectWrapper Rect.top:", projectWrapper.getBoundingClientRect().top);
-    htmlBody.classList.toggle('scrolled', window.scrollY > 20)
+    console.log("ProjectsWrapper Rect.top:", projectsWrapper.getBoundingClientRect().top);
+    htmlBody.classList.toggle('scrolled', window.scrollY > headerElem.getBoundingClientRect().height);
     // imgScrollEffect();
     projectCardScaleEffect();
 });
