@@ -8,10 +8,7 @@ const imgs = document.querySelectorAll("img");
 
 const elem = document.getElementById("parallax-img");
 const projectSection = document.getElementById("projects");
-const projectWrapperCheck = document.getElementById("project-wrapper-check");
 const projectWrapper = document.getElementById("project-wrapper");
-
-projectWrapperCheck.style.height = `${projectWrapper.getBoundingClientRect().width}px`;
 let projectCards = document.querySelectorAll(".project-card");
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -87,28 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // if (window.scrollY > 0) {
     //     projectCardScaleEffect();
     // }
-
-    ///// Sticky project wrapper observer /////
-    function getSticky(entry) {
-        console.log("Project Wrapper Observer Triggered");
-        entry.forEach((change) => {
-            if (change.isIntersecting) {
-                projectWrapper.classList.add('sticky');
-            } else {
-                projectWrapper.classList.remove('sticky');
-            }
-        });
-    }
-    let proWrapOptions = {
-        root: null,
-        threshold: 0.0,
-        rootMargin: "0% 0% -100% 0%"
-    };
-
-    let projectsObserver = new IntersectionObserver(getSticky, proWrapOptions);
-
-    projectsObserver.observe(projectWrapperCheck);
-    ///// Sticky project wrapper observer /////
 });
 
 ///// NEW SCROLL EFFECT CODE /////
@@ -117,46 +92,10 @@ window.addEventListener("scroll", () => {
     console.log("ProjectWrapper Rect.top:", projectWrapper.getBoundingClientRect().top);
     htmlBody.classList.toggle('scrolled', window.scrollY > 20)
     // imgScrollEffect();
-    // projectCardScaleEffect();
-    projectWrapperHoricontalScroll();
-
+    projectCardScaleEffect();
 });
 ///// NEW SCROLL EFFECT CODE /////
 
-function projectWrapperHoricontalScroll() {
-    if (!projectWrapper.classList.contains("sticky")) return;
-
-    // console.log("Project Wrapper Horizontal Scroll Effect");
-
-    const checkerRect = projectWrapperCheck.getBoundingClientRect();
-    const vh = window.innerHeight;
-
-    if (projectWrapperCheck.getBoundingClientRect().bottom < vh) {
-        projectWrapper.classList.remove("sticky");
-        projectWrapper.style.transform = `translateX(-100%)`;
-        projectWrapper.dataset.percentage = 100;
-        return;
-    }
-
-    // start when section is at the top of viewport
-    const startTop = vh * 0.1;
-    // end when card reaches sticky position top: 10vh
-    const endTop = -checkerRect.height + vh;
-
-    // compute progress where 0 = just visible, 1 = at sticky position
-
-    const scrollDelta = checkerRect.top - startTop;
-    const maxParallaxDelta = startTop - endTop; // Maximum parallax movement
-
-    const percentage = (scrollDelta / maxParallaxDelta) * -100;
-    console.log("Percentage:", percentage);
-
-    projectWrapper.dataset.percentage = percentage;
-
-    projectWrapper.style.transform = `translateX(-${percentage}%)`;
-}
-
-/*
 function projectCardScaleEffect() {
     projectCards.forEach((card) => {
         if (!card.classList.contains("inview")) return;
@@ -189,6 +128,7 @@ function projectCardScaleEffect() {
     });
 }
 
+/*
 function imgScrollEffect() {
     if (!elem.classList.contains("inview")) return;
 

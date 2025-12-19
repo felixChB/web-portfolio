@@ -478,21 +478,13 @@ h2.inview .headline-text {
     line-height: normal;
 }
 
-#project-wrapper-check {
-    height: calc(90vh * 4 + 60px * 3);
-}
-
 #project-wrapper {
-    height: 90vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 60px;
     box-sizing: border-box;
     align-items: start;
     width: max-content;
-    position: sticky;
-    top: calc(10vh - 2px);
-    margin-right: 20px;
     /* transition: all 0.3s ease; */
 }
 
