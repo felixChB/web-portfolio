@@ -90,7 +90,7 @@ window.addEventListener("scroll", () => {
     console.log("ProjectsWrapper Rect.top:", projectsWrapper.getBoundingClientRect().top);
     htmlBody.classList.toggle('scrolled', window.scrollY > headerElem.getBoundingClientRect().height);
     // imgScrollEffect();
-    projectCardScaleEffect();
+    //projectCardScaleEffect();
 });
 ///// NEW SCROLL EFFECT CODE /////
 
