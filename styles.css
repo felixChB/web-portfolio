@@ -15,7 +15,7 @@
     --bg-blur: blur(4px);
     --bg-blur-color: #00000057;
     --lined-border: 1px solid var(--grey-color);
-    --border-radius-general: 0px;
+    --border-radius-general: 10px;
     --hover-transition: all 400ms cubic-bezier(.45, .19, .36, 1);
 }
 
@@ -38,6 +38,7 @@ body {
     background-repeat: repeat;
     background-attachment: fixed;
     background-position: initial; */
+    overflow-x: hidden;
 }
 
 main {
@@ -153,7 +154,7 @@ header {
     border-radius: var(--border-radius-general);
     background-color: var(--bg-blur-color);
     backdrop-filter: var(--bg-blur);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, border 0.1s ease 0.3s;
 }
 
 body.scrolled header {
@@ -161,6 +162,9 @@ body.scrolled header {
     position: fixed;
     margin: 0;
     width: calc(100vw - 2px);
+    border-radius: 0px;
+    border: none;
+    border-bottom: var(--lined-border);
 }
 
 body.scrolled .home-addons {
@@ -288,8 +292,8 @@ body.scrolled .home-addons {
     color: var(--text-color);
     text-transform: uppercase;
     border: solid 1px var(--grey-color);
-    border-radius: 4px;
-    transition: all 0.4s ease;
+    border-radius: var(--border-radius-general);
+    transition: transform 0.3s ease, border 0.1s ease 0.3s;
 }
 
 .home-addons span {
@@ -362,6 +366,25 @@ h2.inview .headline-text {
     transition: all 0.7s ease-out;
     overflow-y: clip;
     filter: blur(4px);
+}
+
+.appear-text-parts p:nth-child(1) > span {
+    transition-delay: 0s;
+}
+.appear-text-parts p:nth-child(2) > span {
+    transition-delay: 0.1s;
+}
+.appear-text-parts p:nth-child(3) > span {
+    transition-delay: 0.2s;
+}
+.appear-text-parts p:nth-child(4) > span {
+    transition-delay: 0.3s;
+}
+.appear-text-parts p:nth-child(5) > span {
+    transition-delay: 0.4s;
+}
+.appear-text-parts p:nth-child(6) > span {
+    transition-delay: 0.5s;
 }
 
 .appear-text span {
@@ -597,7 +620,12 @@ h2.inview .headline-text {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 150px;
+}
+
+.contact-headline img {
+    width: 75px;
+    transform: rotate(-90deg);
 }
 
 .get-in-touch-wrapper {
@@ -617,10 +645,11 @@ h2.inview .headline-text {
 
 .contact-bottom-wrapper .contact-left {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 40px;
     width: 80%;
     border-right: var(--lined-border);
+    padding: 20px;
 }
 
 .contact-bottom-wrapper .contact-left .sitemap {
@@ -629,10 +658,39 @@ h2.inview .headline-text {
     gap: 10px;
 }
 
-.contact-bottom-wrapper .contact-right {
+.footer-links,
+.legals {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.github-link img {
+    width: 12px;
+    transform: rotate(-90deg);
+    margin-left: 5px;
+}
+
+.contact-bottom-wrapper .contact-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 20%;
+}
+
+.contact-bottom-wrapper .contact-right .back-to-top-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-bottom-wrapper .contact-right .back-to-top-wrapper img {
+    width: 50px;
+    height: 50px;
+    transform: rotate(-135deg);
 }
 
 #parallax-img {
