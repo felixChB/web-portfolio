@@ -16,7 +16,7 @@
 
 <body>
     <!-- The floating header -->
-    <header>
+    <header id="main-header">
         <span id="logo">
             <a href="">
                 <p>// Felix´</p>
@@ -44,8 +44,21 @@
             </div>
         </nav>
     </header>
+    <header id="home-header">
+            <span id="logo">
+                <a href="">
+                    <p>// Felix´</p>
+                    <p>Portfolio</p>
+                </a>
+            </span>
+            <nav id="home-nav" class="type-font">
+                <a class="nav-link" href="#about"><span class="link-text" data-value="[About]">[About]</span></a><a
+                    class="nav-link" href="#projects"><span class="link-text"
+                        data-value="[Projects]">[Projects]</span></a><a class="nav-link" href="#contact"><span
+                        class="link-text" data-value="[Contact]">[Contact]</span></a>
+            </nav>
+        </header>
     <main>
-
         <section id="home">
             <div id="home-wrapper" class="margin-sides">
                 <h1 class="home-headline main-font">
@@ -171,38 +184,40 @@
                 </div>
             </div>
         </section>
+        <section id="contact">
+            <footer>
+                <div class="get-in-touch-wrapper">
+                    <h2 class="contact-headline">
+                        <span class="headline-text">Get in Touch <img src="./assets/arrow.svg" alt="svg arrow"></span>
+                    </h2>
+                    <a href="mailto:Lixrsnvsnfs@gsnfe.cm">Email: Lixrsnvsnfs@gsnfe.cm</a>
+                </div>
+                <div class="contact-bottom-wrapper">
+                    <div class="contact-left">
+                        <div class="footer-links">
+                            <ul class="sitemap">
+                                <li><a href="#About">About</a></li>
+                                <li><a href="#Projects">Projects</a></li>
+                                <li><a href="#Contact">Contact</a></li>
+                            </ul>
+                            <a href="https://github.com/" class="github-link">Github<img src="./assets/arrow.svg"
+                                    alt="svg arrow"></a>
+                        </div>
+                        <div class="legals">
+                            <span class="legal-info">Felix Brunn Copyright 2025</span>
+                            <span>Local Time 2252342</span>
+                        </div>
+                    </div>
+                    <div class="contact-right">
+                        <a href="#top" class="back-to-top-wrapper">
+                            <img src="./assets/arrow.svg" alt="svg arrow">
+                            <span class="back-to-top-text">Back to Top</span>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </section>
     </main>
-    <footer id="contact">
-        <div class="get-in-touch-wrapper">
-            <h2 class="contact-headline">
-                <span class="headline-text">Get in Touch <img src="./assets/arrow.svg" alt="svg arrow"></span>
-            </h2>
-            <a href="mailto:Lixrsnvsnfs@gsnfe.cm">Email: Lixrsnvsnfs@gsnfe.cm</a>
-        </div>
-        <div class="contact-bottom-wrapper">
-            <div class="contact-left">
-                <div class="footer-links">
-                    <ul class="sitemap">
-                        <li><a href="#About">About</a></li>
-                        <li><a href="#Projects">Projects</a></li>
-                        <li><a href="#Contact">Contact</a></li>
-                    </ul>
-                    <a href="https://github.com/" class="github-link">Github<img src="./assets/arrow.svg"
-                            alt="svg arrow"></a>
-                </div>
-                <div class="legals">
-                    <span class="legal-info">Felix Brunn Copyright 2025</span>
-                    <span>Local Time 2252342</span>
-                </div>
-            </div>
-            <div class="contact-right">
-                <a href="#top" class="back-to-top-wrapper">
-                    <img src="./assets/arrow.svg" alt="svg arrow">
-                    <span class="back-to-top-text">Back to Top</span>
-                </a>
-            </div>
-        </div>
-    </footer>
     <div id="cursor" class="cursor type-font">
         <div class="cursor-bubble">
             <div id="cursor-text"></div>

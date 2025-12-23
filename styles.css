@@ -48,8 +48,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
-    padding-bottom: 60vh;
 }
 
 main {
@@ -69,6 +67,7 @@ main {
 
 body.scrolled main {
     width: 100%;
+    border-radius: 0;
 }
 
 section {
@@ -169,39 +168,31 @@ li {
 }
 
 header {
-    width: calc(100% - var(--side-space) * 2);
     height: 50px;
-    z-index: 10;
     margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--page-white);
+    background-color: transparent;
     /* backdrop-filter: var(--bg-blur); */
-    color: var(--page-black);
-    top: 0;
-    left: calc(var(--side-space));
-    position: absolute;
+    transition: all 0.3s ease;
 }
 
-body.scrolled header {
-    width: 100%;
+#home-header {
+    width: calc(100% - var(--side-space) * 2);
+}
+
+#main-header {
+    position: fixed;
     top: -50px;
     left: 0;
-    background-color: transparent;
+    width: 100%;
+    z-index: 100;
     color: var(--page-white);
-    position: fixed;
-    margin: 0;
-    animation: header-animation 0.3s ease forwards 0.2s;
 }
 
-@keyframes header-animation {
-    0% {
-        top: -50px;
-    }
-    100% {
-        top: 0px;
-    }
+body.scrolled #main-header {
+    top: 0px;
 }
 
 #logo {
@@ -212,7 +203,7 @@ body.scrolled header {
     margin-left: 20px;
 }
 
-#main-nav {
+#main-nav, #home-nav {
     display: flex;
     align-items: center;
 }
@@ -448,6 +439,9 @@ h2.inview .headline-text {
 
 #projects.inview {
     width: 100%;
+    border-radius: 0;
+    padding-left: calc(5% + 20px);
+    padding-right: calc(5% + 20px);
 }
 
 .headline-wrapper {
@@ -644,26 +638,16 @@ h2.inview .headline-text {
     background-color: #4f2f1d;
 }
 
-#contact {
-    position: fixed;
-    bottom: 0;
-    left: calc(10%);
-    height: 61vh;
-    width: 80%;
+#contact > footer {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 150px;
     padding: 20px;
-    z-index: 1;
     background-color: var(--page-black);
     color: var(--page-white);
     justify-content: end;
     transition: all 0.4s ease;
-}
-
-body.scrolled #contact {
-    left: 0;
-    width: 100%;
 }
 
 .contact-headline img {
