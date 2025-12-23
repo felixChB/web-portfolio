@@ -533,7 +533,7 @@ h2.inview .headline-text {
     cursor: pointer;
     width: 100%;
     transition: all 50ms ease;
-    transform: scale(0.7);
+    /* transform: scale(0.7); */
     /* aspect-ratio: 16 / 9; */
 }
 
