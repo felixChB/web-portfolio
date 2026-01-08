@@ -45,19 +45,19 @@
         </nav>
     </header>
     <header id="home-header">
-            <span id="logo">
-                <a href="">
-                    <p>// Felix´</p>
-                    <p>Portfolio</p>
-                </a>
-            </span>
-            <nav id="home-nav" class="type-font">
-                <a class="nav-link" href="#about"><span class="link-text" data-value="[About]">[About]</span></a><a
-                    class="nav-link" href="#projects"><span class="link-text"
-                        data-value="[Projects]">[Projects]</span></a><a class="nav-link" href="#contact"><span
-                        class="link-text" data-value="[Contact]">[Contact]</span></a>
-            </nav>
-        </header>
+        <span id="logo">
+            <a href="">
+                <p>// Felix´</p>
+                <p>Portfolio</p>
+            </a>
+        </span>
+        <nav id="home-nav" class="type-font">
+            <a class="nav-link" href="#about"><span class="link-text" data-value="[About]">[About]</span></a><a
+                class="nav-link" href="#projects"><span class="link-text"
+                    data-value="[Projects]">[Projects]</span></a><a class="nav-link" href="#contact"><span
+                    class="link-text" data-value="[Contact]">[Contact]</span></a>
+        </nav>
+    </header>
     <main>
         <section id="home">
             <div id="home-wrapper" class="margin-sides">
@@ -85,10 +85,12 @@
                             <p class="appear-text"><span>Degree from the HFU in the beautiful black forest.</span></p>
                         </div>
                         <div class="appear-text-parts">
-                            <p class="appear-text"><span>My main focus lies in designing and developing
-                                    interactions</span>
+                            <p class="appear-text"><span>My main focus lies in <span class="underlined">designing and
+                                        developing
+                                        interactions</span></span>
                             </p>
-                            <p class="appear-text"><span>and interfaces. I´m mostly home in the web working with</span>
+                            <p class="appear-text"><span><span class="underlined">and interfaces</span>. I´m mostly home
+                                    in the web working with</span>
                             </p>
                             <p class="appear-text"><span>javascript and typescript. I also did projects with XR,
                                     my</span>
@@ -128,7 +130,7 @@
                         </div>
                         <div class="view-project">
                             <span class="type-font">[View Project]</span>
-                            <span class="arrow"><img src="./assets/arrow.svg" alt="svg arrow"></span>
+                            <span class="arrow"><img class="svg-arrow" src="./assets/arrow.svg" alt="svg arrow"></span>
                         </div>
                     </div>
                 </div>
@@ -144,7 +146,7 @@
                         </div>
                         <div class="view-project">
                             <span class="type-font">[View Project]</span>
-                            <span class="arrow"><img src="./assets/arrow.svg" alt="svg arrow"></span>
+                            <span class="arrow"><img class="svg-arrow" src="./assets/arrow.svg" alt="svg arrow"></span>
                         </div>
                     </div>
                 </div>
@@ -161,7 +163,7 @@
                         </div>
                         <div class="view-project">
                             <span class="type-font">[View Project]</span>
-                            <span class="arrow"><img src="./assets/arrow.svg" alt="svg arrow"></span>
+                            <span class="arrow"><img class="svg-arrow" src="./assets/arrow.svg" alt="svg arrow"></span>
                         </div>
                     </div>
                 </div>
@@ -178,7 +180,7 @@
                         </div>
                         <div class="view-project">
                             <span class="type-font">[View Project]</span>
-                            <span class="arrow"><img src="./assets/arrow.svg" alt="svg arrow"></span>
+                            <span class="arrow"><img class="svg-arrow" src="./assets/arrow.svg" alt="svg arrow"></span>
                         </div>
                     </div>
                 </div>
@@ -188,32 +190,48 @@
             <footer>
                 <div class="get-in-touch-wrapper">
                     <h2 class="contact-headline">
-                        <span class="headline-text">Get in Touch <img src="./assets/arrow.svg" alt="svg arrow"></span>
+                        <span class="headline-text">Get in Touch</span>
                     </h2>
-                    <a href="mailto:Lixrsnvsnfs@gsnfe.cm">Email: Lixrsnvsnfs@gsnfe.cm</a>
+                    <div>
+                        <span class="brackets-headline">[Contact me]</span>
+                        <a href="mailto:Lixrsnvsnfs@gsnfe.cm" class="link"><span class="link-text">Email:
+                                Lixrsnvsnfs@gsnfe.cm</span><img class="svg-arrow" src="./assets/arrow.svg"
+                                alt="svg arrow"></a>
+                    </div>
                 </div>
                 <div class="contact-bottom-wrapper">
-                    <div class="contact-left">
-                        <div class="footer-links">
+                    <nav class="contact-left">
+                        <div>
+                            <span class="brackets-headline">[Navigation]</span>
                             <ul class="sitemap">
-                                <li><a href="#About">About</a></li>
-                                <li><a href="#Projects">Projects</a></li>
-                                <li><a href="#Contact">Contact</a></li>
+                                <li><a href="#About" class="nav-link"><span class="link-text">About</span></a></li>
+                                <li><a href="#Projects" class="nav-link"><span class="link-text">Projects</span></a>
+                                </li>
+                                <li><a href="#Contact" class="nav-link"><span class="link-text">Contact</span></a></li>
                             </ul>
-                            <a href="https://github.com/" class="github-link">Github<img src="./assets/arrow.svg"
-                                    alt="svg arrow"></a>
                         </div>
-                        <div class="legals">
-                            <span class="legal-info">Felix Brunn Copyright 2025</span>
-                            <span>Local Time 2252342</span>
+                        <div>
+                            <span class="brackets-headline">[Navigation]</span>
+                            <ul class="social-links">
+                                <li><a href="https://github.com/" class="nav-link link"><span
+                                            class="link-text">Github<img class="svg-arrow" src="./assets/arrow.svg"
+                                                alt="svg arrow"></span></a></li>
+                                <li><a href="https://linkedin.com/" class="nav-link link"><span
+                                            class="link-text">LinkedIn<img class="svg-arrow" src="./assets/arrow.svg"
+                                                alt="svg arrow"></span></a></li>
+                            </ul>
                         </div>
-                    </div>
+                    </nav>
                     <div class="contact-right">
                         <a href="#top" class="back-to-top-wrapper">
-                            <img src="./assets/arrow.svg" alt="svg arrow">
-                            <span class="back-to-top-text">Back to Top</span>
+                            <img class="svg-arrow" src="./assets/arrow.svg" alt="svg arrow">
+                            <span class="back-to-top-text">[Back to Top]</span>
                         </a>
                     </div>
+                </div>
+                <div class="legals">
+                    <span class="legal-info">Felix Brunn Copyright 2025</span>
+                    <span>Local Time 2252342</span>
                 </div>
             </footer>
         </section>
