@@ -5,9 +5,11 @@
     --grey-color: #5D5D5D;
     --cursor-size: 30px;
     --main-font: 'Alexandria', 'Arial', sans-serif;
-    --main-font-weight: 400; /* regular */
+    --main-font-weight: 400;
+    /* regular */
     --text-font: 'Alexandria', 'Arial', sans-serif;
-    --text-font-weight: 300; /* light */
+    --text-font-weight: 300;
+    /* light */
     --type-font: 'Azeret Mono', monospace;
 
     --about-text-size: 34px;
@@ -22,7 +24,7 @@
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* start - general Element styling */
@@ -227,7 +229,8 @@ body.scrolled #main-header {
     letter-spacing: -8%;
 }
 
-#main-nav, #home-nav {
+#main-nav,
+#home-nav {
     display: flex;
     align-items: center;
     gap: 40px;
@@ -239,8 +242,8 @@ body.scrolled #main-header {
     margin: 0;
     text-transform: uppercase;
     position: relative;
-    display: flex;
     transition: var(--hover-transition);
+    display: inline-block;
 }
 
 .nav-link::after {
@@ -253,10 +256,9 @@ body.scrolled #main-header {
     height: 100%;
     background: var(--highlight-color);
     transition: var(--hover-transition);
-    z-index: -1;
 }
 
-.nav-link>span {
+.nav-link>.link-text {
     position: relative;
     z-index: 1;
 }
@@ -349,11 +351,13 @@ header .nav-link {
 }
 
 h1 {
-    font-size: 12vw;  
+    font-size: 12vw;
+    font-weight: var(--main-font-weight);
 }
 
 h2 {
     font-size: 110px;
+    font-weight: var(--main-font-weight);
     line-height: 110px;
     height: 110px;
     transition: all 0.5s ease-out;
@@ -362,7 +366,8 @@ h2 {
     display: inline-block;
 }
 
-h1, h2 {
+h1,
+h2 {
     filter: blur(2px);
     text-transform: uppercase;
     margin: 0;
@@ -400,6 +405,7 @@ h1, h2 {
 
 .about-text p.appear-text {
     font-size: 32px;
+    font-weight: var(--text-font-weight);
     line-height: 40px;
     height: 40px;
     transition: all 0.7s ease-out;
@@ -431,7 +437,7 @@ h1, h2 {
     transition-delay: 0.5s;
 }
 
-.appear-text > span {
+.appear-text>span {
     display: block;
     transition: all 0.7s ease-out;
     transform: translateY(40px);
@@ -496,18 +502,20 @@ h1, h2 {
     flex-direction: column;
     margin-bottom: 60px;
     width: 100%;
-    align-items: center;
-    overflow: hidden;
+    align-items: start;
 }
 
-.headline-wrapper .projects-headline {
+.headline-wrapper div {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+}
+
+.headline-wrapper .projects-headline {
+    display: flex;
+    align-items: center;
     position: relative;
-    box-sizing: border-box;
-    padding: 0 12px;
+    padding-inline: 12px;
 }
 
 .projects-headline:nth-child(1) .headline-text {
@@ -518,34 +526,33 @@ h1, h2 {
     transition-delay: 0.1s;
 }
 
-.headline-wrapper .projects-headline:first-child {
-    margin-left: 30%;
+/* projects headline lines styling */
+.headline-wrapper .projects-headline-line-1, .headline-wrapper .projects-headline-line-2 {
+    position: relative;
+    height: 100%;
 }
 
-.headline-wrapper .projects-headline:first-child::after {
+.headline-wrapper .projects-headline-line-1::after, .headline-wrapper .projects-headline-line-2::after {
+    position: absolute;
+    top: 50%;
+    left: 0;
     content: '';
-    flex: 1 1 0;
+    display: block;
+    width: 100%;
     height: 1px;
     background-color: var(--grey-color);
-    margin: 0 18px;
 }
 
-.headline-wrapper .projects-headline:last-child {
-    margin-left: -60%;
+.headline-wrapper .projects-headline-line-1 {
+    flex-grow: 1;
+    display: flex;
+    height: 100%;
 }
 
-.headline-wrapper .projects-headline:last-child::before {
-    content: '';
-    flex: 1 1 0;
-    height: 1px;
-    background-color: var(--grey-color);
-    margin: 0 18px;
+.headline-wrapper .projects-headline-line-2 {
+    width: 250px;
 }
-
-.headline-wrapper .projects-headline:last-child {
-    grid-column: 3 / 5;
-    grid-row: 2 / 3;
-}
+/* projects headline lines styling end */
 
 .headline-wrapper .projects-headline .headline-text {
     display: inline-block;
@@ -634,7 +641,7 @@ h1, h2 {
 
 .project-card-infos .project-card-title {
     font-size: 6em;
-    font-weight: 700;
+    font-weight: var(--main-font-weight);
     line-height: 100%;
 }
 
@@ -697,7 +704,7 @@ h1, h2 {
     background-color: #4f2f1d;
 }
 
-#contact > footer {
+#contact>footer {
     width: 100%;
     height: 75vh;
     display: flex;
@@ -764,7 +771,6 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    margin-left: 2px;
 }
 
 .legals {
@@ -796,6 +802,15 @@ h1, h2 {
     gap: 20px;
     padding-top: 14px;
     text-transform: uppercase;
+    font-family: var(--type-font);
+}
+
+.contact-bottom-wrapper .contact-right .back-to-top-wrapper:hover .nav-link {
+    color: var(--page-black);
+}
+
+.contact-bottom-wrapper .contact-right .back-to-top-wrapper:hover .nav-link::after {
+    width: 100%;
 }
 
 .contact-bottom-wrapper .contact-right .back-to-top-wrapper img {
