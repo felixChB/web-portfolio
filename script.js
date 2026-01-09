@@ -83,3 +83,52 @@ window.addEventListener("scroll", () => {
     htmlBody.classList.toggle('scrolled', window.scrollY > headerElem.getBoundingClientRect().height);
 });
 ///// NEW SCROLL EFFECT CODE /////
+
+const navLinks = document.querySelectorAll(".nav-link");
+const backToTopLink = document.querySelector(".back-to-top-wrapper");
+
+backToTopLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    scrollToSection("top");
+});
+
+navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const sectionId = link.getAttribute("nav-section-value");
+        if (!sectionId) return;
+        scrollToSection(sectionId);
+    });
+});
+
+function scrollToSection(sectionId) {
+
+    switch (sectionId) {
+        case "about":
+            window.scrollTo({
+                top: document.getElementById("about").offsetTop,
+                behavior: "smooth"
+            });
+            break;
+        case "projects":
+            window.scrollTo({
+                top: document.getElementById("projects").offsetTop,
+                behavior: "smooth"
+            });
+            break;
+        case "contact":
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth"
+            });
+            break;
+        case "top":
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+            break;
+        default:
+            break;
+    }
+}

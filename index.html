@@ -24,10 +24,9 @@
             </a>
         </span>
         <nav id="main-nav" class="type-font">
-            <a class="nav-link" href="#about"><span class="link-text" data-value="[About]">[About]</span></a><a
-                class="nav-link" href="#projects"><span class="link-text"
-                    data-value="[Projects]">[Projects]</span></a><a class="nav-link" href="#contact"><span
-                    class="link-text" data-value="[Contact]">[Contact]</span></a>
+            <a class="nav-link" nav-section-value="about"><span class="link-text">[About]</span></a><a class="nav-link"
+                nav-section-value="projects"><span class="link-text">[Projects]</span></a><a class="nav-link"
+                nav-section-value="contact"><span class="link-text">[Contact]</span></a>
         </nav>
         <nav id="burger-nav">
             <div id="burger-icon">
@@ -37,10 +36,9 @@
                 <span></span>
             </div>
             <div id="burger-menu" class="type-font">
-                <a class="nav-link" href="#about"><span class="link-text" data-value="[About]">[About]</span></a>
-                <a class="nav-link" href="#projects"><span class="link-text"
-                        data-value="[Projects]">[Projects]</span></a>
-                <a class="nav-link" href="#contact"><span class="link-text" data-value="[Contact]">[Contact]</span></a>
+                <a class="nav-link" nav-section-value="about"><span class="link-text">[About]</span></a>
+                <a class="nav-link" nav-section-value="projects"><span class="link-text">[Projects]</span></a>
+                <a class="nav-link" nav-section-value="contact"><span class="link-text">[Contact]</span></a>
             </div>
         </nav>
     </header>
@@ -52,10 +50,9 @@
             </a>
         </span>
         <nav id="home-nav" class="type-font">
-            <a class="nav-link" href="#about"><span class="link-text" data-value="[About]">[About]</span></a><a
-                class="nav-link" href="#projects"><span class="link-text"
-                    data-value="[Projects]">[Projects]</span></a><a class="nav-link" href="#contact"><span
-                    class="link-text" data-value="[Contact]">[Contact]</span></a>
+            <a class="nav-link" nav-section-value="about"><span class="link-text">[About]</span></a><a class="nav-link"
+                nav-section-value="projects"><span class="link-text">[Projects]</span></a><a class="nav-link"
+                nav-section-value="contact"><span class="link-text">[Contact]</span></a>
         </nav>
     </header>
     <main>
@@ -192,56 +189,53 @@
                 </div>
             </div>
         </section>
-        <section id="contact">
-            <footer>
-                <div class="get-in-touch-wrapper">
-                    <h2 class="contact-headline">
-                        <span class="headline-text">Get in Touch</span>
-                    </h2>
-                    <div>
-                        <span class="brackets-headline">[Contact me]</span>
-                        <a href="mailto:Lixrsnvsnfs@gsnfe.cm" class="nav-link link"><span class="link-text">Email:
-                                Lixrsnvsnfs@gsnfe.cm<img class="svg-arrow" src="./assets/arrow.svg"
-                                alt="svg arrow"></span></a>
-                    </div>
-                </div>
-                <div class="contact-bottom-wrapper">
-                    <nav class="contact-left">
-                        <div>
-                            <span class="brackets-headline">[Navigation]</span>
-                            <ul class="sitemap">
-                                <li><a href="#About" class="nav-link"><span class="link-text">About</span></a></li>
-                                <li><a href="#Projects" class="nav-link"><span class="link-text">Projects</span></a>
-                                </li>
-                                <li><a href="#Contact" class="nav-link"><span class="link-text">Contact</span></a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <span class="brackets-headline">[Navigation]</span>
-                            <ul class="social-links">
-                                <li><a href="https://github.com/" class="nav-link link"><span
-                                            class="link-text">Github<img class="svg-arrow" src="./assets/arrow.svg"
-                                                alt="svg arrow"></span></a></li>
-                                <li><a href="https://linkedin.com/" class="nav-link link"><span
-                                            class="link-text">LinkedIn<img class="svg-arrow" src="./assets/arrow.svg"
-                                                alt="svg arrow"></span></a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                    <div class="contact-right">
-                        <a href="#top" class="back-to-top-wrapper">
-                            <img class="svg-arrow" src="./assets/arrow.svg" alt="svg arrow">
-                            <span class="back-to-top-text nav-link"><span class="link-text">[Back to Top]</span></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="legals">
-                    <span class="legal-info">Felix Brunn Copyright 2025</span>
-                    <span>Local Time 2252342</span>
-                </div>
-            </footer>
-        </section>
     </main>
+    <footer id="contact">
+        <div class="get-in-touch-wrapper">
+            <h2 class="contact-headline">
+                <span class="headline-text">Get in Touch</span>
+            </h2>
+            <div>
+                <span class="brackets-headline">[Contact me]</span>
+                <a href="mailto:Lixrsnvsnfs@gsnfe.cm" class="nav-link link"><span class="link-text">Email:
+                        Lixrsnvsnfs@gsnfe.cm<img class="svg-arrow" src="./assets/arrow.svg" alt="svg arrow"></span></a>
+            </div>
+        </div>
+        <div class="contact-bottom-wrapper">
+            <nav class="contact-left">
+                <div>
+                    <span class="brackets-headline">[Navigation]</span>
+                    <ul class="sitemap">
+                        <li><a nav-section-value="about" class="nav-link"><span class="link-text">About</span></a></li>
+                        <li><a nav-section-value="projects" class="nav-link"><span class="link-text">Projects</span></a>
+                        </li>
+                        <li><a nav-section-value="contact" class="nav-link"><span class="link-text">Contact</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="brackets-headline">[Navigation]</span>
+                    <ul class="social-links">
+                        <li><a href="https://github.com/" class="nav-link link"><span class="link-text">Github<img
+                                        class="svg-arrow" src="./assets/arrow.svg" alt="svg arrow"></span></a></li>
+                        <li><a href="https://linkedin.com/" class="nav-link link"><span class="link-text">LinkedIn<img
+                                        class="svg-arrow" src="./assets/arrow.svg" alt="svg arrow"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="contact-right">
+                <a class="back-to-top-wrapper">
+                    <img class="svg-arrow" src="./assets/arrow.svg" alt="svg arrow">
+                    <span class="back-to-top-text nav-link"><span class="link-text">[Back to Top]</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="legals">
+            <span class="legal-info">Felix Brunn Copyright 2025</span>
+            <span>Local Time 2252342</span>
+        </div>
+    </footer>
     <div id="cursor" class="cursor type-font">
         <div class="cursor-bubble">
             <div id="cursor-text"></div>
