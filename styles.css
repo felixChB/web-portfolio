@@ -16,6 +16,8 @@
 
     --side-space: 20px;
 
+    --header-height: 3.5rem;
+
     --bg-blur: blur(4px);
     --bg-blur-color: #00000057;
     --border-radius-small: 10px;
@@ -144,17 +146,15 @@ li {
 /* end - font styling */
 
 .margin-sides {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-inline: var(--side-space);
 }
 
 .padding-sides {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-inline: var(--side-space);
 }
 
 header {
-    height: 3.5rem;
+    height: var(--header-height);
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -175,7 +175,7 @@ body.scrolled #home-header {
 
 #main-header {
     position: fixed;
-    top: -50px;
+    top: calc(-1 * var(--header-height));
     left: 0;
     width: 100%;
     z-index: 100;
@@ -289,7 +289,7 @@ header .nav-link {
 #home {
     position: relative;
     width: 100%;
-    height: calc(100vh - 50px);
+    height: calc(100vh - var(--header-height));
     overflow: hidden;
     border-radius: var(--border-radius-big) var(--border-radius-big) 0 0;
 }
@@ -555,8 +555,8 @@ h2 {
     color: var(--grey-color);
     display: inline-block;
     position: absolute;
-    top: 5px;
-    right: -20px;
+    top: 0.6rem;
+    right: -1.2rem;
     font-size: var(--f-size-smallest);
     line-height: normal;
 }
@@ -636,6 +636,10 @@ h2 {
     font-size: var(--f-size-project-card-title);
     font-weight: var(--main-font-weight);
     line-height: 100%;
+}
+
+.project-card-infos .project-card-tags {
+    color: var(--grey-color);
 }
 
 .project-card-details .view-project {
@@ -831,7 +835,11 @@ body.scrolled #contact {
     background-color: violet;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1020px) {
+    :root {
+        --side-space: 20px;
+    }
+
     html {
         font-size: 12px;
     }
@@ -859,6 +867,10 @@ body.scrolled #contact {
 }
 
 @media (max-width: 500px) {
+    :root {
+        --side-space: 15px;
+    }
+
     html {
         font-size: 10px;
     }
