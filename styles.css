@@ -27,6 +27,7 @@
     --f-size-about-text: 1.65rem;
     --f-size-big-headline: 6rem;
     --f-size-projects-headline: 3.4rem;
+    --f-size-project-card-title: 2.8rem;
 }
 
 * {
@@ -40,20 +41,6 @@ html {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-}
-
-@media (max-width: 800px) {
-    html {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    html {
-        font-size: 10px;
-    }
-
-
 }
 
 body {
@@ -144,7 +131,7 @@ li {
     text-transform: uppercase;
     color: var(--grey-color);
     margin-bottom: 4px;
-    margin-left: -3px;
+    margin-left: -1px;
     display: block;
 }
 
@@ -167,7 +154,7 @@ li {
 }
 
 header {
-    height: 50px;
+    height: 3.5rem;
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -200,17 +187,16 @@ body.scrolled #main-header {
 }
 
 #logo {
-    font-size: 22px;
+    font-size: var(--f-size-slightly-bigger);
     font-family: var(--main-font);
     font-weight: var(--main-font-weight);
     display: block;
-    line-height: 20px;
+    line-height: 90%;
     text-transform: uppercase;
     letter-spacing: -8%;
 }
 
-#main-nav,
-#home-nav {
+.text-nav {
     display: flex;
     align-items: center;
     gap: 40px;
@@ -257,30 +243,36 @@ header .nav-link {
     height: 100%;
 }
 
-#burger-nav {
+.burger-nav {
     display: none;
+    height: 45%;
 }
 
-#burger-icon {
-    width: auto;
-    height: 22px;
+.burger-icon {
+    width: 6rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10px;
-    margin: 25px 20px 0 0;
     position: relative;
     cursor: pointer;
 }
 
-#burger-icon span {
+.burger-icon span {
     height: 1px;
-    width: 80px;
-    background-color: var(--page-white);
     transition: all 0.3s ease;
 }
 
+#home-header .burger-icon span {
+    background-color: var(--page-black);
+}
+
+#main-header .burger-icon span {
+    background-color: var(--page-white);
+}
+
 #burger-menu {
+    display: none;
     position: fixed;
     top: 0;
     right: -100%;
@@ -320,7 +312,6 @@ header .nav-link {
     flex-direction: row;
     align-items: flex-end;
     justify-content: center;
-    font-size: 14px;
     color: var(--page-white);
     text-transform: uppercase;
     transition: transform 0.3s ease;
@@ -336,10 +327,10 @@ h1 {
 }
 
 h2 {
-    font-size: 110px;
+    font-size: var(--f-size-big-headline);
     font-weight: var(--main-font-weight);
-    line-height: 110px;
-    height: 110px;
+    line-height: var(--f-size-big-headline);
+    height: var(--f-size-big-headline);
     transition: all 0.5s ease-out;
     opacity: 0;
     overflow-y: clip;
@@ -384,10 +375,10 @@ h2 {
 }
 
 .about-text p.appear-text {
-    font-size: 32px;
+    font-size: var(--f-size-about-text);
     font-weight: var(--text-font-weight);
-    line-height: 40px;
-    height: 40px;
+    line-height: var(--f-size-about-text);
+    height: var(--f-size-about-text);
     transition: all 0.7s ease-out;
     overflow-y: clip;
     filter: blur(4px);
@@ -524,12 +515,14 @@ h2 {
 }
 
 /* projects headline lines styling */
-.headline-wrapper .projects-headline-line-1, .headline-wrapper .projects-headline-line-2 {
+.headline-wrapper .projects-headline-line-1,
+.headline-wrapper .projects-headline-line-2 {
     position: relative;
     height: 100%;
 }
 
-.headline-wrapper .projects-headline-line-1::after, .headline-wrapper .projects-headline-line-2::after {
+.headline-wrapper .projects-headline-line-1::after,
+.headline-wrapper .projects-headline-line-2::after {
     position: absolute;
     top: 50%;
     left: 0;
@@ -547,8 +540,9 @@ h2 {
 }
 
 .headline-wrapper .projects-headline-line-2 {
-    width: 250px;
+    width: 11rem;
 }
+
 /* projects headline lines styling end */
 
 .headline-wrapper .projects-headline .headline-text {
@@ -563,7 +557,7 @@ h2 {
     position: absolute;
     top: 5px;
     right: -20px;
-    font-size: 12px;
+    font-size: var(--f-size-smallest);
     line-height: normal;
 }
 
@@ -639,7 +633,7 @@ h2 {
 }
 
 .project-card-infos .project-card-title {
-    font-size: 4em;
+    font-size: var(--f-size-project-card-title);
     font-weight: var(--main-font-weight);
     line-height: 100%;
 }
@@ -787,7 +781,7 @@ body.scrolled #contact {
     justify-content: space-between;
     align-items: start;
     color: var(--grey-color);
-    font-size: 14px;
+    font-size: var(--f-size-smallest);
 }
 
 .github-link img {
@@ -835,4 +829,47 @@ body.scrolled #contact {
     object-fit: none;
     object-position: 50% 30%;
     background-color: violet;
+}
+
+@media (max-width: 800px) {
+    html {
+        font-size: 12px;
+    }
+
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-card-img-wrapper {
+        width: 100%;
+    }
+
+    .project-card-details {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    header .burger-nav {
+        display: block;
+    }
+
+    header .text-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 10px;
+    }
+
+    h2 {
+        font-size: 4rem;
+        line-height: 4rem;
+        height: 4rem;
+    }
+
+    .headline-wrapper .projects-headline-line-2 {
+        width: 7rem;
+    }
 }
