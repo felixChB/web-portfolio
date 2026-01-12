@@ -33,12 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Observer options
     let appearTextOptions = { root: null, threshold: 0.5, rootMargin: "10% 0% -10% 0%" };
     let parallaxImgOptions = { root: null, threshold: 0.0, rootMargin: "0% 0% 0% 0%" };
-    let projectsElemOptions = { root: null, threshold: 0.0, rootMargin: "-70% 0% -20% 0%" };
+    let projectsElemOptions = { root: null, threshold: 0.0, rootMargin: "-50% 0% -20% 0%" };
+    let projectCardsOptions = { root: null, threshold: 0.5, rootMargin: "0% 0% -10% 0%" };
 
     // create all Oberservers
     let appearTextObserver = new IntersectionObserver(onEntry, appearTextOptions);
     let parallaxImgObserver = new IntersectionObserver(onImgEntry, parallaxImgOptions);
     let projectsElemObserver = new IntersectionObserver(onEntry, projectsElemOptions);
+    let projectCardsObserver = new IntersectionObserver(onEntry, projectCardsOptions);
 
     // let Observers observe Elemenets
     for (let elem of appearTextElems) {
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     parallaxImgObserver.observe(elem);
 
     for (let card of projectCards) {
-        appearTextObserver.observe(card);
+        projectCardsObserver.observe(card);
     }
 
     projectsElemObserver.observe(projectsSection);

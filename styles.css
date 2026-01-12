@@ -193,7 +193,6 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
-    /* backdrop-filter: var(--bg-blur); */
     transition: all 0.3s ease;
     padding-inline: 20px;
 }
@@ -463,10 +462,15 @@ h2 {
     left: 0;
     content: '';
     display: block;
-    width: 100%;
+    width: 0%;
     height: 1px;
     background: var(--highlight-color);
     z-index: -1;
+    transition: all 0.6s ease 1s;
+}
+
+.appear-text-parts.inview .underlined::after {
+    width: 100%;
 }
 
 #projects {
@@ -497,11 +501,23 @@ h2 {
     transform: translateY(0px);
 }
 
+#projects.inview .projects-headline-line-1::after {
+    transition: width 0.5s ease-in-out;
+    transition-delay: 0.3s;
+    width: 100%;
+}
+
+#projects.inview .projects-headline-line-2::after {
+    transition: width 0.5s ease-in-out;
+    transition-delay: 0.3s;
+    width: 100%;
+}
+
 .headline-wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 60px;
+    margin-bottom: 120px;
     width: 100%;
     align-items: start;
 }
@@ -539,7 +555,7 @@ h2 {
     left: 0;
     content: '';
     display: block;
-    width: 100%;
+    width: 0%;
     height: 1px;
     background-color: var(--grey-color);
 }
@@ -574,7 +590,7 @@ h2 {
 #project-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 150px;
     box-sizing: border-box;
     align-items: start;
     width: 100%;
@@ -587,6 +603,8 @@ h2 {
     cursor: pointer;
     width: 100%;
     transition: all 50ms ease;
+    scroll-snap-align: center;
+    min-height: 40vh;
 }
 
 .project-card-img-wrapper {
@@ -621,7 +639,7 @@ h2 {
     display: flex;
     flex-direction: column;
     padding: 0;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-left: 20px;
     gap: 20px;
     transform: translateY(50px);
@@ -641,7 +659,7 @@ h2 {
 }
 
 .project-card-infos .project-card-title {
-    font-size: 6em;
+    font-size: 4em;
     font-weight: var(--main-font-weight);
     line-height: 100%;
 }
@@ -706,7 +724,7 @@ h2 {
 }
 
 #contact {
-    width: 100%;
+    width: calc(100% - var(--side-space) * 2);
     height: 60vh;
     display: flex;
     flex-direction: column;
@@ -714,10 +732,14 @@ h2 {
     background-color: var(--page-black);
     color: var(--page-white);
     justify-content: end;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     position: sticky;
     bottom: 0;
     z-index: 0;
+}
+
+body.scrolled #contact {
+    width: 100%
 }
 
 #contact.inview h2 {
