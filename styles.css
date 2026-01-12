@@ -138,7 +138,7 @@ li {
 }
 
 .link .svg-arrow {
-    width: 3rem;
+    width: 0.75em;
     transform: rotate(-90deg);
     margin-left: 6px;
 }
@@ -706,7 +706,7 @@ h2 {
     height: 60vh;
     display: flex;
     flex-direction: column;
-    padding: var(--side-space);
+    padding: calc(var(--side-space) / 2) var(--side-space);
     background-color: var(--page-black);
     color: var(--page-white);
     justify-content: end;
@@ -734,6 +734,10 @@ body.scrolled #contact {
 .contact-headline img {
     width: 75px;
     transform: rotate(-90deg);
+}
+
+.email-link {
+    font-size: var(--f-size-slightly-bigger);
 }
 
 .get-in-touch-wrapper {
