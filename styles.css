@@ -30,6 +30,7 @@
 /* start - general Element styling */
 html {
     font-family: var(--main-font);
+    font-size: 14px;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -736,10 +737,12 @@ h2 {
     position: sticky;
     bottom: 0;
     z-index: 0;
+    opacity: 0;
 }
 
 body.scrolled #contact {
-    width: 100%
+    width: 100%;
+    opacity: 1;
 }
 
 #contact.inview h2 {
@@ -853,4 +856,16 @@ body.scrolled #contact {
     object-fit: none;
     object-position: 50% 30%;
     background-color: violet;
+}
+
+@media (max-width: 1200px) {
+    
+}
+
+@media (max-width: 800px) {
+
+}
+
+@media (max-width: 400px) {
+    
 }

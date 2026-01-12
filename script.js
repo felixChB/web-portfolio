@@ -13,7 +13,7 @@ const projectsSection = document.getElementById("projects");
 const projectsWrapper = document.getElementById("project-wrapper");
 const projectCards = document.querySelectorAll(".project-card");
 
-const headerElem = document.querySelector("header");
+const homeHeaderElem = document.getElementById("home-header");
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed");
@@ -82,7 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
 ///// NEW SCROLL EFFECT CODE /////
 window.addEventListener("scroll", () => {
 
-    htmlBody.classList.toggle('scrolled', window.scrollY > headerElem.getBoundingClientRect().height);
+    console.log("ScrollY:", window.scrollY);
+
+    htmlBody.classList.toggle('scrolled', window.scrollY > homeHeaderElem.getBoundingClientRect().height);
 });
 ///// NEW SCROLL EFFECT CODE /////
 
