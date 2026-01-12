@@ -21,6 +21,12 @@
     --border-radius-small: 10px;
     --border-radius-big: 25px;
     --hover-transition: all 400ms cubic-bezier(.45, .19, .36, 1);
+
+    --f-size-smallest: 0.825rem;
+    --f-size-slightly-bigger: 1.3rem;
+    --f-size-about-text: 1.65rem;
+    --f-size-big-headline: 6rem;
+    --f-size-projects-headline: 3.4rem;
 }
 
 * {
@@ -34,6 +40,20 @@ html {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+}
+
+@media (max-width: 800px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 10px;
+    }
+
+
 }
 
 body {
@@ -115,7 +135,6 @@ li {
 .type-font {
     font-family: var(--type-font);
     font-weight: normal;
-    font-size: 14px;
     text-transform: uppercase;
 }
 
@@ -136,46 +155,6 @@ li {
 }
 
 /* end - font styling */
-
-#cursor {
-    position: fixed;
-    width: auto;
-    height: var(--cursor-size);
-    top: calc(var(--cursor-size) / -2);
-    left: calc(var(--cursor-size) / -2);
-    pointer-events: none;
-    z-index: 100;
-    display: block;
-    /* transition: transform 0.2s cubic-bezier(.22, .61, .36, 1); */
-    font-size: 14px;
-    color: var(--page-black);
-    transition: all 0.1s ease;
-    padding: 2px;
-    box-sizing: border-box;
-    opacity: 0;
-}
-
-#cursor::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: '';
-    display: block;
-    width: 0px;
-    height: 100%;
-    background: var(--page-white);
-    transition: all .3s ease;
-    z-index: -1;
-    pointer-events: none;
-}
-
-#cursor.active {
-    opacity: 1;
-}
-
-#cursor.active::after {
-    width: 100%;
-}
 
 .margin-sides {
     margin-left: 20px;
@@ -856,16 +835,4 @@ body.scrolled #contact {
     object-fit: none;
     object-position: 50% 30%;
     background-color: violet;
-}
-
-@media (max-width: 1200px) {
-    
-}
-
-@media (max-width: 800px) {
-
-}
-
-@media (max-width: 400px) {
-    
 }
