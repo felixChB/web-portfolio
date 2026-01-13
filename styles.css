@@ -178,10 +178,14 @@ body.scrolled #home-header {
     width: 100%;
     z-index: 100;
     color: var(--page-white);
+    opacity: 0;
+    filter: blur(0.2em);
 }
 
 body.scrolled #main-header {
     top: 0px;
+    opacity: 1;
+    filter: none;
 }
 
 #logo {
