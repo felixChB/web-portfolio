@@ -137,12 +137,6 @@ li {
     display: block;
 }
 
-.link .svg-arrow {
-    width: 0.75em;
-    transform: rotate(-90deg);
-    margin-left: 6px;
-}
-
 /* end - font styling */
 
 .margin-sides {
@@ -210,6 +204,8 @@ body.scrolled #main-header {
     position: relative;
     transition: var(--hover-transition);
     display: inline-block;
+    font-size: 1rem;
+    line-height: 1.1rem;
 }
 
 .nav-link::after {
@@ -227,6 +223,8 @@ body.scrolled #main-header {
 .nav-link>.link-text {
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
 }
 
 .nav-link:hover {
@@ -235,6 +233,38 @@ body.scrolled #main-header {
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+.arrow-wrapper {
+    width: 0.8em;
+    height: 0.8em;
+    display: inline-block;
+    position: relative;
+    margin-left: 0.3em;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.link .svg-arrow {
+    width: 0.75em;
+    transform: rotate(-90deg);
+    position: absolute;
+    transition: all 0.5s cubic-bezier(.65, .05, .36, 1);
+    translate: 0 0;
+}
+
+.nav-link:hover .svg-arrow {
+    translate: 1em -1em;
+}
+
+.arrow-wrapper .svg-arrow:first-child {
+    top: 1em;
+    left: -1em;
+}
+
+.arrow-wrapper .svg-arrow:last-child {
+    top: 0;
+    left: 0;
 }
 
 header .nav-link {
