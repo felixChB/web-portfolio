@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let appearTextOptions = { root: null, threshold: 0.5, rootMargin: "10% 0% -10% 0%" };
     let parallaxImgOptions = { root: null, threshold: 0.0, rootMargin: "0% 0% 0% 0%" };
     let projectsElemOptions = { root: null, threshold: 0.0, rootMargin: "-50% 0% -20% 0%" };
-    let projectCardsOptions = { root: null, threshold: 0.5, rootMargin: "0% 0% -10% 0%" };
+    let projectCardsOptions = { root: null, threshold: 1.0, rootMargin: "40% 0% 5% 0%" };
 
     // create all Oberservers
     let appearTextObserver = new IntersectionObserver(onEntry, appearTextOptions);

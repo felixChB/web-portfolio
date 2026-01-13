@@ -26,7 +26,7 @@
 
     --f-size-smallest: 0.825rem;
     --f-size-slightly-bigger: 1.3rem;
-    --f-size-about-text: 1.65rem;
+    --f-size-about-text: 1.8rem;
     --f-size-big-headline: 6rem;
     --f-size-projects-headline: 3.4rem;
     --f-size-project-card-title: 2.8rem;
@@ -250,7 +250,7 @@ body.scrolled #main-header {
 }
 
 .arrow-wrapper .svg-arrow {
-    width: 0.75em;
+    width: 100%;
     transform: rotate(-90deg);
     position: absolute;
     transition: all 0.5s cubic-bezier(.65, .05, .36, 1);
@@ -266,13 +266,13 @@ body.scrolled #main-header {
 }
 
 .arrow-wrapper .svg-arrow:first-child {
-    top: 1em;
-    left: -1em;
+    top: 0;
+    left: 0;
 }
 
 .arrow-wrapper .svg-arrow:last-child {
-    top: 0;
-    left: 0;
+    top: 1em;
+    left: -1em;
 }
 
 header .nav-link {
@@ -497,7 +497,7 @@ h2 {
     background-color: var(--page-white);
     color: var(--page-black);
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 150px;
     border-radius: var(--border-radius-big);
     transition: all 0.5s ease;
 }
@@ -505,8 +505,8 @@ h2 {
 #projects.inview {
     width: 100%;
     border-radius: 0;
-    padding-left: calc(5% + 20px);
-    padding-right: calc(5% + 20px);
+    padding-left: calc(5% + var(--side-space));
+    padding-right: calc(5% + var(--side-space));
 }
 
 #projects.inview h2 {
@@ -628,13 +628,11 @@ h2 {
 }
 
 .project-card-img-wrapper {
-    width: 65%;
-    height: auto;
+    height: 60vh;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 16 / 9;
     border-radius: var(--border-radius-small);
     transform: translateX(-50px);
     opacity: 0;
@@ -648,6 +646,7 @@ h2 {
 
 .project-card-img-wrapper img {
     height: 100%;
+    min-width: 100%;
     object-fit: cover;
     object-position: 50% 40%;
     /* transform: scale(0.8); */
@@ -688,6 +687,11 @@ h2 {
 
 .project-card-title .arrow-wrapper {
     display: none;
+}
+
+.project-card-title .arrow-wrapper {
+    width: 0.4em;
+    height: 0.4em;
 }
 
 .project-card-infos .project-card-tags {
