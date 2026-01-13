@@ -62,6 +62,10 @@ body {
     align-items: center;
 }
 
+body.menu-open {
+    overflow: hidden;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -280,6 +284,8 @@ header .nav-link {
 .burger-nav {
     display: none;
     height: 45%;
+    z-index: 210;
+    position: relative;
 }
 
 .burger-icon {
@@ -309,15 +315,21 @@ header .nav-link {
     display: none;
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 300px;
+    right: 0;
+    width: 100vw;
     height: 100vh;
     background-color: var(--highlight-color);
-    transition: right 0.3s ease;
-    z-index: 20;
+    transition: all 0.3s ease;
+    z-index: 200;
     display: flex;
     flex-direction: column;
-    padding-top: 80px;
+    padding: var(--side-space) var(--side-space) calc(var(--side-space) / 2) var(--side-space);
+    transform: translateX(100%);
+    justify-content: space-between;
+}
+
+#burger-menu.open {
+    transform: translateX(0%);
 }
 
 #home {
@@ -916,6 +928,10 @@ body.scrolled #contact {
 
     header .text-nav {
         display: none;
+    }
+
+    #burger-menu {
+        display: flex;
     }
 
     .project-card .project-card-details {

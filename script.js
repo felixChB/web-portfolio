@@ -15,9 +15,21 @@ const projectCards = document.querySelectorAll(".project-card");
 
 const homeHeaderElem = document.getElementById("home-header");
 
+const burgerNavs = document.querySelectorAll(".burger-nav");
+const burgerMenu = document.getElementById("burger-menu");
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed");
     console.log("Initial scrollY:", window.scrollY);
+
+    burgerNavs.forEach(burgerNav => {
+        burgerNav.addEventListener("click", () => {
+            console.log("Burger menu clicked");
+            burgerMenu.classList.toggle("open");
+
+            htmlBody.classList.toggle("menu-open", burgerMenu.classList.contains("open"));
+        });
+    });
 
     ////// Inview appear Events //////
     function onEntry(entry) {
