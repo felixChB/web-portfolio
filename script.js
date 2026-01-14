@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed");
     console.log("Initial scrollY:", window.scrollY);
 
+    // Start up stuff
+    htmlBody.classList.add("page-loaded");
+
     burgerNavs.forEach(burgerNav => {
         burgerNav.addEventListener("click", () => {
             console.log("Burger menu clicked");

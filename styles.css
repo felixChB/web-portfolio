@@ -1,5 +1,5 @@
 :root {
-    --highlight-color: #FF8B16;
+    --highlight-color: #EEEEEE;
     --page-white: #EEEEEE;
     --page-black: #0B0B0B;
     --grey-color: #5D5D5D;
@@ -153,31 +153,34 @@ li {
 
 header {
     height: var(--header-height);
+    width: 100%;
     margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
     transition: all 0.3s ease;
-    padding-inline: 20px;
+    padding-inline: var(--side-space);
+    mix-blend-mode: difference;
+    color: var(--page-white);
 }
 
 #home-header {
-    width: calc(100% - var(--side-space) * 2);
     opacity: 1;
+    filter: none;
+    padding-inline: calc(var(--side-space) + 10px);
 }
 
 body.scrolled #home-header {
     opacity: 0;
+    filter: blur(0.2em);
 }
 
 #main-header {
     position: fixed;
     top: calc(-1 * var(--header-height));
     left: 0;
-    width: 100%;
     z-index: 100;
-    color: var(--page-white);
     opacity: 0;
     filter: blur(0.2em);
 }
@@ -206,7 +209,7 @@ body.scrolled #main-header {
 
 .nav-link {
     font-weight: normal;
-    padding: 2px;
+    padding: 0.25em 0.15em;
     margin: 0;
     text-transform: uppercase;
     position: relative;
@@ -226,6 +229,7 @@ body.scrolled #main-header {
     height: 100%;
     background: var(--highlight-color);
     transition: var(--hover-transition);
+    border-radius: 1px;
 }
 
 .nav-link>.link-text {
@@ -374,6 +378,22 @@ header .nav-link {
 h1 {
     font-size: 12vw;
     font-weight: var(--main-font-weight);
+    transition: all 0.5s ease-out 0.5s;
+    overflow-y: hidden;
+    filter: blur(4px);
+}
+
+body.page-loaded h1 {
+    filter: blur(0);
+}
+
+h1 .headline-text{
+    transition-delay: 0.5s
+}
+
+body.page-loaded h1 .headline-text {
+    transform: translateY(0);
+    filter: blur(0);
 }
 
 h2 {
@@ -385,11 +405,11 @@ h2 {
     opacity: 0;
     overflow-y: clip;
     display: inline-block;
+    filter: blur(2px);
 }
 
 h1,
 h2 {
-    filter: blur(2px);
     text-transform: uppercase;
     margin: 0;
     padding: 0;
@@ -398,7 +418,7 @@ h2 {
 .headline-text {
     position: relative;
     display: block;
-    transform: translateY(110px);
+    transform: translateY(1em);
     transition: transform 0.5s ease-out;
     will-change: transform;
 }
@@ -662,9 +682,9 @@ h2 {
     display: flex;
     flex-direction: column;
     padding: 0;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-left: 20px;
-    gap: 20px;
+    gap: 60px;
     transform: translateY(50px);
     opacity: 0;
     transition: all 0.5s ease;
@@ -767,7 +787,7 @@ h2 {
 
 #contact {
     width: calc(100% - var(--side-space) * 2);
-    height: 60vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     padding: calc(var(--side-space) / 2) var(--side-space);
