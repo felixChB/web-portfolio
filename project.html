@@ -12,17 +12,25 @@
 
 <body>
     <!-- The floating header -->
-    <header>
-        <a href="index.html">
-            <span id="logo">
-                <span>Portfolio</span><br>
-                <span>of</span><br>
-                <span>Felix Brunn.</span>
-            </span>
-        </a>
-        <nav>
-            <a class="nav-link" href="index.html#projects"><span>Projects</span></a><a class="nav-link"
-                href="#about"><span>About</span></a><a class="nav-link" href="#contact"><span>Contact</span></a>
+    <header id="main-header">
+        <span id="logo">
+            <a href="">
+                <p>// Felix´</p>
+                <p>Portfolio</p>
+            </a>
+        </span>
+        <nav id="main-nav" class="text-nav">
+            <a class="nav-link" nav-section-value="about"><span class="link-text">[About]</span></a><a class="nav-link"
+                nav-section-value="projects"><span class="link-text">[Projects]</span></a><a class="nav-link"
+                nav-section-value="contact"><span class="link-text">[Contact]</span></a>
+        </nav>
+        <nav class="burger-nav">
+            <div class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
     <main>
@@ -52,12 +60,12 @@
                             <p>Tools: webXR, node.js, babylon.js, typescript</p>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag">#web-app</span>
-                        <span class="tag">#VR</span>
-                        <span class="tag">#co-located</span>
-                        <span class="tag">#multiplayer</span>
-                    </div>
+                    <ul class="tags">
+                        <li class="tag">#web-app</li>
+                        <li class="tag">#VR</li>
+                        <li class="tag">#co-located</li>
+                        <li class="tag">#multiplayer</li>
+                    </ul>
                 </div>
 
                 <div class="project-detail-images">
