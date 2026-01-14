@@ -30,10 +30,6 @@ body.scrolled #home-header {
     filter: blur(0.2em);
 }
 
-#home-header .burger-icon span {
-    background-color: var(--page-black);
-}
-
 /*---------- Home Section START----------*/
 #home {
     position: relative;

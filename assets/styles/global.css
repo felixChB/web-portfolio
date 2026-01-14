@@ -143,6 +143,7 @@ body.scrolled #main-header {
     line-height: 90%;
     text-transform: uppercase;
     letter-spacing: -8%;
+    padding: 0.25em 0.15em;
 }
 
 .text-nav {
