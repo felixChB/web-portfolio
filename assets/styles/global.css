@@ -221,7 +221,7 @@ body.scrolled #main-header {
 }
 
 .arrow-wrapper .svg-arrow path {
-    stroke-width: 3; 
+    stroke-width: 3;
 }
 
 .nav-link:hover .svg-arrow {
@@ -300,6 +300,10 @@ header .nav-link {
 #burger-menu .menu-nav-wrapper {
     font-family: var(--main-font);
     font-weight: var(--main-font-weight);
+    height: 100%;
+    display: flex;
+    align-items: end;
+    padding-bottom: 10vh;
 }
 
 #burger-menu .menu-link {
@@ -311,6 +315,11 @@ header .nav-link {
 
 #burger-menu .menu-link::after {
     border-radius: 4px;
+}
+
+#burger-menu .social-links {
+    display: flex;
+    gap: 20px;
 }
 
 /* ----------Burger Menu Styling END---------- */

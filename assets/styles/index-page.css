@@ -271,7 +271,7 @@ body.page-loaded #home h1 .headline-text {
     z-index: 1;
 }
 
-.projects-headline>.headline-text>.projects-number {
+.projects-number {
     color: var(--grey-color);
     display: inline-block;
     position: absolute;
