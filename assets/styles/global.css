@@ -217,7 +217,7 @@ body.scrolled #main-header {
 }
 
 .arrow-wrapper .svg-arrow path {
-    stroke-width: 2.5; 
+    stroke-width: 3; 
 }
 
 .nav-link:hover .svg-arrow {
@@ -439,6 +439,7 @@ body.scrolled #contact {
     width: 3.5rem;
     margin-left: 0;
     transform: rotate(-45deg);
+    border-radius: 4px;
 }
 
 .back-to-top-wrapper .arrow-wrapper .svg-arrow:last-child {

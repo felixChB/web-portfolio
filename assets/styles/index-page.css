@@ -92,6 +92,7 @@ body.page-loaded #home h1 .headline-text {
 #about {
     position: relative;
     width: auto;
+    min-height: 75vh;
 }
 
 #about-wrapper {
@@ -367,7 +368,6 @@ body.page-loaded #home h1 .headline-text {
     display: none;
     width: 0.5em;
     height: 0.5em;
-    transform: rotate(45deg);
 }
 
 .project-card-title .arrow-wrapper .svg-arrow:last-child {
@@ -387,6 +387,7 @@ body.page-loaded #home h1 .headline-text {
     width: fit-content;
     padding: 2px;
     box-sizing: border-box;
+    padding-right: 4px;
 }
 
 .view-project .view-project-text {
@@ -412,6 +413,7 @@ body.page-loaded #home h1 .headline-text {
     transition: var(--hover-transition);
     z-index: -1;
     pointer-events: none;
+    border-radius: 2px;
 }
 
 .project-card:hover .view-project::after {
@@ -423,7 +425,7 @@ body.page-loaded #home h1 .headline-text {
 }
 
 .project-card:hover .project-card-title .arrow-wrapper .svg-arrow {
-    translate: 0.5em 0.5em;
+    translate: 0.5em -0.5em;
 }
 
 .project-card:hover .view-project .arrow-wrapper .svg-arrow {
@@ -500,27 +502,3 @@ body.page-loaded #home h1 .headline-text {
         width: 7rem;
     }
 }
-
-.my-arrow {
-    color: #3498db; /* Change this to change the arrow color */
-    transition: color 0.3s ease;
-}
-.my-arrow:hover {
-    color: #e74c3c; /* Changes color on hover */
-  }
-
-  .rounded-arrow {
-    color: #3498db;
-    width: 50px; /* Adjust size easily */
-    height: 50px;
-  }
-
-  /* You can even change the thickness in CSS! */
-  .rounded-arrow path {
-    stroke-width: 2.5; 
-    transition: stroke-width 0.2s ease;
-  }
-
-  .rounded-arrow:hover path {
-    stroke-width: 3.5; /* Makes it bolder on hover */
-  }
