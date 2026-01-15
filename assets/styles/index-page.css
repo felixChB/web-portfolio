@@ -209,7 +209,7 @@ body.page-loaded #home h1 .headline-text {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 120px;
+    margin-bottom: 5vh;
     width: 100%;
     align-items: start;
 }

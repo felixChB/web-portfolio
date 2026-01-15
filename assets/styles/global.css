@@ -195,6 +195,10 @@ body.scrolled #main-header {
     width: 100%;
 }
 
+.nav-link .arrow-wrapper {
+    margin-right: 0.1em;
+}
+
 .arrow-wrapper {
     width: 0.8em;
     height: 0.8em;
@@ -283,6 +287,30 @@ header .nav-link {
 
 #burger-menu.open {
     transform: translateX(0%);
+}
+
+#burger-menu .nav-link::after {
+    background-color: var(--page-black);
+}
+
+#burger-menu .nav-link:hover {
+    color: var(--page-white);
+}
+
+#burger-menu .menu-nav-wrapper {
+    font-family: var(--main-font);
+    font-weight: var(--main-font-weight);
+}
+
+#burger-menu .menu-link {
+    font-size: 4rem;
+    font-weight: var(--main-font-weight);
+    line-height: 4rem;
+    padding: 0.1em;
+}
+
+#burger-menu .menu-link::after {
+    border-radius: 4px;
 }
 
 /* ----------Burger Menu Styling END---------- */
