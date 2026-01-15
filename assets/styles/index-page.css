@@ -310,7 +310,7 @@ body.page-loaded #home h1 .headline-text {
     border-radius: var(--border-radius-small);
     transform: translateX(-50px);
     opacity: 0;
-    transition: all 0.5s ease;
+    transition: var(--hover-transition);
 }
 
 .project-card.inview .project-card-img-wrapper {
@@ -351,6 +351,10 @@ body.page-loaded #home h1 .headline-text {
     width: 100%;
 }
 
+.project-card-tags {
+    text-transform: uppercase;
+}
+
 .project-card-infos .project-card-title {
     font-size: var(--f-size-project-card-title);
     font-weight: var(--main-font-weight);
@@ -361,11 +365,14 @@ body.page-loaded #home h1 .headline-text {
 
 .project-card-title .arrow-wrapper {
     display: none;
+    width: 0.5em;
+    height: 0.5em;
+    transform: rotate(45deg);
 }
 
-.project-card-title .arrow-wrapper {
-    width: 0.4em;
-    height: 0.4em;
+.project-card-title .arrow-wrapper .svg-arrow:last-child {
+    top: 0.5em;
+    left: -0.5em;
 }
 
 .project-card-infos .project-card-tags {
@@ -385,16 +392,12 @@ body.page-loaded #home h1 .headline-text {
 .view-project .view-project-text {
     font-family: var(--type-font);
     text-transform: uppercase;
+    transition: var(--hover-transition);
 }
 
-.project-card-details .view-project .arrow-wrapper .svg-arrow {
-    transform: rotate(-45deg);
-}
-
-.project-card-details .view-project .arrow img {
-    transform: rotate(-45deg);
-    width: 14px;
-    height: 14px;
+.project-card-details .view-project .arrow-wrapper {
+    transform: rotate(45deg);
+    padding-right: 2px;
 }
 
 .project-card-details .view-project::after {
@@ -405,7 +408,7 @@ body.page-loaded #home h1 .headline-text {
     display: block;
     width: 0px;
     height: 100%;
-    background: var(--highlight-color);
+    background: var(--page-black);
     transition: var(--hover-transition);
     z-index: -1;
     pointer-events: none;
@@ -413,6 +416,18 @@ body.page-loaded #home h1 .headline-text {
 
 .project-card:hover .view-project::after {
     width: 100%;
+}
+
+.project-card:hover .view-project {
+    color: var(--page-white);
+}
+
+.project-card:hover .project-card-title .arrow-wrapper .svg-arrow {
+    translate: 0.5em 0.5em;
+}
+
+.project-card:hover .view-project .arrow-wrapper .svg-arrow {
+    translate: 1em -1em;
 }
 
 .project-card:hover .project-card-img-wrapper img {
@@ -485,3 +500,27 @@ body.page-loaded #home h1 .headline-text {
         width: 7rem;
     }
 }
+
+.my-arrow {
+    color: #3498db; /* Change this to change the arrow color */
+    transition: color 0.3s ease;
+}
+.my-arrow:hover {
+    color: #e74c3c; /* Changes color on hover */
+  }
+
+  .rounded-arrow {
+    color: #3498db;
+    width: 50px; /* Adjust size easily */
+    height: 50px;
+  }
+
+  /* You can even change the thickness in CSS! */
+  .rounded-arrow path {
+    stroke-width: 2.5; 
+    transition: stroke-width 0.2s ease;
+  }
+
+  .rounded-arrow:hover path {
+    stroke-width: 3.5; /* Makes it bolder on hover */
+  }
