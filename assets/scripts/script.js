@@ -100,7 +100,17 @@ navLinks.forEach(link => {
         e.preventDefault();
         const sectionId = link.getAttribute("nav-section-value");
         if (!sectionId) return;
-        scrollToSection(sectionId);
+
+        if (link.classList.contains("menu-link")) {
+            burgerMenu.classList.remove("open");
+            htmlBody.classList.remove("menu-open");
+            setTimeout(() => {
+                scrollToSection(sectionId);
+            }, 300);
+            return;
+        } else {
+            scrollToSection(sectionId);
+        }
     });
 });
 

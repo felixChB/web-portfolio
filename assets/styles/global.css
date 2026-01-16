@@ -200,7 +200,7 @@ body.scrolled #main-header {
 }
 
 .arrow-icon-wrapper {
-    margin-left: 0.3em;
+    margin-left: 0.2em;
 }
 
 .arrow-icon-wrapper .arrow-icon {
@@ -261,7 +261,7 @@ header .nav-link {
 }
 
 .burger-icon-wrapper {
-    margin-right: 0.3em;
+    margin-right: 0.2em;
 }
 
 .burger-icon {
@@ -328,7 +328,7 @@ header .nav-link {
 }
 
 .close-icon-wrapper {
-    margin-left: 0.3em;
+    margin-left: 0.15em;
 }
 
 .close-icon {
@@ -336,6 +336,7 @@ header .nav-link {
     left: 0;
     color: var(--page-black);
     transition: var(--hover-transition);
+    transform: rotate(0deg);
 }
 
 .close-icon path {
@@ -344,6 +345,7 @@ header .nav-link {
 
 .close-menu-link:hover .close-icon {
     color: var(--page-white);
+    transform: rotate(180deg);
 }
 
 #burger-menu.open {
