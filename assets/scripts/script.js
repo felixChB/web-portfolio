@@ -13,7 +13,6 @@ const projectCards = document.querySelectorAll(".project-card");
 
 const homeHeaderElem = document.getElementById("home-header");
 
-const burgerNavs = document.querySelectorAll(".burger-nav");
 const burgerMenu = document.getElementById("burger-menu");
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,15 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start up stuff
     htmlBody.classList.add("page-loaded");
-
-    burgerNavs.forEach(burgerNav => {
-        burgerNav.addEventListener("click", () => {
-            console.log("Burger menu clicked");
-            burgerMenu.classList.toggle("open");
-
-            htmlBody.classList.toggle("menu-open", burgerMenu.classList.contains("open"));
-        });
-    });
 
     ////// Inview appear Events //////
     function onEntry(entry) {
@@ -140,6 +130,14 @@ function scrollToSection(sectionId) {
                 top: 0,
                 behavior: "smooth"
             });
+            break;
+        case "open-menu":
+            burgerMenu.classList.add("open");
+            htmlBody.classList.add("menu-open");
+            break;
+        case "close-menu":
+            burgerMenu.classList.remove("open");
+            htmlBody.classList.remove("menu-open");
             break;
         default:
             break;

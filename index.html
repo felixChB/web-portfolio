@@ -31,26 +31,47 @@
                 nav-section-value="contact"><span class="link-text">[Contact]</span></a>
         </nav>
         <nav class="burger-nav">
-            <div class="burger-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a class="open-menu-link nav-link" nav-section-value="open-menu">
+                <div class="burger-icon-wrapper">
+                    <div class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <span class="link-text">[Menu]</span>
+            </a>
         </nav>
     </header>
     <div id="burger-menu">
+        <div class="close-menu-wrapper">
+            <a class="close-menu-link nav-link" nav-section-value="close-menu">
+                <span class="link-text">[Close]</span>
+                <div class="close-icon-wrapper">
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        height="24">
+                        <path d="M22 2L2 22M2 2l20 20" fill="none" stroke="currentColor" stroke-width="1"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </a>
+        </div>
         <div class="menu-contact">
             <span class="brackets-headline">[Contact me]</span>
             <a href="mailto:Lixrsnvsnfs@gsnfe.cm" class="email-link nav-link link"><span class="link-text">Email:
                     Lixrsnvsnfs@gsnfe.cm</span>
-                <div class="arrow-wrapper">
-                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                <div class="arrow-icon-wrapper">
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                         height="24">
                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
                             stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                         height="24">
                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
                             stroke-linecap="round" stroke-linejoin="round" />
@@ -60,12 +81,12 @@
         </div>
         <div class="menu-nav-wrapper">
             <ul class="menu-nav-links">
-                <li><a class="menu-link nav-link" nav-section-value="about"><span
-                            class="link-text">About</span></a></li>
-                <li><a class="menu-link nav-link" nav-section-value="projects"><span
-                            class="link-text">Projects<span class="projects-number">[4]</span></span></a></li>
-                <li><a class="menu-link nav-link" nav-section-value="contact"><span
-                            class="link-text">Contact</span></a></li>
+                <li><a class="menu-link nav-link" nav-section-value="about"><span class="link-text">About</span></a>
+                </li>
+                <li><a class="menu-link nav-link" nav-section-value="projects"><span class="link-text">Projects<span
+                                class="projects-number">[4]</span></span></a></li>
+                <li><a class="menu-link nav-link" nav-section-value="contact"><span class="link-text">Contact</span></a>
+                </li>
             </ul>
         </div>
         <div class="menu-bottom">
@@ -73,28 +94,28 @@
                 <span class="brackets-headline">[Navigation]</span>
                 <ul class="social-links">
                     <li><a href="https://github.com/" class="nav-link link"><span class="link-text">Github</span>
-                            <div class="arrow-wrapper">
-                                <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                    height="24">
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
                                     <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                    height="24">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
                                     <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </div>
                         </a></li>
                     <li><a href="https://linkedin.com/" class="nav-link link"><span class="link-text">LinkedIn</span>
-                            <div class="arrow-wrapper">
-                                <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                    height="24">
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
                                     <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                    height="24">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
                                     <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
@@ -122,12 +143,21 @@
                 nav-section-value="contact"><span class="link-text">[Contact]</span></a>
         </nav>
         <nav class="burger-nav">
-            <div class="burger-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a class="open-menu-link nav-link" nav-section-value="open-menu">
+                <div class="burger-icon-wrapper">
+                    <div class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <span class="link-text">[Menu]</span>
+            </a>
         </nav>
     </header>
     <main>
@@ -152,9 +182,11 @@
                             <p class="appear-text"><span>I´m Felix, an interaction- and Web-Designer and
                                     Developer</span>
                             </p>
-                            <p class="appear-text"><span>based in Germany. I recently graduated with a Masters</span>
+                            <p class="appear-text"><span>based in Germany. I recently graduated with a
+                                    Masters</span>
                             </p>
-                            <p class="appear-text"><span>Degree from the HFU in the beautiful black forest.</span></p>
+                            <p class="appear-text"><span>Degree from the HFU in the beautiful black forest.</span>
+                            </p>
                         </div>
                         <div class="appear-text-parts">
                             <p class="appear-text"><span>My main focus lies in designing and
@@ -171,7 +203,8 @@
                                     with</span>
                             </p>
                             <p class="appear-text"><span>WebXR.</span></p>
-                            <p class="appear-text"><span>Right now i am looking for a full- or half-time job!</span></p>
+                            <p class="appear-text"><span>Right now i am looking for a full- or half-time job!</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -201,13 +234,13 @@
                     <div class="project-card-details">
                         <div class="project-card-infos">
                             <span class="project-card-year">2024</span>
-                            <span class="project-card-title">VR-Pong<div class="arrow-wrapper">
-                                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            <span class="project-card-title">VR-Pong<div class="arrow-icon-wrapper">
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         width="24" height="24">
                                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         width="24" height="24">
                                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
@@ -217,14 +250,14 @@
                         </div>
                         <div class="view-project">
                             <span class="view-project-text">[View Project]</span>
-                            <div class="arrow-wrapper">
-                                <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                    height="24">
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
                                     <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                    height="24">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
                                     <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
@@ -239,13 +272,13 @@
                     <div class="project-card-details">
                         <div class="project-card-infos">
                             <span class="project-card-year">2020</span>
-                            <span class="project-card-title">UI-verse<div class="arrow-wrapper">
-                                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            <span class="project-card-title">UI-verse<div class="arrow-icon-wrapper">
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         width="24" height="24">
                                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         width="24" height="24">
                                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
@@ -255,14 +288,14 @@
                         </div>
                         <div class="view-project">
                             <span class="view-project-text">[View Project]</span>
-                            <div class="arrow-wrapper">
-                                <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                    height="24">
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
                                     <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                    height="24">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
                                     <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
@@ -277,13 +310,13 @@
                     <div class="project-card-details">
                         <div class="project-card-infos">
                             <span class="project-card-year">2022</span>
-                            <span class="project-card-title">Rising Weather<div class="arrow-wrapper">
-                                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            <span class="project-card-title">Rising Weather<div class="arrow-icon-wrapper">
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         width="24" height="24">
                                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         width="24" height="24">
                                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
@@ -294,14 +327,14 @@
                         </div>
                         <div class="view-project">
                             <span class="view-project-text">[View Project]</span>
-                            <div class="arrow-wrapper">
-                                <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                    height="24">
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
                                     <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                    height="24">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
                                     <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
@@ -316,13 +349,13 @@
                     <div class="project-card-details">
                         <div class="project-card-infos">
                             <span class="project-card-year">2023</span>
-                            <span class="project-card-title">3D-Constructor<div class="arrow-wrapper">
-                                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            <span class="project-card-title">3D-Constructor<div class="arrow-icon-wrapper">
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         width="24" height="24">
                                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         width="24" height="24">
                                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
@@ -333,14 +366,14 @@
                         </div>
                         <div class="view-project">
                             <span class="view-project-text">[View Project]</span>
-                            <div class="arrow-wrapper">
-                                <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                    height="24">
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
                                     <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                    height="24">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
                                     <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
@@ -361,13 +394,13 @@
                 <span class="brackets-headline">[Contact me]</span>
                 <a href="mailto:Lixrsnvsnfs@gsnfe.cm" class="email-link nav-link link"><span class="link-text">Email:
                         Lixrsnvsnfs@gsnfe.cm</span>
-                    <div class="arrow-wrapper">
-                        <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                    <div class="arrow-icon-wrapper">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                             height="24">
                             <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                             height="24">
                             <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
                                 stroke-linecap="round" stroke-linejoin="round" />
@@ -381,7 +414,8 @@
                 <div>
                     <span class="brackets-headline">[Navigation]</span>
                     <ul class="sitemap">
-                        <li><a nav-section-value="about" class="nav-link"><span class="link-text">About</span></a></li>
+                        <li><a nav-section-value="about" class="nav-link"><span class="link-text">About</span></a>
+                        </li>
                         <li><a nav-section-value="projects" class="nav-link"><span class="link-text">Projects</span></a>
                         </li>
                         <li><a nav-section-value="contact" class="nav-link"><span class="link-text">Contact</span></a>
@@ -392,13 +426,13 @@
                     <span class="brackets-headline">[Navigation]</span>
                     <ul class="social-links">
                         <li><a href="https://github.com/" class="nav-link link"><span class="link-text">Github</span>
-                                <div class="arrow-wrapper">
-                                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                <div class="arrow-icon-wrapper">
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         width="24" height="24">
                                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         width="24" height="24">
                                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
@@ -407,13 +441,13 @@
                             </a></li>
                         <li><a href="https://linkedin.com/" class="nav-link link"><span
                                     class="link-text">LinkedIn</span>
-                                <div class="arrow-wrapper">
-                                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                <div class="arrow-icon-wrapper">
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         width="24" height="24">
                                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         width="24" height="24">
                                         <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
                                             stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
@@ -425,13 +459,13 @@
             </nav>
             <div class="contact-right">
                 <a class="back-to-top-wrapper">
-                    <div class="arrow-wrapper">
-                        <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                    <div class="arrow-icon-wrapper">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                             height="24">
                             <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <svg class="svg-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                             height="24">
                             <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
                                 stroke-linecap="round" stroke-linejoin="round" />
