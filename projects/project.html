@@ -5,75 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="project-styles.css">
-    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap" rel="stylesheet">
+    <script src="../assets/scripts/script.js" defer></script>
+    <link rel="stylesheet" href="../assets/styles/global.css">
+    <link rel="stylesheet" href="../assets/styles/project-page.css">
 </head>
 
-<body>
-    <!-- The floating header -->
-    <header id="main-header">
-        <span id="logo">
-            <a href="">
-                <p>// Felix´</p>
-                <p>Portfolio</p>
-            </a>
-        </span>
-        <nav id="main-nav" class="text-nav">
-            <a class="nav-link" nav-section-value="about"><span class="link-text">[About]</span></a><a class="nav-link"
-                nav-section-value="projects"><span class="link-text">[Projects]</span></a><a class="nav-link"
-                nav-section-value="contact"><span class="link-text">[Contact]</span></a>
-        </nav>
-        <nav class="burger-nav">
-            <div class="burger-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+<body class="project-page">
     <main>
-
-        <section id="project-detail">
-            <img class="project-head-img" src="./assets/vrpong-thumbnail.png" alt="">
-            <div id="project-detail-wrapper">
-                <h1 class="project-detail-title">VR-Pong<span class="colored-dot">.</span></h1>
-                <div class="project-info-wrapper">
-                    <div class="main-info">
-                        <p class="year">2024</p>
-                        <div>
-                            <p class="project-detail-description">
-                                VR-Pong ist ein co-located Multiplayer VR-Spiel, bei welchem bis zu vier Spieler in
-                                einer
-                                virtuellen
-                                Welt gegeneinander 3D-Pong spielen können. Das Besondere istm, dass die Spieler sich
-                                dafür
-                                in der
-                                echten Welt treffen und so ein neues Gefühl des gemeinsamen VR-Erlebens erfahren können.
-                                <br><br>
-                                Das Projekt war Teil meiner Master-Thesis an der HFU. VR-Pong wurde fürs Web mit webXR
-                                entwickelt
-                                und ist so ohne Installation über den Browser spielbar.
-                                Aktuell wird das Spiel teils auf Messen für Besucher ausgestellt.
-                            </p>
-                            <p>Tools: webXR, node.js, babylon.js, typescript</p>
-                        </div>
+        <div class="head-img-wrapper">
+                <img class="project-head-img" src="../assets/project-assets/3d-thumbnail.png" alt="">
+            </div>
+        <section id="project-detail-section" class="padding-sides">
+            <div class="project-detail-wrapper">
+                <div class="project-details">
+                    <div class="project-infos">
+                        <span class="project-year">2024</span>
+                        <span class="project-tags">[web-app, VR, co-located, multiplayer]</span>
                     </div>
-                    <ul class="tags">
-                        <li class="tag">#web-app</li>
-                        <li class="tag">#VR</li>
-                        <li class="tag">#co-located</li>
-                        <li class="tag">#multiplayer</li>
-                    </ul>
+                    <h1 class="project-title">
+                        <span>VR-Pong</span>
+                    </h1>
                 </div>
+                <div>
+                    <div class="project-decription-wrapper">
+                        <span class="brackets-headline">[About]</span>
+                        <p class="project-description">
+                            VR-Pong ist ein co-located Multiplayer VR-Spiel, bei welchem bis zu vier Spieler in
+                            einer
+                            virtuellen
+                            Welt gegeneinander 3D-Pong spielen können. Das Besondere istm, dass die Spieler sich
+                            dafür
+                            in der
+                            echten Welt treffen und so ein neues Gefühl des gemeinsamen VR-Erlebens erfahren können.
+                            <br><br>
+                            Das Projekt war Teil meiner Master-Thesis an der HFU. VR-Pong wurde fürs Web mit webXR
+                            entwickelt
+                            und ist so ohne Installation über den Browser spielbar.
+                            Aktuell wird das Spiel teils auf Messen für Besucher ausgestellt.
+                        </p>
+                    </div>
+                    <div class="project-tools-wrapper">
+                        <span class="brackets-headline">[Tools]</span>
+                        <p class="project-tools">Tools: webXR, node.js, babylon.js, typescript</p>
+                    </div>
 
-                <div class="project-detail-images">
-                    <img src="./assets/3d-thumbnail.png" alt="">
-                    <img src="./assets/rw-thumbnail.jpg" alt="">
-                    <img src="./assets/uiverse-thumbnail.png" alt="">
-                    <img src="./assets/vrpong-thumbnail.png" alt="">
                 </div>
+            </div>
+            <div id="project-imgs-wrapper">
+                <img src="../assets/project-assets/3d-thumbnail.png" alt="">
+                <img src="../assets/project-assets/rw-thumbnail.jpg" alt="">
+                <img src="../assets/project-assets/uiverse-thumbnail.png" alt="">
+                <img src="../assets/project-assets/vrpong-thumbnail.png" alt="">
             </div>
         </section>
     </main>
