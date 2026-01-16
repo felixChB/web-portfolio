@@ -294,17 +294,18 @@ body.page-loaded #home h1 .headline-text {
 
 .project-card {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     cursor: pointer;
     width: 100%;
     transition: all 50ms ease;
-    scroll-snap-align: center;
     min-height: 40vh;
+    max-height: 90vh;
+    gap: 5px;
 }
 
 .project-card-img-wrapper {
-    height: 60vh;
-    width: 65%;
+    min-height: 60vh;
+    width: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -330,13 +331,12 @@ body.page-loaded #home h1 .headline-text {
 }
 
 .project-card-details {
-    width: 35%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 0;
     justify-content: center;
-    margin-left: 20px;
-    gap: 60px;
+    gap: 5px;
     transform: translateY(50px);
     opacity: 0;
     transition: all 0.5s ease;
@@ -347,17 +347,18 @@ body.page-loaded #home h1 .headline-text {
     opacity: 1;
 }
 
-.project-card-details .project-card-infos {
+.project-card-infos {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
+    gap: 40px;
 }
 
 .project-card-tags {
     text-transform: uppercase;
 }
 
-.project-card-infos .project-card-title {
+.project-card-title {
     font-size: var(--f-size-project-card-title);
     font-weight: var(--main-font-weight);
     line-height: 100%;
@@ -366,7 +367,7 @@ body.page-loaded #home h1 .headline-text {
 }
 
 .project-card-title .arrow-icon-wrapper {
-    display: none;
+    display: inline-block;
     width: 0.5em;
     height: 0.5em;
 }
@@ -458,39 +459,13 @@ body.page-loaded #home h1 .headline-text {
 /* ---------- MEDIA QUERIES START ---------- */
 /* medium Breackpoint: max-width 1020px */
 @media (max-width: 1020px) {
-    .project-card {
-        flex-direction: column;
-    }
-
-    .project-card-img-wrapper {
-        width: 100%;
-    }
 
     .project-card-details {
-        width: 100%;
-        margin-left: 0;
-        flex-direction: row;
         gap: 0;
     }
 
     .project-card .project-card-details {
         margin-top: 6px;
-    }
-
-    .project-card .project-card-details .project-card-year {
-        display: none;
-    }
-
-    .project-card .project-card-details .project-card-tags {
-        order: 0;
-    }
-
-    .project-card .project-card-details .project-card-title {
-        order: 1;
-    }
-
-    .project-card .project-card-details .project-card-title .arrow-icon-wrapper {
-        display: inline-block;
     }
 
     .project-card-details .view-project {
