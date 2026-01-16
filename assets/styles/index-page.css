@@ -304,6 +304,7 @@ body.page-loaded #home h1 .headline-text {
 
 .project-card-img-wrapper {
     height: 60vh;
+    width: 65%;
     overflow: hidden;
     display: flex;
     align-items: center;

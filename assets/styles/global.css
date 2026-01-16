@@ -380,6 +380,26 @@ header .nav-link {
     border-radius: 4px;
 }
 
+#burger-menu .menu-bottom {
+    padding-top: 15px;
+    position: relative;
+}
+
+#burger-menu .menu-bottom::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--grey-color);
+}
+
+#burger-menu .menu-bottom-links {
+    margin-bottom: 30px;
+}
+
 #burger-menu .social-links {
     display: flex;
     gap: 20px;
