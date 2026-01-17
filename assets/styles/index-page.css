@@ -21,8 +21,7 @@ body.index-page.scrolled main {
 
 #home-header {
     opacity: 1;
-    filter: none;
-    padding-inline: calc(var(--side-space) + 10px);
+    filter: none;   
 }
 
 body.scrolled #home-header {
@@ -167,7 +166,7 @@ body.page-loaded #home h1 .headline-text {
 /*---------- Projects Section START----------*/
 #projects {
     position: relative;
-    width: 90%;
+    width: calc(100% - (var(--side-space) * 2));
     height: auto;
     background-color: var(--page-white);
     color: var(--page-black);
@@ -180,8 +179,6 @@ body.page-loaded #home h1 .headline-text {
 #projects.inview {
     width: 100%;
     border-radius: 0;
-    padding-left: calc(5% + var(--side-space));
-    padding-right: calc(5% + var(--side-space));
 }
 
 #projects.inview h2 {
@@ -205,7 +202,7 @@ body.page-loaded #home h1 .headline-text {
     width: 100%;
 }
 
-.headline-wrapper {
+.projects-headline-wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -214,17 +211,21 @@ body.page-loaded #home h1 .headline-text {
     align-items: start;
 }
 
-.headline-wrapper div {
+.projects-headline-wrapper div {
     width: 100%;
     display: flex;
     align-items: center;
 }
 
-.headline-wrapper .projects-headline {
+.projects-headline-wrapper .projects-headline:first-child {
+    padding-left: 0;
+}
+
+.projects-headline-wrapper .projects-headline {
     display: flex;
     align-items: center;
     position: relative;
-    padding-inline: 12px;
+    padding-inline: 0.1em;
 }
 
 .projects-headline:nth-child(1) .headline-text {
@@ -236,14 +237,14 @@ body.page-loaded #home h1 .headline-text {
 }
 
 /* projects headline lines styling START */
-.headline-wrapper .projects-headline-line-1,
-.headline-wrapper .projects-headline-line-2 {
+.projects-headline-wrapper .projects-headline-line-1,
+.projects-headline-wrapper .projects-headline-line-2 {
     position: relative;
     height: 100%;
 }
 
-.headline-wrapper .projects-headline-line-1::after,
-.headline-wrapper .projects-headline-line-2::after {
+.projects-headline-wrapper .projects-headline-line-1::after,
+.projects-headline-wrapper .projects-headline-line-2::after {
     position: absolute;
     top: 50%;
     left: 0;
@@ -254,18 +255,18 @@ body.page-loaded #home h1 .headline-text {
     background-color: var(--grey-color);
 }
 
-.headline-wrapper .projects-headline-line-1 {
+.projects-headline-wrapper .projects-headline-line-1 {
     flex-grow: 1;
     display: flex;
     height: 100%;
 }
 
-.headline-wrapper .projects-headline-line-2 {
+.projects-headline-wrapper .projects-headline-line-2 {
     width: 11rem;
 }
 /* projects headline lines styling END */
 
-.headline-wrapper .projects-headline .headline-text {
+.projects-headline-wrapper .projects-headline .headline-text {
     display: inline-block;
     position: relative;
     z-index: 1;
@@ -474,7 +475,7 @@ body.page-loaded #home h1 .headline-text {
 }
 /* small  Breackpoint: max-width 500px */
 @media (max-width: 500px) {
-    .headline-wrapper .projects-headline-line-2 {
+    .projects-headline-wrapper .projects-headline-line-2 {
         width: 7rem;
     }
 }
