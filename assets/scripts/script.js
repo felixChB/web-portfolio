@@ -27,8 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.forEach((change) => {
             if (change.isIntersecting) {
                 change.target.classList.add('inview');
+
+                // change body background to black for the footer when below or within projects section
+                if (change.target == projectsSection) {
+                    console.log("target is projects section element");
+                    if (!htmlBody.classList.contains("black-body")) {
+                        htmlBody.classList.add("black-body");
+                    }
+                }
             } else {
                 change.target.classList.remove('inview');
+
+                // change body background back to white for home border when above projects section
+                if (change.target == projectsSection) {
+                    console.log("target is projects section element");
+                    if (htmlBody.classList.contains("black-body")) {
+                        htmlBody.classList.remove("black-body");
+                    }
+                }
             }
         });
     }

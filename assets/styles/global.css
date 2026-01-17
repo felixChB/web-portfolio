@@ -23,6 +23,7 @@
     --border-radius-small: 10px;
     --border-radius-big: 25px;
     --hover-transition: all 400ms cubic-bezier(.45, .19, .36, 1);
+    --appear-transition: all 500ms ease-in;
 
     --f-size-smallest: 0.825rem;
     --f-size-slightly-bigger: 1.3rem;
@@ -55,6 +56,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+body.black-body {
+    background-color: var(--page-black);
 }
 
 body.menu-open {
@@ -239,7 +245,9 @@ header .nav-link {
     height: 100%;
 }
 
-.arrow-icon-wrapper, .burger-icon-wrapper, .close-icon-wrapper {
+.arrow-icon-wrapper,
+.burger-icon-wrapper,
+.close-icon-wrapper {
     width: 0.8em;
     height: 0.8em;
     display: inline-block;
@@ -248,7 +256,9 @@ header .nav-link {
     z-index: 1;
 }
 
-.arrow-icon, .burger-icon, .close-icon {
+.arrow-icon,
+.burger-icon,
+.close-icon {
     width: 100%;
     height: 100%;
     position: absolute;
