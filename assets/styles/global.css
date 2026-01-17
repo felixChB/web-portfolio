@@ -475,6 +475,10 @@ body.scrolled #contact {
     transform: translateY(0px);
 }
 
+.email-link-wrapper {
+    margin-bottom: 10px;
+}
+
 .email-link {
     font-size: var(--f-size-slightly-bigger);
 }
@@ -629,11 +633,11 @@ body.scrolled #contact {
     }
 
     .contact-bottom-wrapper {
-        padding-top: 30px;
-        padding-bottom: 40px;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
         flex-direction: column-reverse;
         align-items: center;
-        gap: 60px;
+        gap: 8vh;
     }
 
     .contact-bottom-wrapper .contact-left {
