@@ -1,26 +1,28 @@
-const aElements = document.querySelectorAll("a");
-const htmlBody = document.querySelector("body");
+// global html elements
+const bodyElem = document.querySelector("body");
+const mainHeaderElem = document.getElementById("main-header");
+const burgerMenuElem = document.getElementById("burger-menu");
+const contactSectionElem = document.getElementById("contact");
 
-const appearTextElems = document.getElementsByClassName("appear-text-parts");
+let appearTextElems, projectsSectionElem, projectCardsElems;
 
-const imgs = document.querySelectorAll("img");
+if (bodyElem.classList.contains("index-page")) {
 
-const contactSection = document.getElementById("contact");
-const projectsSection = document.getElementById("projects");
+    // index html elements
+    appearTextElems = document.getElementsByClassName("appear-text-parts");
+    projectsSectionElem = document.getElementById("projects");
+    projectCardsElems = document.querySelectorAll(".project-card");
 
-const projectsWrapper = document.getElementById("project-wrapper");
-const projectCards = document.querySelectorAll(".project-card");
+} else if (bodyElem.classList.contains("project-page")) {
 
-const homeHeaderElem = document.getElementById("home-header");
-
-const burgerMenu = document.getElementById("burger-menu");
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed");
     console.log("Initial scrollY:", window.scrollY);
 
     // Start up stuff
-    htmlBody.classList.add("page-loaded");
+    bodyElem.classList.add("page-loaded");
 
     ////// Inview appear Events //////
     function onEntry(entry) {
@@ -29,20 +31,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 change.target.classList.add('inview');
 
                 // change body background to black for the footer when below or within projects section
-                if (change.target == projectsSection) {
+                if (change.target == projectsSectionElem) {
                     console.log("target is projects section element");
-                    if (!htmlBody.classList.contains("black-body")) {
-                        htmlBody.classList.add("black-body");
+                    if (!bodyElem.classList.contains("black-body")) {
+                        bodyElem.classList.add("black-body");
                     }
                 }
             } else {
                 change.target.classList.remove('inview');
 
                 // change body background back to white for home border when above projects section
-                if (change.target == projectsSection) {
+                if (change.target == projectsSectionElem) {
                     console.log("target is projects section element");
-                    if (htmlBody.classList.contains("black-body")) {
-                        htmlBody.classList.remove("black-body");
+                    if (bodyElem.classList.contains("black-body")) {
+                        bodyElem.classList.remove("black-body");
                     }
                 }
             }
@@ -60,17 +62,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let projectCardsObserver = new IntersectionObserver(onEntry, projectCardsOptions);
 
     // let Observers observe Elemenets
-    for (let elem of appearTextElems) {
-        appearTextObserver.observe(elem);
+    if (appearTextElems) {
+        for (let elem of appearTextElems) {
+            appearTextObserver.observe(elem);
+        }
     }
 
-    for (let card of projectCards) {
-        projectCardsObserver.observe(card);
+    if (projectCardsElems) {
+        for (let card of projectCardsElems) {
+            projectCardsObserver.observe(card);
+        }
     }
 
-    projectsElemObserver.observe(projectsSection);
+    if (projectsSectionElem) {
+        projectsElemObserver.observe(projectsSectionElem);
+    }
 
-    appearTextObserver.observe(contactSection);
+    appearTextObserver.observe(contactSectionElem);
 
 
     function onImgEntry(entry) {
@@ -99,7 +107,7 @@ window.addEventListener("scroll", () => {
 
     console.log("ScrollY:", window.scrollY);
 
-    htmlBody.classList.toggle('scrolled', window.scrollY > homeHeaderElem.getBoundingClientRect().height);
+    bodyElem.classList.toggle('scrolled', window.scrollY > mainHeaderElem.getBoundingClientRect().height);
 });
 ///// NEW SCROLL EFFECT CODE /////
 
@@ -118,8 +126,8 @@ navLinks.forEach(link => {
         if (!sectionId) return;
 
         if (link.classList.contains("menu-link")) {
-            burgerMenu.classList.remove("open");
-            htmlBody.classList.remove("menu-open");
+            burgerMenuElem.classList.remove("open");
+            bodyElem.classList.remove("menu-open");
             setTimeout(() => {
                 scrollToSection(sectionId);
             }, 300);
@@ -158,12 +166,12 @@ function scrollToSection(sectionId) {
             });
             break;
         case "open-menu":
-            burgerMenu.classList.add("open");
-            htmlBody.classList.add("menu-open");
+            burgerMenuElem.classList.add("open");
+            bodyElem.classList.add("menu-open");
             break;
         case "close-menu":
-            burgerMenu.classList.remove("open");
-            htmlBody.classList.remove("menu-open");
+            burgerMenuElem.classList.remove("open");
+            bodyElem.classList.remove("menu-open");
             break;
         default:
             break;

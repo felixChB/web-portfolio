@@ -16,6 +16,120 @@
 </head>
 
 <body class="project-page">
+    <!------------Global Header and Burger-Menu START------------>
+    <!-- The floating header -->
+    <header id="main-header">
+        <span id="logo">
+            <a href="./index.html">
+                <p>// Felix´</p>
+                <p>Portfolio</p>
+            </a>
+        </span>
+        <nav id="main-nav" class="text-nav">
+            <a class="nav-link" nav-section-value="about"><span class="link-text">[About]</span></a><a class="nav-link"
+                nav-section-value="projects"><span class="link-text">[Projects]</span></a><a class="nav-link"
+                nav-section-value="contact"><span class="link-text">[Contact]</span></a>
+        </nav>
+        <nav class="burger-nav">
+            <a class="open-menu-link nav-link" nav-section-value="open-menu">
+                <div class="burger-icon-wrapper">
+                    <div class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <span class="link-text">[Menu]</span>
+            </a>
+        </nav>
+    </header>
+    <div id="burger-menu">
+        <div class="close-menu-wrapper">
+            <a class="close-menu-link nav-link" nav-section-value="close-menu">
+                <span class="link-text">[Close]</span>
+                <div class="close-icon-wrapper">
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        height="24">
+                        <path d="M22 2L2 22M2 2l20 20" fill="none" stroke="currentColor" stroke-width="1"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class="menu-contact">
+            <span class="brackets-headline">[Contact me]</span>
+            <a href="mailto:Lixrsnvsnfs@gsnfe.cm" class="email-link nav-link link"><span class="link-text">Email:
+                    Lixrsnvsnfs@gsnfe.cm</span>
+                <div class="arrow-icon-wrapper">
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        height="24">
+                        <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        height="24">
+                        <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class="menu-nav-wrapper">
+            <ul class="menu-nav-links">
+                <li><a class="menu-link nav-link" nav-section-value="about"><span class="link-text">About</span></a>
+                </li>
+                <li><a class="menu-link nav-link has-project-number" nav-section-value="projects"><span
+                            class="link-text">Projects<span class="projects-number">[4]</span></span></a></li>
+                <li><a class="menu-link nav-link" nav-section-value="contact"><span class="link-text">Contact</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="menu-bottom">
+            <div class="menu-bottom-links">
+                <span class="brackets-headline">[Connect]</span>
+                <ul class="social-links">
+                    <li><a href="https://github.com/" class="nav-link link"><span class="link-text">Github</span>
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a></li>
+                    <li><a href="https://linkedin.com/" class="nav-link link"><span class="link-text">LinkedIn</span>
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="legals">
+                <span class="legal-info">Felix Brunn Copyright 2025</span>
+                <span>Local Time 2252342</span>
+            </div>
+        </div>
+    </div>
+    <!------------Global Header and Burger-Menu END------------>
     <div class="head-img-wrapper">
         <img class="project-head-img" src="../assets/project-assets/3d-thumbnail.png" alt="">
     </div>
@@ -66,6 +180,44 @@
                 <img class="project-img" src="../assets/project-assets/rw-thumbnail.jpg" alt="">
                 <img class="project-img" src="../assets/project-assets/uiverse-thumbnail.png" alt="">
                 <img class="project-img" src="../assets/project-assets/vrpong-thumbnail.png" alt="">
+            </div>
+        </section>
+        <section class="project-next-prev-wrapper">
+            <div class="prev-project">
+                <span class="prev-project-title">VR-Pong</span>
+                <span class="prev-project-link nav-link view-project">
+                    <span class="view-project-text">[View project]</span>
+                    <div class="arrow-icon-wrapper">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </span>
+            </div>
+            <div class="next-project">
+                <span class="next-project-title">VR-Pong</span>
+                <span class="next-project-link nav-link view-project">
+                    <span class="view-project-text">[View project]</span>
+                    <div class="arrow-icon-wrapper">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </span>
             </div>
         </section>
     </main>

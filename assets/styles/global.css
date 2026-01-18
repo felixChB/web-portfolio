@@ -454,6 +454,43 @@ h2 {
     will-change: transform;
 }
 
+.view-project {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    padding: 2px;
+    box-sizing: border-box;
+    padding-right: 4px;
+}
+
+.view-project .view-project-text {
+    font-family: var(--type-font);
+    text-transform: uppercase;
+    transition: var(--hover-transition);
+}
+
+.view-project .arrow-icon-wrapper {
+    transform: rotate(45deg);
+    padding-right: 2px;
+}
+
+.view-project::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 0px;
+    height: 100%;
+    background: var(--page-black);
+    transition: var(--hover-transition);
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 2px;
+}
+
 /* ---------- Contact Section START ---------- */
 #contact {
     width: calc(100% - var(--side-space) * 2);

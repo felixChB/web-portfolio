@@ -60,3 +60,32 @@ main {
 .project-page #contact {
     width: 100%;
 }
+
+.project-next-prev-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10vw;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-next-prev-wrapper .prev-project {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.project-next-prev-wrapper .next-project {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.next-project:hover .view-project {
+    color: var(--page-white);
+}
+
+.next-project:hover .view-project::after {
+    width: 100%;
+}
