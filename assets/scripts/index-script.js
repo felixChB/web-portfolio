@@ -47,12 +47,11 @@ function onEntry(entry) {
 ////// Inview appear Events //////
 // Observer options
 const appearTextOptions = { root: null, threshold: 0.5, rootMargin: "10% 0% -10% 0%" };
-const projectsElemOptions = { root: null, threshold: 0.0, rootMargin: "-50% 0% -20% 0%" };
 const projectCardsOptions = { root: null, threshold: 0.0, rootMargin: "10% 0% 0% 0%" };
 
 // create all Oberservers
 let appearTextObserver = new IntersectionObserver(onEntry, appearTextOptions);
-let projectsElemObserver = new IntersectionObserver(onEntry, projectsElemOptions);
+let projectsElemObserver = new IntersectionObserver(onEntry, g.whiteSectionElemOptions);
 let projectCardsObserver = new IntersectionObserver(onEntry, projectCardsOptions);
 
 // let Observers observe Elemenets

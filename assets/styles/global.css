@@ -67,6 +67,10 @@ body.menu-open {
     overflow: hidden;
 }
 
+main {
+    z-index: 1;
+}
+
 section {
     width: 100%;
     position: relative;
