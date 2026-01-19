@@ -1,13 +1,74 @@
-import * as globalScript from "./global-script.js";
+import * as g from "./global-script.js";
 
 const appearTextElems = document.getElementsByClassName("appear-text-parts");
 const projectsSectionElem = document.getElementById("projects");
 const projectCardsElems = document.querySelectorAll(".project-card");
 
+g.onPageLoad();
 
 window.addEventListener("scroll", () => {
 
     // console.log("ScrollY:", window.scrollY);
 
-    bodyElem.classList.toggle('scrolled', window.scrollY > mainHeaderElem.getBoundingClientRect().height);
+    g.bodyElem.classList.toggle('scrolled', window.scrollY > g.mainHeaderElem.getBoundingClientRect().height);
 });
+
+function onEntry(entry) {
+    entry.forEach((change) => {
+        if (change.isIntersecting) {
+            change.target.classList.add('inview');
+
+            // change body background to black for the footer when below or within projects section
+            if (change.target == projectsSectionElem) {
+                if (!g.bodyElem.classList.contains("black-body")) {
+                    g.bodyElem.classList.add("black-body");
+                }
+            }
+        } else {
+            change.target.classList.remove('inview');
+
+            // change body background back to white for home border when above projects section
+            if (change.target == projectsSectionElem) {
+                if (change.target.getBoundingClientRect().top > 0)
+                    if (g.bodyElem.classList.contains("black-body")) {
+                        g.bodyElem.classList.remove("black-body");
+                    }
+            }
+        }
+    });
+}
+
+
+////// Inview appear Events //////
+// Observer options
+const appearTextOptions = { root: null, threshold: 0.5, rootMargin: "10% 0% -10% 0%" };
+const projectsElemOptions = { root: null, threshold: 0.0, rootMargin: "-50% 0% -20% 0%" };
+const projectCardsOptions = { root: null, threshold: 0.0, rootMargin: "10% 0% 0% 0%" };
+
+// create all Oberservers
+let appearTextObserver = new IntersectionObserver(onEntry, appearTextOptions);
+let projectsElemObserver = new IntersectionObserver(onEntry, projectsElemOptions);
+let projectCardsObserver = new IntersectionObserver(onEntry, projectCardsOptions);
+
+// let Observers observe Elemenets
+if (appearTextElems) {
+    for (let elem of appearTextElems) {
+        appearTextObserver.observe(elem);
+    }
+}
+
+if (projectCardsElems) {
+    for (let card of projectCardsElems) {
+        projectCardsObserver.observe(card);
+    }
+}
+
+if (projectsSectionElem) {
+    projectsElemObserver.observe(projectsSectionElem);
+}
+
+appearTextObserver.observe(g.contactSectionElem);
+
+// header and footer functionalities
+g.backToTopHandler();
+g.navLinksHandler();

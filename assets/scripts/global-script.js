@@ -8,32 +8,6 @@ export const navLinks = document.querySelectorAll(".nav-link");
 export const backToTopLink = document.querySelector(".back-to-top-wrapper");
 
 
-export function onEntry(entry) {
-    entry.forEach((change) => {
-        if (change.isIntersecting) {
-            change.target.classList.add('inview');
-
-            // change body background to black for the footer when below or within projects section
-            if (change.target == projectsSectionElem) {
-                if (!bodyElem.classList.contains("black-body")) {
-                    bodyElem.classList.add("black-body");
-                }
-            }
-        } else {
-            change.target.classList.remove('inview');
-
-            // change body background back to white for home border when above projects section
-            if (change.target == projectsSectionElem) {
-                if (change.target.getBoundingClientRect().top > 0)
-                    if (bodyElem.classList.contains("black-body")) {
-                        bodyElem.classList.remove("black-body");
-                    }
-            }
-        }
-    });
-}
-
-
 export function onPageLoad() {
 
     console.log("DOM fully loaded and parsed");
@@ -43,41 +17,13 @@ export function onPageLoad() {
     bodyElem.classList.add("page-loaded");
 }
 
-////// Inview appear Events //////
-
-// Observer options
-export const appearTextOptions = { root: null, threshold: 0.5, rootMargin: "10% 0% -10% 0%" };
-export const projectsElemOptions = { root: null, threshold: 0.0, rootMargin: "-50% 0% -20% 0%" };
-export const projectCardsOptions = { root: null, threshold: 0.0, rootMargin: "10% 0% 0% 0%" };
-
-// create all Oberservers
-let appearTextObserver = new IntersectionObserver(onEntry, appearTextOptions);
-let projectsElemObserver = new IntersectionObserver(onEntry, projectsElemOptions);
-let projectCardsObserver = new IntersectionObserver(onEntry, projectCardsOptions);
-
-// let Observers observe Elemenets
-if (appearTextElems) {
-    for (let elem of appearTextElems) {
-        appearTextObserver.observe(elem);
-    }
+export function backToTopHandler() {
+    backToTopLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        scrollToSection("top");
+    });
 }
 
-if (projectCardsElems) {
-    for (let card of projectCardsElems) {
-        projectCardsObserver.observe(card);
-    }
-}
-
-if (projectsSectionElem) {
-    projectsElemObserver.observe(projectsSectionElem);
-}
-
-appearTextObserver.observe(contactSectionElem);
-
-backToTopLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    scrollToSection("top");
-});
 
 export function navLinksHandler() {
     navLinks.forEach(link => {
