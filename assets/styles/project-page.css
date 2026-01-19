@@ -2,6 +2,12 @@
     background-color: var(--page-black);
 }
 
+.project-page #main-header {
+    top: 0px;
+    opacity: 1;
+    filter: blur(0px);
+}
+
 .head-img-wrapper {
     width: 100vw;
     height: 100vh;
@@ -32,12 +38,22 @@ main {
     display: flex;
     flex-direction: column;
     padding-top: 50px;
-    gap: 40px;
+    gap: 8rem;
     width: calc(100% - (var(--side-space) * 2));
     background-color: var(--page-white);
     border-radius: var(--border-radius-big);
     overflow: hidden;
     padding-bottom: 50px;
+    transition: all 0.5s ease;
+}
+
+body.scrolled main {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.project-detail-wrapper .brackets-headline {
+    font-size: var(--f-size-smallest);
 }
 
 .project-infos {
@@ -46,19 +62,56 @@ main {
     gap: 20px;
 }
 
+.project-year {
+    font-family: var(--type-font);
+    font-weight: normal;
+}
+
 .project-tags {
     font-family: var(--type-font);
     text-transform: uppercase;
     color: var(--grey-color);
+    font-weight: normal;
+}
+
+.project-title {
+    margin-bottom: 3.2rem;
+}
+
+.project-description-wrapper {
+    width: 70%;
+    max-width: 1000px;
+    padding-bottom: 3.2rem;
+}
+
+.project-description {
+    font-family: var(--main-font);
+    font-weight: var(--text-font-weight);
+    font-size: var(--f-size-slightly-bigger);
+}
+
+.project-tools {
+    font-family: var(--type-font);
+    font-weight: normal;
+}
+
+.project-imgs-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    align-items: center;
 }
 
 .project-img {
     width: 100%;
     aspect-ratio: 16 / 9;
+    border-radius: var(--border-radius-small);
 }
 
 .project-page #contact {
     width: 100%;
+    display: none;
 }
 
 .project-next-prev-wrapper {
@@ -68,6 +121,19 @@ main {
     width: 100%;
     justify-content: center;
     align-items: center;
+    padding-top: 50px;
+    position: relative;
+}
+
+.project-next-prev-wrapper::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--grey-color);
 }
 
 .project-next-prev-wrapper .prev-project {
@@ -80,6 +146,20 @@ main {
     display: flex;
     flex-direction: column;
     align-items: start;
+}
+
+.prev-project,
+.next-project {
+    cursor: pointer;
+}
+
+.project-next-prev-wrapper .prev-project-title,
+.project-next-prev-wrapper .next-project-title {
+    font-size: var(--f-size-project-card-title);
+}
+
+.project-next-prev-wrapper .view-project {
+    font-size: var(--f-size-slightly-bigger);
 }
 
 .next-project:hover .view-project {

@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap" rel="stylesheet">
-    <script src="../assets/scripts/script.js" defer></script>
+    <script src="../assets/scripts/project-script.js" type="module" defer></script>
     <link rel="stylesheet" href="../assets/styles/global.css">
     <link rel="stylesheet" href="../assets/styles/project-page.css">
 </head>
@@ -144,12 +144,12 @@
                         <span class="project-year">2024</span>
                         <span class="project-tags">[web-app, VR, co-located, multiplayer]</span>
                     </div>
-                    <h1 class="project-title">
-                        <span>VR-Pong</span>
-                    </h1>
+                    <h2 class="project-title">
+                        <span class="headline-text">VR-Pong</span>
+                    </h2>
                 </div>
                 <div>
-                    <div class="project-decription-wrapper">
+                    <div class="project-description-wrapper">
                         <span class="brackets-headline">[About]</span>
                         <p class="project-description">
                             VR-Pong ist ein co-located Multiplayer VR-Spiel, bei welchem bis zu vier Spieler in
@@ -168,56 +168,59 @@
                     </div>
                     <div class="project-tools-wrapper">
                         <span class="brackets-headline">[Tools]</span>
-                        <p class="project-tools">Tools: webXR, node.js, babylon.js, typescript</p>
+                        <p class="project-tools">webXR, node.js, babylon.js, typescript</p>
                     </div>
 
                 </div>
             </div>
         </section>
         <section id="project-imgs-section" class="padding-sides">
-            <div id="project-imgs-wrapper">
+            <div class="project-imgs-wrapper">
                 <img class="project-img" src="../assets/project-assets/3d-thumbnail.png" alt="">
                 <img class="project-img" src="../assets/project-assets/rw-thumbnail.jpg" alt="">
                 <img class="project-img" src="../assets/project-assets/uiverse-thumbnail.png" alt="">
                 <img class="project-img" src="../assets/project-assets/vrpong-thumbnail.png" alt="">
             </div>
         </section>
-        <section class="project-next-prev-wrapper">
-            <div class="prev-project">
-                <span class="prev-project-title">VR-Pong</span>
-                <span class="prev-project-link nav-link view-project">
-                    <span class="view-project-text">[View project]</span>
-                    <div class="arrow-icon-wrapper">
-                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                            height="24">
-                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                            height="24">
-                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                </span>
-            </div>
-            <div class="next-project">
-                <span class="next-project-title">VR-Pong</span>
-                <span class="next-project-link nav-link view-project">
-                    <span class="view-project-text">[View project]</span>
-                    <div class="arrow-icon-wrapper">
-                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                            height="24">
-                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                            height="24">
-                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                </span>
+        <section class="project-next-prev-section padding-sides">
+            <div class="project-next-prev-wrapper">
+                <div class="prev-project">
+                    <span class="prev-project-title">VR-Pong</span>
+                    <span class="prev-project-link nav-link view-project">
+                        <div class="arrow-icon-wrapper">
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24">
+                                <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24">
+                                <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="view-project-text">[View project]</span>
+                    </span>
+                </div>
+
+                <div class="next-project">
+                    <span class="next-project-title">VR-Pong</span>
+                    <span class="next-project-link nav-link view-project">
+                        <span class="view-project-text">[View project]</span>
+                        <div class="arrow-icon-wrapper">
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24">
+                                <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24">
+                                <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </span>
+                </div>
             </div>
         </section>
     </main>
