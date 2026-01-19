@@ -18,7 +18,7 @@
     z-index: -1;
 }
 
-.head-img-wrapper.is-background {
+.project-page.scrolled-enough .head-img-wrapper {
     display: none;
 }
 
@@ -181,4 +181,12 @@ body.page-loaded .project-title .headline-text {
 
 .next-project:hover .view-project::after {
     width: 100%;
+}
+
+.project-page #contact {
+    visibility: hidden;
+}
+
+.project-page.scrolled-enough #contact {
+    visibility: visible;
 }

@@ -15,7 +15,7 @@ window.addEventListener("scroll", () => {
 
     // console.log("ScrollY:", window.scrollY);
 
-    g.bodyElem.classList.toggle('scrolled', window.scrollY > g.mainHeaderElem.getBoundingClientRect().height);
+    g.bodyElem.classList.toggle('scrolled-enough', window.scrollY > g.mainHeaderElem.getBoundingClientRect().height);
 });
 
 function onEntry(entry) {

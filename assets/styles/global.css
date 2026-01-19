@@ -143,7 +143,7 @@ header {
     filter: blur(0.2em);
 }
 
-body.scrolled #main-header {
+body.scrolled-enough #main-header {
     top: 0px;
     opacity: 1;
     filter: blur(0px);
@@ -510,12 +510,6 @@ h2 {
     position: sticky;
     bottom: 0;
     z-index: 0;
-    opacity: 0;
-}
-
-body.scrolled #contact {
-    width: 100%;
-    opacity: 1;
 }
 
 #contact.inview h2 {

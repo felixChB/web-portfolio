@@ -22,13 +22,8 @@ function onEntry(entry) {
 
 window.addEventListener("scroll", () => {
 
-    if (mainElem.getBoundingClientRect().top <= -(window.innerHeight / 2)) {
-        headImgElem.classList.add("is-background");
-    } else {
-        if (headImgElem.classList.contains("is-background")) {
-            headImgElem.classList.remove("is-background");
-        }
-    }
+
+    g.bodyElem.classList.toggle('scrolled-enough', mainElem.getBoundingClientRect().top <= -(window.innerHeight / 2));
 });
 
 function toggleHeadImg(entry) {

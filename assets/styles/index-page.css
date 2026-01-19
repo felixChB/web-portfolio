@@ -14,7 +14,7 @@ body.index-page main {
     position: relative;
 }
 
-body.index-page.scrolled main {
+body.index-page.scrolled-enough main {
     width: 100%;
     border-radius: 0;
 }
@@ -24,7 +24,7 @@ body.index-page.scrolled main {
     filter: none;   
 }
 
-body.scrolled #home-header {
+body.scrolled-enough #home-header {
     opacity: 0;
     filter: blur(0.2em);
 }
@@ -412,6 +412,16 @@ body.page-loaded #home h1 .headline-text {
 }
 /* project cards styling END */
 /*---------- Projects Section END----------*/
+
+.index-page #contact {
+    visibility: hidden;
+    width: calc(100% - var(--side-space) * 2);
+}
+
+.index-page.scrolled-enough #contact {
+    width: 100%;
+    visibility: visible;
+}
 
 /* ---------- MEDIA QUERIES START ---------- */
 /* medium Breackpoint: max-width 1020px */
