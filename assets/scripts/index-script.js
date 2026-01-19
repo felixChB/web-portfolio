@@ -4,7 +4,12 @@ const appearTextElems = document.getElementsByClassName("appear-text-parts");
 const projectsSectionElem = document.getElementById("projects");
 const projectCardsElems = document.querySelectorAll(".project-card");
 
+// ---------- global functionalities for every page START ----------
 g.onPageLoad();
+// header and footer functionalities
+g.backToTopHandler();
+g.navLinksHandler();
+// ---------- global functionalities for every page END ----------
 
 window.addEventListener("scroll", () => {
 
@@ -68,7 +73,3 @@ if (projectsSectionElem) {
 }
 
 appearTextObserver.observe(g.contactSectionElem);
-
-// header and footer functionalities
-g.backToTopHandler();
-g.navLinksHandler();
