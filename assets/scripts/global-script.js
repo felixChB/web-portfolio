@@ -74,15 +74,6 @@ if (projectsSectionElem) {
 
 appearTextObserver.observe(contactSectionElem);
 
-///// NEW SCROLL EFFECT CODE /////
-window.addEventListener("scroll", () => {
-
-    // console.log("ScrollY:", window.scrollY);
-
-    bodyElem.classList.toggle('scrolled', window.scrollY > mainHeaderElem.getBoundingClientRect().height);
-});
-///// NEW SCROLL EFFECT CODE /////
-
 backToTopLink.addEventListener("click", (e) => {
     e.preventDefault();
     scrollToSection("top");

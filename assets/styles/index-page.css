@@ -51,18 +51,11 @@ body.scrolled #home-header {
 .home-addons {
     position: absolute;
     width: 100%;
-    bottom: 20px;
+    bottom: calc(var(--side-space) / 2);
     display: flex;
-    flex-direction: row;
-    align-items: flex-end;
     justify-content: center;
     color: var(--page-white);
     text-transform: uppercase;
-    transition: transform 0.3s ease;
-}
-
-.home-addons span {
-    margin: 10px 0;
 }
 
 #home h1 {
