@@ -4,11 +4,13 @@ const mainHeaderElem = document.getElementById("main-header");
 const burgerMenuElem = document.getElementById("burger-menu");
 const contactSectionElem = document.getElementById("contact");
 
-let appearTextElems, projectsSectionElem, projectCardsElems;
+const navLinks = document.querySelectorAll(".nav-link");
+const backToTopLink = document.querySelector(".back-to-top-wrapper");
 
+// index html elements
+let appearTextElems, projectsSectionElem, projectCardsElems;
 if (bodyElem.classList.contains("index-page")) {
 
-    // index html elements
     appearTextElems = document.getElementsByClassName("appear-text-parts");
     projectsSectionElem = document.getElementById("projects");
     projectCardsElems = document.querySelectorAll(".project-card");
@@ -32,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // change body background to black for the footer when below or within projects section
                 if (change.target == projectsSectionElem) {
-                    console.log("target is projects section element");
                     if (!bodyElem.classList.contains("black-body")) {
                         bodyElem.classList.add("black-body");
                     }
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // change body background back to white for home border when above projects section
                 if (change.target == projectsSectionElem) {
-                    console.log("target is projects section element");
+                    if (change.target.getBoundingClientRect().top > 0)
                     if (bodyElem.classList.contains("black-body")) {
                         bodyElem.classList.remove("black-body");
                     }
@@ -105,14 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
 ///// NEW SCROLL EFFECT CODE /////
 window.addEventListener("scroll", () => {
 
-    console.log("ScrollY:", window.scrollY);
+    // console.log("ScrollY:", window.scrollY);
 
     bodyElem.classList.toggle('scrolled', window.scrollY > mainHeaderElem.getBoundingClientRect().height);
 });
 ///// NEW SCROLL EFFECT CODE /////
-
-const navLinks = document.querySelectorAll(".nav-link");
-const backToTopLink = document.querySelector(".back-to-top-wrapper");
 
 backToTopLink.addEventListener("click", (e) => {
     e.preventDefault();
