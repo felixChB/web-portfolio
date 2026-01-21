@@ -558,7 +558,7 @@ h2 {
 /* ---------- Contact Section START ---------- */
 #contact {
     width: calc(100% - var(--side-space) * 2);
-    height: 65vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     padding: calc(var(--side-space) / 2) var(--side-space);
@@ -802,7 +802,7 @@ h2 {
     }
 
     #contact {
-        height: 75vh;
+        height: 80vh;
     }
 
     .contact-bottom-wrapper {

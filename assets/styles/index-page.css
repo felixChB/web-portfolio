@@ -276,6 +276,22 @@ body.page-loaded #home h1 .headline-text {
     column-gap: 10px;
 }
 
+#project-wrapper:hover .project-card {
+    opacity: 0.8;
+}
+
+#project-wrapper:hover .project-card img {
+    filter: blur(4px);
+}
+
+#project-wrapper:hover .project-card:hover {
+    opacity: 1;
+}
+
+#project-wrapper:hover .project-card:hover img {
+    filter: blur(0);
+}
+
 .project-card {
     display: flex;
     flex-direction: column;
