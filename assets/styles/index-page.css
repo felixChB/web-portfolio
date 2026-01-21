@@ -10,7 +10,6 @@ body.index-page main {
     transition: all 0.3s ease;
     border-top-left-radius: var(--border-radius-big);
     border-top-right-radius: var(--border-radius-big);
-    z-index: 2;
     position: relative;
 }
 
@@ -263,16 +262,6 @@ body.page-loaded #home h1 .headline-text {
     display: inline-block;
     position: relative;
     z-index: 1;
-}
-
-.projects-number {
-    color: var(--grey-color);
-    display: inline-block;
-    position: absolute;
-    top: 0.6rem;
-    right: -1.2rem;
-    font-size: var(--f-size-smallest);
-    line-height: normal;
 }
 
 /* project cards styling START */
