@@ -23,7 +23,7 @@
     --border-radius-small: 10px;
     --border-radius-big: 25px;
     --hover-transition: all 400ms cubic-bezier(.45, .19, .36, 1);
-    --appear-transition: all 500ms ease-in-out;
+    --appear-transition: all 600ms ease-out;
 
     --f-size-smallest: 0.825rem;
     --f-size-slightly-bigger: 1.3rem;
@@ -521,13 +521,11 @@ h2 {
     z-index: 0;
 }
 
-#contact.inview h2 {
-    filter: blur(0);
-    opacity: 1;
-}
-
-#contact.inview h2 .headline-text {
-    transform: translateY(0px);
+.email-link-wrapper, .contact-left, .contact-right {
+    opacity: 0;
+    transition: var(--appear-transition);
+    filter: blur(2px);
+    transition-delay: 0s;
 }
 
 .email-link-wrapper {
@@ -564,9 +562,11 @@ h2 {
     left: 0;
     content: '';
     display: block;
-    width: 100%;
+    width: 0%;
     height: 1px;
     background: var(--grey-color);
+    transition: var(--appear-transition);
+    transition-delay: 0s;
 }
 
 .contact-bottom-wrapper .contact-left {
@@ -634,6 +634,34 @@ h2 {
 .back-to-top-wrapper .arrow-icon-wrapper .arrow-icon:last-child {
     top: 3.5rem;
     left: -3.5rem;
+}
+
+/* contact inview style and animations */
+#contact.inview h2 {
+    filter: blur(0);
+    opacity: 1;
+}
+
+#contact.inview h2 .headline-text {
+    transform: translateY(0px);
+}
+
+#contact.inview .email-link-wrapper, #contact.inview .contact-left, #contact.inview .contact-right {
+    opacity: 1;
+    filter: blur(0);
+}
+
+#contact.inview .email-link-wrapper {
+    transition-delay: 0.2s;
+}
+
+#contact.inview .contact-left, #contact.inview .contact-right {
+    transition-delay: 0.4s;
+}
+
+#contact.inview .contact-bottom-wrapper::before {
+    width: 100%;
+    transition-delay: 0.7s;
 }
 
 /* ---------- Contact Section END ---------- */

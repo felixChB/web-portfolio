@@ -1,5 +1,6 @@
 // global html elements
 export const bodyElem = document.querySelector("body");
+export const mainElem = document.querySelector("main");
 export const mainHeaderElem = document.getElementById("main-header");
 export const burgerMenuElem = document.getElementById("burger-menu");
 export const contactSectionElem = document.getElementById("contact");
@@ -26,6 +27,10 @@ export function backToTopHandler() {
     });
 }
 
+export function toggleContactSectionVisibility() {
+    // when main is scrolled up halfway through the window height past the contact section
+    contactSectionElem.classList.toggle('inview', mainElem.getBoundingClientRect().bottom <= (window.innerHeight / 2));
+}
 
 export function navLinksHandler() {
     navLinks.forEach(link => {

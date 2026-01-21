@@ -102,44 +102,48 @@ body.page-loaded #home h1 .headline-text {
     margin-top: 40px;
 }
 
-.about-text p.appear-text {
+.about-text .appear-text {
     font-size: var(--f-size-about-text);
     font-weight: var(--text-font-weight);
     line-height: var(--f-size-about-text);
     height: var(--f-size-about-text);
-    transition: all 0.7s ease-out;
+    transition: var(--appear-transition);
     overflow-y: clip;
     filter: blur(4px);
 }
 
-.appear-text-parts p:nth-child(1)>span {
+.appear-text-parts.inview p:nth-child(1)>span {
     transition-delay: 0s;
 }
 
-.appear-text-parts p:nth-child(2)>span {
+.appear-text-parts.inview p:nth-child(2)>span {
     transition-delay: 0.1s;
 }
 
-.appear-text-parts p:nth-child(3)>span {
+.appear-text-parts.inview p:nth-child(3)>span {
     transition-delay: 0.2s;
 }
 
-.appear-text-parts p:nth-child(4)>span {
+.appear-text-parts.inview p:nth-child(4)>span {
     transition-delay: 0.3s;
 }
 
-.appear-text-parts p:nth-child(5)>span {
+.appear-text-parts.inview p:nth-child(5)>span {
     transition-delay: 0.4s;
 }
 
-.appear-text-parts p:nth-child(6)>span {
+.appear-text-parts.inview p:nth-child(6)>span {
     transition-delay: 0.5s;
 }
 
-.appear-text>span {
+.appear-text-parts p > span {
+    transition-delay: 0s;
+}
+
+.appear-text > span {
     display: block;
-    transition: all 0.7s ease-out;
-    transform: translateY(40px);
+    transition: var(--appear-transition);
+    transform: translateY(1em);
 }
 
 .appear-text-parts.inview .appear-text {
@@ -183,14 +187,14 @@ body.page-loaded #home h1 .headline-text {
 }
 
 #projects.inview .projects-headline-line-1::after {
-    transition: width 0.5s ease-in-out;
+    transition: var(--appear-transition);
     transition-delay: 0.3s;
     width: 100%;
 }
 
 #projects.inview .projects-headline-line-2::after {
-    transition: width 0.5s ease-in-out;
-    transition-delay: 0.3s;
+    transition: var(--appear-transition);
+    transition-delay: 0.4s;
     width: 100%;
 }
 
@@ -220,11 +224,15 @@ body.page-loaded #home h1 .headline-text {
     padding-inline: 0.1em;
 }
 
-.projects-headline:nth-child(1) .headline-text {
+.projects-headline-wrapper .projects-headline .headline-text {
     transition-delay: 0s;
 }
 
-.projects-headline:nth-child(2) .headline-text {
+#projects.inview .projects-headline:nth-child(1) .headline-text {
+    transition-delay: 0s;
+}
+
+#projects.inview .projects-headline:nth-child(2) .headline-text {
     transition-delay: 0.1s;
 }
 

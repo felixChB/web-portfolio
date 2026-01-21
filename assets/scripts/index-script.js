@@ -4,18 +4,52 @@ const appearTextElems = document.getElementsByClassName("appear-text-parts");
 const projectsSectionElem = document.getElementById("projects");
 const projectCardsElems = document.querySelectorAll(".project-card");
 
-// ---------- global functionalities for every page START ----------
-g.onPageLoad();
-// header and footer functionalities
-g.backToTopHandler();
-g.navLinksHandler();
-// ---------- global functionalities for every page END ----------
+////// Inview appear Events //////
+// Observer options
+const appearTextOptions = { root: null, threshold: 0.5, rootMargin: "10% 0% -10% 0%" };
+const projectCardsOptions = { root: null, threshold: 0.0, rootMargin: "10% 0% 0% 0%" };
 
-window.addEventListener("scroll", () => {
+// create all Oberservers
+let appearTextObserver = new IntersectionObserver(onEntry, appearTextOptions);
+let projectsElemObserver = new IntersectionObserver(onEntry, g.whiteSectionElemOptions);
+let projectCardsObserver = new IntersectionObserver(onEntry, projectCardsOptions);
 
-    // console.log("ScrollY:", window.scrollY);
+document.addEventListener("DOMContentLoaded", () => {
 
-    g.bodyElem.classList.toggle('scrolled-enough', window.scrollY > g.mainHeaderElem.getBoundingClientRect().height);
+    // ---------- global functionalities for every page START ----------
+    g.onPageLoad();
+    // header and footer functionalities
+    g.backToTopHandler();
+    g.navLinksHandler();
+    // ---------- global functionalities for every page END ----------
+
+    g.toggleContactSectionVisibility();
+
+
+    window.addEventListener("scroll", () => {
+        g.toggleContactSectionVisibility();
+        g.bodyElem.classList.toggle('scrolled-enough', window.scrollY > g.mainHeaderElem.getBoundingClientRect().height);
+    });
+
+
+    // let Observers observe Elemenets
+    if (appearTextElems) {
+        for (let elem of appearTextElems) {
+            appearTextObserver.observe(elem);
+        }
+    }
+
+    if (projectCardsElems) {
+        for (let card of projectCardsElems) {
+            projectCardsObserver.observe(card);
+        }
+    }
+
+    if (projectsSectionElem) {
+        projectsElemObserver.observe(projectsSectionElem);
+    }
+
+    appearTextObserver.observe(g.contactSectionElem);
 });
 
 function onEntry(entry) {
@@ -42,33 +76,3 @@ function onEntry(entry) {
         }
     });
 }
-
-
-////// Inview appear Events //////
-// Observer options
-const appearTextOptions = { root: null, threshold: 0.5, rootMargin: "10% 0% -10% 0%" };
-const projectCardsOptions = { root: null, threshold: 0.0, rootMargin: "10% 0% 0% 0%" };
-
-// create all Oberservers
-let appearTextObserver = new IntersectionObserver(onEntry, appearTextOptions);
-let projectsElemObserver = new IntersectionObserver(onEntry, g.whiteSectionElemOptions);
-let projectCardsObserver = new IntersectionObserver(onEntry, projectCardsOptions);
-
-// let Observers observe Elemenets
-if (appearTextElems) {
-    for (let elem of appearTextElems) {
-        appearTextObserver.observe(elem);
-    }
-}
-
-if (projectCardsElems) {
-    for (let card of projectCardsElems) {
-        projectCardsObserver.observe(card);
-    }
-}
-
-if (projectsSectionElem) {
-    projectsElemObserver.observe(projectsSectionElem);
-}
-
-appearTextObserver.observe(g.contactSectionElem);
