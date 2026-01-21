@@ -182,6 +182,7 @@ body.scrolled-enough #main-header {
     font-size: 1rem;
     line-height: 1.1rem;
     width: max-content;
+    overflow: hidden;
 }
 
 .nav-link::after {
@@ -328,7 +329,7 @@ header .nav-link {
     width: 100vw;
     height: 100vh;
     background-color: var(--highlight-color);
-    transition: all 0.7s cubic-bezier(.65, .05, .36, 1);
+    transition: all 0.7s cubic-bezier(.65, .05, .36, 1); /* speacial curve for menu slide-in */
     transition-delay: 0.1s;
     z-index: 200;
     display: flex;
@@ -368,10 +369,6 @@ header .nav-link {
 .close-menu-link:hover .close-icon {
     color: var(--page-white);
     transform: rotate(180deg);
-}
-
-#burger-menu .nav-link {
-    overflow: hidden;
 }
 
 #burger-menu .nav-link .link-text,
@@ -493,10 +490,8 @@ h2 {
     line-height: var(--f-size-big-headline);
     height: var(--f-size-big-headline);
     transition: var(--appear-transition);
-    opacity: 0;
-    overflow-y: clip;
+    overflow-y: hidden;
     display: inline-block;
-    filter: blur(2px);
 }
 
 h1,
@@ -511,7 +506,8 @@ h2 {
     display: block;
     transform: translateY(1em);
     transition: var(--appear-transition);
-    will-change: transform;
+    will-change: transform, filter;
+    filter: blur(2px);
 }
 
 .view-project {
@@ -575,15 +571,6 @@ h2 {
     position: sticky;
     bottom: 0;
     z-index: 0;
-}
-
-.email-link-wrapper,
-.contact-left,
-.contact-right {
-    opacity: 0;
-    transition: var(--appear-transition);
-    filter: blur(2px);
-    transition-delay: 0s;
 }
 
 .email-link-wrapper {
@@ -667,6 +654,7 @@ h2 {
     padding-top: 14px;
     text-transform: uppercase;
     font-family: var(--type-font);
+    overflow: hidden;
 }
 
 .back-to-top-wrapper:hover .nav-link {
@@ -687,6 +675,8 @@ h2 {
     margin-left: 0;
     transform: rotate(-45deg);
     border-radius: 4px;
+    transition: var(--appear-transition);
+    opacity: 0;
 }
 
 .back-to-top-wrapper .arrow-icon-wrapper .arrow-icon:last-child {
@@ -695,34 +685,50 @@ h2 {
 }
 
 /* contact inview style and animations */
-#contact.inview h2 {
-    filter: blur(0);
-    opacity: 1;
-}
-
 #contact.inview h2 .headline-text {
     transform: translateY(0px);
-}
-
-#contact.inview .email-link-wrapper,
-#contact.inview .contact-left,
-#contact.inview .contact-right {
-    opacity: 1;
     filter: blur(0);
+    transition-delay: 0.1s;
 }
 
-#contact.inview .email-link-wrapper {
+#contact .nav-link .link-text,
+#contact .nav-link .arrow-icon-wrapper {
+    transform: translateY(1.5em);
+    filter: blur(2px);
+    transition: var(--appear-transition);
+}
+
+#contact .back-to-top-wrapper .arrow-icon-wrapper {
+    transform: translateY(120%) rotate(-45deg);
+    filter: blur(2px);
+}
+
+#contact.inview .nav-link .link-text,
+#contact.inview .nav-link .arrow-icon-wrapper {
+    transform: translateY(0);
+    filter: blur(0);
     transition-delay: 0.2s;
 }
 
-#contact.inview .contact-left,
-#contact.inview .contact-right {
+#contact.inview .email-link-wrapper .link-text,
+#contact.inview .email-link-wrapper .arrow-icon-wrapper {
+    transition-delay: 0.3s;
+}
+
+#contact.inview .back-to-top-wrapper .arrow-icon-wrapper {
+    transform: translateY(0) rotate(-45deg);
+    filter: blur(0);
+    opacity: 1;
+}
+
+#contact.inview .contact-bottom-wrapper .link-text,
+#contact.inview .contact-bottom-wrapper .arrow-icon-wrapper {
     transition-delay: 0.4s;
 }
 
 #contact.inview .contact-bottom-wrapper::before {
     width: 100%;
-    transition-delay: 0.7s;
+    transition-delay: 0.5s;
 }
 
 /* ---------- Contact Section END ---------- */
