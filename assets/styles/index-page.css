@@ -274,13 +274,11 @@ body.page-loaded #home h1 .headline-text {
 
 /* project cards styling START */
 #project-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 150px;
-    box-sizing: border-box;
-    align-items: start;
+    display: grid;
     width: 100%;
-    /* transition: all 0.3s ease; */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    row-gap: 20px;
+    column-gap: 10px;
 }
 
 .project-card {
