@@ -8,6 +8,14 @@
     filter: blur(0px);
 }
 
+header .header-back-link {
+    display: block;
+}
+
+header #logo, header .text-nav {
+    display: none;
+}
+
 .head-img-wrapper {
     width: 100vw;
     height: 100vh;

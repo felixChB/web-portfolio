@@ -28,6 +28,10 @@ body.scrolled-enough #home-header {
     filter: blur(0.2em);
 }
 
+header .header-back-link {
+    display: none;
+}
+
 /*---------- Home Section START----------*/
 #home {
     position: relative;
