@@ -2,7 +2,7 @@ import * as g from "./global-script.js";
 
 const appearTextElems = document.getElementsByClassName("appear-text-parts");
 const projectsSectionElem = document.getElementById("projects");
-const projectCardsElems = document.querySelectorAll(".project-card");
+const projectCardElems = document.querySelectorAll(".project-card");
 
 ////// Inview appear Events //////
 // Observer options
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     g.toggleContactSectionVisibility();
 
+    g.customCursorHandler(g.cursor, projectCardElems);
 
     window.addEventListener("scroll", () => {
         g.toggleContactSectionVisibility();
@@ -39,8 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    if (projectCardsElems) {
-        for (let card of projectCardsElems) {
+    if (projectCardElems) {
+        for (let card of projectCardElems) {
             projectCardsObserver.observe(card);
         }
     }

@@ -4,6 +4,7 @@ export const mainElem = document.querySelector("main");
 export const mainHeaderElem = document.getElementById("main-header");
 export const burgerMenuElem = document.getElementById("burger-menu");
 export const contactSectionElem = document.getElementById("contact");
+export const cursor = document.getElementById('cursor');
 
 export const navLinks = document.querySelectorAll(".nav-link");
 export const backToTopLink = document.querySelector(".back-to-top-wrapper");
@@ -44,7 +45,7 @@ export function navLinksHandler() {
                 bodyElem.classList.remove("menu-open");
                 setTimeout(() => {
                     scrollToSection(sectionId);
-                }, 300);
+                }, 600);
                 return;
             } else {
                 scrollToSection(sectionId);
@@ -89,5 +90,35 @@ export function scrollToSection(sectionId) {
             break;
         default:
             break;
+    }
+}
+
+export function customCursorHandler(cursor, targets) {
+
+    // 1. Only run logic if the device has a mouse (fine pointer)
+    const hasMouse = window.matchMedia('(pointer: fine)').matches;
+
+    if (hasMouse) {
+        // 2. Update coordinates on mouse move
+        window.addEventListener('mousemove', (e) => {
+
+            cursor.animate({
+                transform: `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(20px, 20px)`
+            }, {
+                duration: 200,
+                fill: "forwards"
+            });
+        });
+
+        // 3. Show/Hide logic for specific elements
+        targets.forEach(target => {
+            target.addEventListener('mouseenter', () => {
+                cursor.classList.add('is-active');
+            });
+
+            target.addEventListener('mouseleave', () => {
+                cursor.classList.remove('is-active');
+            });
+        });
     }
 }

@@ -60,7 +60,6 @@ body.scrolled-enough #home-header {
 #home h1 {
     font-size: 12vw;
     font-weight: var(--main-font-weight);
-    overflow-y: hidden;
 }
 
 #home h1 .headline-text {
@@ -71,7 +70,7 @@ body.scrolled-enough #home-header {
 body.page-loaded #home h1 .headline-text {
     transform: translateY(0);
     filter: blur(0);
-    transition-delay: 0.5s;
+    transition-delay: var(--page-load-delay);
 }
 
 /*---------- Home Section END----------*/
@@ -105,7 +104,7 @@ body.page-loaded #home h1 .headline-text {
     line-height: var(--f-size-about-text);
     height: var(--f-size-about-text);
     transition: var(--appear-transition);
-    overflow-y: clip;
+    overflow: hidden;
     filter: blur(4px);
 }
 
@@ -137,10 +136,10 @@ body.page-loaded #home h1 .headline-text {
     transition-delay: 0s;
 }
 
-.appear-text>span {
+.appear-text > span {
     display: block;
     transition: var(--appear-transition);
-    transform: translateY(1em);
+    transform: translateY(1.5em);
 }
 
 .appear-text-parts.inview .appear-text {
@@ -175,13 +174,9 @@ body.page-loaded #home h1 .headline-text {
     border-radius: 0;
 }
 
-#projects.inview h2 {
-    filter: blur(0);
-    opacity: 1;
-}
-
 #projects.inview h2 .headline-text {
     transform: translateY(0px);
+    filter: blur(0);
 }
 
 #projects.inview .projects-headline-line-1::after {

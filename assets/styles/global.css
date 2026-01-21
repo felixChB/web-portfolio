@@ -27,6 +27,7 @@
         opacity 0.7s cubic-bezier(.25, .46, .45, .94),
         transform 0.7s cubic-bezier(.25, .46, .45, .94),
         filter 0.7s cubic-bezier(.25, .46, .45, .94);
+    --page-load-delay: 0.5s;
 
     --f-size-smallest: 0.825rem;
     --f-size-slightly-bigger: 1.3rem;
@@ -329,8 +330,9 @@ header .nav-link {
     width: 100vw;
     height: 100vh;
     background-color: var(--highlight-color);
-    transition: all 0.7s cubic-bezier(.65, .05, .36, 1); /* speacial curve for menu slide-in */
-    transition-delay: 0.1s;
+    transition: all 0.7s cubic-bezier(.65, .05, .36, 1);
+    /* speacial curve for menu slide-in */
+    transition-delay: 0.05s;
     z-index: 200;
     display: flex;
     flex-direction: column;
@@ -384,37 +386,37 @@ header .nav-link {
 #burger-menu.open .nav-link .close-icon-wrapper {
     transform: translateY(0);
     filter: blur(0);
-    transition-delay: 0.75s;
+    transition-delay: 0.5s;
 }
 
 #burger-menu.open .nav-link .close-icon-wrapper {
-    transition-delay: 0.75s;
+    transition-delay: 0.5s;
 }
 
 #burger-menu.open .menu-contact .link-text,
 #burger-menu.open .menu-contact .arrow-icon-wrapper {
-    transition-delay: 0.85s;
+    transition-delay: 0.5s;
 }
 
 #burger-menu.open .menu-nav-links li:nth-child(1) .link-text {
-    transition-delay: 0.95s;
+    transition-delay: 0.6s;
 }
 
 #burger-menu.open .menu-nav-links li:nth-child(2) .link-text {
-    transition-delay: 1.05s;
+    transition-delay: 0.7s;
 }
 
 #burger-menu.open .menu-nav-links li:nth-child(3) .link-text {
-    transition-delay: 1.15s;
+    transition-delay: 0.8s;
 }
 
 #burger-menu.open .menu-bottom .link-text,
 #burger-menu.open .menu-bottom .arrow-icon-wrapper {
-    transition-delay: 1.25s;
+    transition-delay: 0.9s;
 }
 
 #burger-menu.open .menu-bottom::before {
-    transition-delay: 1.25s;
+    transition-delay: 0.9s;
     width: 100%;
 }
 
@@ -499,12 +501,13 @@ h2 {
     text-transform: uppercase;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .headline-text {
     position: relative;
     display: block;
-    transform: translateY(1em);
+    transform: translateY(1.5em);
     transition: var(--appear-transition);
     will-change: transform, filter;
     filter: blur(2px);
@@ -525,11 +528,6 @@ h2 {
     font-family: var(--type-font);
     text-transform: uppercase;
     transition: var(--hover-transition);
-}
-
-.view-project .arrow-icon-wrapper {
-    transform: rotate(45deg);
-    padding-right: 2px;
 }
 
 .view-project::after {
@@ -560,7 +558,7 @@ h2 {
 /* ---------- Contact Section START ---------- */
 #contact {
     width: calc(100% - var(--side-space) * 2);
-    height: 85vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     padding: calc(var(--side-space) / 2) var(--side-space);
@@ -699,7 +697,7 @@ h2 {
 }
 
 #contact .back-to-top-wrapper .arrow-icon-wrapper {
-    transform: translateY(120%) rotate(-45deg);
+    transform: translateY(150%) rotate(-45deg);
     filter: blur(2px);
 }
 
@@ -733,6 +731,53 @@ h2 {
 
 /* ---------- Contact Section END ---------- */
 
+/* ---------- Cursor Section START ---------- */
+#cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(10px);
+    will-change: transform;
+    visibility: hidden;
+    display: block;
+}
+
+#cursor .view-project {
+    font-family: var(--type-font);
+    text-transform: uppercase;
+    color: var(--page-white);
+}
+
+#cursor .view-project::after {
+    font-family: var(--type-font);
+    text-transform: uppercase;
+    color: var(--page-white);
+}
+
+#cursor .view-project-text {
+    transition: var(--hover-transition);
+    opacity: 0;
+}
+
+/* Class to show the cursor */
+#cursor.is-active {
+    visibility: visible;
+}
+
+#cursor.is-active .view-project::after {
+    width: 100%;
+}
+
+#cursor.is-active .view-project-text {
+    opacity: 1;
+}
+
+/* ---------- Cursor Section END ---------- */
+
 /* ---------- MEDIA QUERIES START ---------- */
 /* medium Breackpoint: max-width 1020px */
 @media (max-width: 1020px) {
@@ -754,6 +799,10 @@ h2 {
 
     #burger-menu {
         display: flex;
+    }
+
+    #contact {
+        height: 75vh;
     }
 
     .contact-bottom-wrapper {
@@ -785,6 +834,10 @@ h2 {
     #burger-menu .menu-link {
         font-size: 5rem;
         line-height: 5rem;
+    }
+
+    #contact {
+        height: 85vh;
     }
 
     .contact-bottom-wrapper {

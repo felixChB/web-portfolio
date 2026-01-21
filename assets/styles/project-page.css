@@ -80,13 +80,10 @@ main.inview {
     margin-bottom: 3.2rem;
 }
 
-body.page-loaded .project-title {
-    opacity: 1;
-    filter: blur(0px);
-}
-
 body.page-loaded .project-title .headline-text {
     transform: translateY(0);
+    filter: blur(0px);
+    transition-delay: var(--page-load-delay);
 }
 
 .project-description-wrapper {
