@@ -286,7 +286,7 @@ body.page-loaded #home h1 .headline-text {
     flex-direction: column;
     cursor: pointer;
     width: 100%;
-    transition: all 50ms ease;
+    transition: var(--appear-transition);
     min-height: 40vh;
     max-height: 90vh;
     gap: 5px;
