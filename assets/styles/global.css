@@ -179,8 +179,8 @@ body.scrolled-enough #main-header {
     flex-direction: row;
     font-size: 1rem;
     line-height: 1.1rem;
-    width: max-content;
     overflow: hidden;
+    width: fit-content;
 }
 
 .nav-link::after {
@@ -334,17 +334,21 @@ header .nav-link {
     position: fixed;
     top: 0;
     right: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: var(--highlight-color);
     transition: all 0.7s cubic-bezier(.65, .05, .36, 1);
     /* speacial curve for menu slide-in */
     z-index: 200;
-    display: flex;
     flex-direction: column;
-    padding: var(--side-space) var(--side-space) calc(var(--side-space) / 2) var(--side-space);
+    padding: var(--side-space);
     transform: translateX(100%);
     justify-content: space-between;
+}
+
+#burger-menu.open {
+    display: flex;
+    transform: translateX(0%);
 }
 
 #burger-menu .brackets-headline {
@@ -385,6 +389,7 @@ header .nav-link {
 
 #burger-menu .email-link {
     font-size: 1rem;
+    line-height: 1.1rem;
 }
 
 #burger-menu .nav-link .link-text,
@@ -434,10 +439,6 @@ header .nav-link {
     width: 100%;
 }
 
-#burger-menu.open {
-    transform: translateX(0%);
-}
-
 #burger-menu .nav-link::after {
     background-color: var(--page-black);
 }
@@ -462,9 +463,9 @@ header .nav-link {
 }
 
 #burger-menu .menu-link {
-    font-size: 6rem;
+    font-size: var(--f-size-big-headline);
     font-weight: var(--main-font-weight);
-    line-height: 6rem;
+    line-height: var(--f-size-big-headline);
     padding: 0.1em;
 }
 
@@ -504,7 +505,6 @@ h2 {
     font-size: var(--f-size-big-headline);
     font-weight: var(--main-font-weight);
     line-height: var(--f-size-big-headline);
-    height: var(--f-size-big-headline);
     transition: var(--appear-transition);
     overflow-y: hidden;
     display: inline-block;
@@ -591,6 +591,7 @@ h2 {
 
 .email-link {
     font-size: var(--f-size-bigger);
+    line-height: var(--f-size-bigger);
 }
 
 .get-in-touch-wrapper {
@@ -797,6 +798,7 @@ h2 {
 @media (max-width: 1020px) {
     :root {
         --side-space: 24px;
+        --f-size-big-headline: 5rem;
     }
 
     html {
@@ -829,21 +831,11 @@ h2 {
 @media (max-width: 500px) {
     :root {
         --side-space: 20px;
+        --f-size-big-headline: 4rem;
     }
 
     html {
         font-size: 12px;
-    }
-
-    h2 {
-        font-size: 4rem;
-        line-height: 4rem;
-        height: 4rem;
-    }
-
-    #burger-menu .menu-link {
-        font-size: 5rem;
-        line-height: 5rem;
     }
 
     .contact-bottom-wrapper {

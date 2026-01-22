@@ -12,7 +12,9 @@ header .header-back-link {
     display: block;
 }
 
-header #logo, header .text-nav, header .burger-nav {
+header #logo,
+header .text-nav,
+header .burger-nav {
     display: none;
 }
 
@@ -53,7 +55,7 @@ main {
     background-color: var(--page-white);
     border-radius: var(--border-radius-big);
     overflow: hidden;
-    padding-bottom: 50px;
+    padding-bottom: 15vh;
     transition: var(--white-elem-transition);
 }
 
@@ -69,7 +71,7 @@ main.inview {
 .project-infos {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 80px;
 }
 
 .project-year {
@@ -86,6 +88,7 @@ main.inview {
 
 .project-title {
     margin-bottom: 3.2rem;
+    margin-top: 1rem;
 }
 
 body.page-loaded .project-title .headline-text {
@@ -147,9 +150,14 @@ body.page-loaded .project-title .headline-text {
     left: 0;
     content: '';
     display: block;
-    width: 100%;
+    width: 0%;
     height: 1px;
     background: var(--grey-color);
+    transition: var(--appear-transition);
+}
+
+#project-next-prev-section.inview .project-next-prev-wrapper::before {
+    width: 100%;
 }
 
 .project-next-prev-wrapper .prev-project {
@@ -189,3 +197,28 @@ body.page-loaded .project-title .headline-text {
 .project-page.scrolled-enough #contact {
     visibility: visible;
 }
+
+/* ---------- MEDIA QUERIES START ---------- */
+/* medium Breackpoint: max-width 1020px */
+@media (max-width: 1020px) {
+    .project-infos {
+        gap: 50px;
+    }
+
+    .project-description-wrapper {
+        width: 80%
+    }
+}
+
+/* small  Breackpoint: max-width 500px */
+@media (max-width: 500px) {
+    .project-infos {
+        gap: 20px;
+    }
+
+    .project-description-wrapper {
+        width: 100%
+    }
+}
+
+/* ---------- MEDIA QUERIES END ---------- */
