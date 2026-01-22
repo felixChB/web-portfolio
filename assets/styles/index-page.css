@@ -170,7 +170,7 @@ body.page-loaded #home h1 .headline-text {
     padding-top: 50px;
     padding-bottom: 15vh;
     border-radius: var(--border-radius-big);
-    transition: all 0.5s ease;
+    transition: var(--white-elem-transition);
 }
 
 #projects.inview {
@@ -281,10 +281,6 @@ body.page-loaded #home h1 .headline-text {
 
 #project-wrapper:hover .project-card img {
     filter: blur(4px);
-}
-
-#project-wrapper:hover .project-card:hover {
-    opacity: 1;
 }
 
 #project-wrapper:hover .project-card:hover img {

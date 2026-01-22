@@ -54,7 +54,7 @@ main {
     border-radius: var(--border-radius-big);
     overflow: hidden;
     padding-bottom: 50px;
-    transition: all 0.5s ease;
+    transition: var(--white-elem-transition);
 }
 
 main.inview {

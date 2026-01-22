@@ -10,7 +10,7 @@ export const navLinks = document.querySelectorAll(".nav-link");
 export const backToTopLink = document.querySelector(".back-to-top-wrapper");
 
 // observer options for the white section element (index: projects, project: main)
-export const whiteSectionElemOptions = { root: null, threshold: 0.0, rootMargin: "-50% 0% -20% 0%" };
+export const whiteSectionElemOptions = { root: null, threshold: 0.0, rootMargin: "-40% 0% -20% 0%" };
 
 export function onPageLoad() {
 
@@ -30,7 +30,21 @@ export function backToTopHandler() {
 
 export function toggleContactSectionVisibility() {
     // when main is scrolled up halfway through the window height past the contact section
-    contactSectionElem.classList.toggle('inview', mainElem.getBoundingClientRect().bottom <= (window.innerHeight * 0.4));
+    if (mainElem.getBoundingClientRect().bottom <= (window.innerHeight * 0.4)) {
+        if (!contactSectionElem.classList.contains('inview')) {
+            contactSectionElem.classList.add('inview');
+
+            //scroll to the bottom when contact inview is triggered
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth"
+            });
+        }
+    } else {
+        if (contactSectionElem.classList.contains('inview')) {
+            contactSectionElem.classList.remove('inview');
+        }
+    }
 }
 
 export function navLinksHandler() {
