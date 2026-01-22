@@ -12,6 +12,9 @@ export const backToTopLink = document.querySelector(".back-to-top-wrapper");
 // observer options for the white section element (index: projects, project: main)
 export const whiteSectionElemOptions = { root: null, threshold: 0.0, rootMargin: "-40% 0% -20% 0%" };
 export const slideInOptions = { root: null, threshold: 0.0, rootMargin: "10% 0% 0% 0%" };
+export const appearTextOptions = { root: null, threshold: 0.5, rootMargin: "10% 0% -10% 0%" };
+
+export const appearTextObserver = new IntersectionObserver(onSlideInEntry, appearTextOptions);
 
 export function onPageLoad() {
 
@@ -140,7 +143,7 @@ export function customCursorHandler(cursor, targets) {
 
 export function onSlideInEntry(entries) {
     entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
             entry.target.classList.add('inview');
         } else {
             if (entry.boundingClientRect.top > 0) {
@@ -148,4 +151,65 @@ export function onSlideInEntry(entries) {
             }
         }
     });
+}
+
+// split text content of an element into lines wrapped in divs for line-by-line animation
+// gemini made
+export function splitTextIntoLines(container) {
+    // Save original text on first run to prevent losing words on repeated resizes
+    if (!container.dataset.originalText) {
+        container.dataset.originalText = container.innerText;
+    }
+
+    const originalText = container.dataset.originalText;
+    container.innerHTML = ''; // Clear for rebuild
+
+    // Step 1: Wrap words in temporary spans to measure their Y-position
+    const words = originalText.split(' ');
+    words.forEach(word => {
+        const span = document.createElement('span');
+        // if (word.) {
+        // insert code here to get the last word element to not add &nbsp;
+        // }
+        span.innerHTML = word + '&nbsp;';
+        span.style.display = 'inline-block';
+        container.appendChild(span);
+    });
+
+    // Step 2: Group words into lines based on their vertical offset
+    const lines = [];
+    let currentLine = [];
+    let lastOffset = 0;
+
+    const wordSpans = container.querySelectorAll('span');
+    wordSpans.forEach(span => {
+        if (span.offsetTop !== lastOffset) {
+            if (currentLine.length > 0) lines.push(currentLine.join(' '));
+            currentLine = [];
+            lastOffset = span.offsetTop;
+        }
+        currentLine.push(span.innerText);
+    });
+
+    console.log(lines);
+
+    // if (currentLine.length > 0) lines.push(currentLine.join(' '));
+
+    // // Step 3: Rebuild the HTML with your specific classes
+    // container.innerHTML = ''; // Clear temp spans
+    // lines.forEach((lineText, index) => {
+    //     const lineMask = document.createElement('div');
+    //     lineMask.classList.add('appear-text-line');
+    //     lineMask.style.transitionDelay = `${index * 0.1}s`;
+
+    //     const wordContent = document.createElement('div');
+    //     wordContent.classList.add('appear-text-word');
+    //     wordContent.innerText = lineText;
+        
+    //     // Staggered delay: each line waits 0.1s longer than the previous
+    //     wordContent.style.transitionDelay = `${index * 0.1}s`;
+
+    //     lineMask.appendChild(wordContent);
+    //     container.appendChild(lineMask);
+    // });
 }

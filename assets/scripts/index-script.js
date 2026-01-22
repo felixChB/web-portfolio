@@ -1,15 +1,14 @@
 import * as g from "./global-script.js";
 
-const appearTextElems = document.getElementsByClassName("appear-text-parts");
+const aboutTextElem = document.querySelector(".appear-text-wrapper");
 const projectsSectionElem = document.getElementById("projects");
 const projectCardElems = document.querySelectorAll(".project-card");
 
 ////// Inview appear Events //////
 // Observer options
-const appearTextOptions = { root: null, threshold: 0.5, rootMargin: "10% 0% -10% 0%" };
+
 
 // create all Oberservers
-let appearTextObserver = new IntersectionObserver(g.onSlideInEntry, appearTextOptions);
 let projectsElemObserver = new IntersectionObserver(onEntry, g.whiteSectionElemOptions);
 let projectCardsObserver = new IntersectionObserver(g.onSlideInEntry, g.slideInOptions);
 
@@ -22,6 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
     g.navLinksHandler();
     // ---------- global functionalities for every page END ----------
 
+
+    // Initial split
+    g.splitTextIntoLines(aboutTextElem);
+    g.appearTextObserver.observe(aboutTextElem);
+
+    window.addEventListener('resize', () => {
+        // Re-split the text to calculate new line breaks
+        g.splitTextIntoLines(aboutTextElem);
+    });
+
     g.toggleContactSectionVisibility();
 
     g.customCursorHandler(g.cursor, projectCardElems);
@@ -33,11 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // let Observers observe Elemenets
-    if (appearTextElems) {
-        for (let elem of appearTextElems) {
-            appearTextObserver.observe(elem);
-        }
-    }
 
     if (projectCardElems) {
         for (let card of projectCardElems) {
@@ -48,8 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (projectsSectionElem) {
         projectsElemObserver.observe(projectsSectionElem);
     }
-
-    appearTextObserver.observe(g.contactSectionElem);
 });
 
 function onEntry(entry) {

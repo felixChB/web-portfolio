@@ -510,6 +510,29 @@ h2 {
     overflow: hidden;
 }
 
+.appear-text-wrapper {
+    display: block;
+    overflow: hidden;
+}
+
+.appear-text-line {
+    display: block;
+    overflow: hidden;
+}
+
+.appear-text-line .appear-text-word {
+    display: block;
+    transform: translateY(100%);
+    transition: var(--appear-transition);
+    will-change: transform, filter;
+    filter: blur(2px);
+}
+
+.appear-text-wrapper.inview .appear-text-line .appear-text-word {
+    transform: translateY(0%);
+    filter: blur(0px);
+}
+
 .headline-text {
     position: relative;
     display: block;
@@ -571,7 +594,7 @@ h2 {
     background-color: var(--page-black);
     color: var(--page-white);
     justify-content: end;
-    transition: all 0.3s ease;
+    transition: var(--white-elem-transition);
     position: sticky;
     bottom: 0;
     z-index: 0;

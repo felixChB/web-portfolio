@@ -7,7 +7,7 @@ body.index-page main {
     color: var(--page-white);
     width: calc(100% - var(--side-space) * 2);
     box-sizing: border-box;
-    transition: all 0.3s ease;
+    transition: var(--white-elem-transition);
     border-top-left-radius: var(--border-radius-big);
     border-top-right-radius: var(--border-radius-big);
     position: relative;
@@ -85,6 +85,11 @@ body.page-loaded #home h1 .headline-text {
     position: relative;
     width: auto;
     min-height: 75vh;
+    padding-inline: 0;
+    transition: var(--white-elem-transition);
+}
+
+body.scrolled-enough #about {
     padding-inline: var(--side-space);
 }
 
@@ -93,71 +98,18 @@ body.page-loaded #home h1 .headline-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
 }
 
 .about-text-wrapper {
     margin: 20vh 0;
+    width: 70%;
 }
 
-.about-text .appear-text-parts:nth-child(2) {
-    margin-top: 40px;
-}
-
-.about-text .appear-text {
+#about-text.appear-text-wrapper {
     font-size: var(--f-size-bigger);
     font-weight: var(--text-font-weight);
     line-height: var(--f-size-bigger);
-    height: var(--f-size-bigger);
-    transition: var(--appear-transition);
-    overflow: hidden;
-    filter: blur(4px);
-}
-
-.appear-text-parts.inview p:nth-child(1)>span {
-    transition-delay: 0s;
-}
-
-.appear-text-parts.inview p:nth-child(2)>span {
-    transition-delay: 0.1s;
-}
-
-.appear-text-parts.inview p:nth-child(3)>span {
-    transition-delay: 0.2s;
-}
-
-.appear-text-parts.inview p:nth-child(4)>span {
-    transition-delay: 0.3s;
-}
-
-.appear-text-parts.inview p:nth-child(5)>span {
-    transition-delay: 0.4s;
-}
-
-.appear-text-parts.inview p:nth-child(6)>span {
-    transition-delay: 0.5s;
-}
-
-.appear-text-parts p>span {
-    transition-delay: 0s;
-}
-
-.appear-text>span {
-    display: block;
-    transition: var(--appear-transition);
-    transform: translateY(1.5em);
-}
-
-.appear-text-parts.inview .appear-text {
-    filter: blur(0) !important;
-}
-
-.appear-text-parts.inview .appear-text span {
-    transform: translateY(0px);
-}
-
-.appear-text-parts.inview .underlined::after {
-    width: 100%;
 }
 
 /*---------- About Section END----------*/
