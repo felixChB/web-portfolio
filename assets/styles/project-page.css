@@ -140,7 +140,7 @@ body.page-loaded .project-title .headline-text {
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding-top: 50px;
+    padding-top: 48px;
     position: relative;
 }
 
@@ -208,6 +208,10 @@ body.page-loaded .project-title .headline-text {
     .project-description-wrapper {
         width: 80%
     }
+
+    .project-next-prev-wrapper {
+        padding-top: 40px;
+    }
 }
 
 /* small  Breackpoint: max-width 500px */
@@ -218,6 +222,10 @@ body.page-loaded .project-title .headline-text {
 
     .project-description-wrapper {
         width: 100%
+    }
+
+    .project-next-prev-wrapper {
+        padding-top: 32px;
     }
 }
 
