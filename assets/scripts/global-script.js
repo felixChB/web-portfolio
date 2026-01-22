@@ -176,6 +176,7 @@ export function splitTextIntoLines(container) {
         container.appendChild(span);
     });
 
+    /*
     // Step 2: Group words into lines based on their vertical offset
     const lines = [];
     let currentLine = [];
@@ -187,14 +188,15 @@ export function splitTextIntoLines(container) {
             console.log(span.offsetTop, lastOffset);
             if (currentLine.length > 0) lines.push(currentLine.join(''));
             currentLine = [];
-            console.log(currentLine);
             lastOffset = span.offsetTop;
         }
         currentLine.push(span.innerText);
     });
 
     if (currentLine.length > 0) lines.push(currentLine.join(''));
+    */
 
+    /*
     // Step 3: Rebuild the HTML with your specific classes
     container.innerHTML = ''; // Clear temp spans
     lines.forEach((lineText, index) => {
@@ -208,6 +210,48 @@ export function splitTextIntoLines(container) {
 
 
         lineMask.appendChild(wordContent);
+        container.appendChild(lineMask);
+    }); */
+
+    // Step 2: Group words into lines based on their vertical offset
+    const lines = [];
+    let currentLine = [];
+    let lastOffset = -1;
+
+    const wordSpans = container.querySelectorAll('span');
+    wordSpans.forEach(span => {
+        if (span.offsetTop !== lastOffset) {
+            console.log(span.offsetTop, lastOffset);
+            if (currentLine.length > 0) lines.push(currentLine);
+            currentLine = [];
+            lastOffset = span.offsetTop;
+        }
+        currentLine.push(span.innerText);
+    });
+
+    if (currentLine.length > 0) lines.push(currentLine);
+
+    // Step 3: Rebuild the HTML with your specific classes
+    container.innerHTML = ''; // Clear temp spans
+    lines.forEach((lineText, index) => {
+        const lineMask = document.createElement('div');
+        lineMask.classList.add('appear-text-line');
+
+        for (let i = 0; i < lineText.length; i++) {
+            const span = document.createElement('span');
+            span.innerHTML = lineText[i];
+            span.classList.add('appear-text-word');
+            span.style.transitionDelay = `${index * 0.1}s`;
+            lineMask.appendChild(span);
+        }
+        // words.forEach(word => {
+        //     const span = document.createElement('span');
+        //     span.innerHTML = word + '&nbsp;';
+        //     span.classList.add('appear-text-word');
+        //     span.style.transitionDelay = `${index * 0.1}s`;
+        //     lineMask.appendChild(span);
+        // });
+
         container.appendChild(lineMask);
     });
 }

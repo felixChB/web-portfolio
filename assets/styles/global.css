@@ -516,12 +516,12 @@ h2 {
 }
 
 .appear-text-line {
-    display: block;
+    display: inline-block;
     overflow: hidden;
 }
 
 .appear-text-line .appear-text-word {
-    display: block;
+    display: inline-block;
     transform: translateY(100%);
     transition: var(--appear-transition);
     will-change: transform, filter;
