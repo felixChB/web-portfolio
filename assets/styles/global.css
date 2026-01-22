@@ -12,9 +12,7 @@
     /* light */
     --type-font: 'Azeret Mono', monospace;
 
-    --about-text-size: 34px;
-
-    --side-space: 20px;
+    --side-space: 28px;
 
     --header-height: 3.5rem;
 
@@ -29,12 +27,9 @@
         filter 0.7s cubic-bezier(.25, .46, .45, .94);
     --page-load-delay: 0.5s;
 
-    --f-size-smallest: 0.825rem;
-    --f-size-slightly-bigger: 1.3rem;
-    --f-size-about-text: 1.8rem;
+    --f-size-smallest: 0.8rem;
+    --f-size-bigger: 1.6rem;
     --f-size-big-headline: 6rem;
-    --f-size-projects-headline: 3.4rem;
-    --f-size-project-card-title: 2.8rem;
 }
 
 * {
@@ -44,7 +39,7 @@
 /* start - general Element styling */
 html {
     font-family: var(--main-font);
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -154,7 +149,7 @@ body.scrolled-enough #main-header {
 }
 
 #logo {
-    font-size: var(--f-size-slightly-bigger);
+    font-size: 1rem;
     font-family: var(--main-font);
     font-weight: var(--main-font-weight);
     display: block;
@@ -342,13 +337,16 @@ header .nav-link {
     background-color: var(--highlight-color);
     transition: all 0.7s cubic-bezier(.65, .05, .36, 1);
     /* speacial curve for menu slide-in */
-    transition-delay: 0.05s;
     z-index: 200;
     display: flex;
     flex-direction: column;
     padding: var(--side-space) var(--side-space) calc(var(--side-space) / 2) var(--side-space);
     transform: translateX(100%);
     justify-content: space-between;
+}
+
+#burger-menu .brackets-headline {
+    font-size: var(--f-size-smallest);
 }
 
 #burger-menu .close-menu-wrapper {
@@ -383,6 +381,10 @@ header .nav-link {
     transform: rotate(180deg);
 }
 
+#burger-menu .email-link {
+    font-size: 1rem;
+}
+
 #burger-menu .nav-link .link-text,
 #burger-menu .nav-link .arrow-icon-wrapper,
 #burger-menu .nav-link .close-icon-wrapper {
@@ -396,37 +398,37 @@ header .nav-link {
 #burger-menu.open .nav-link .close-icon-wrapper {
     transform: translateY(0);
     filter: blur(0);
-    transition-delay: 0.5s;
+    transition-delay: 0.4s;
 }
 
 #burger-menu.open .nav-link .close-icon-wrapper {
-    transition-delay: 0.5s;
+    transition-delay: 0.4s;
 }
 
 #burger-menu.open .menu-contact .link-text,
 #burger-menu.open .menu-contact .arrow-icon-wrapper {
-    transition-delay: 0.5s;
+    transition-delay: 0.4s;
 }
 
 #burger-menu.open .menu-nav-links li:nth-child(1) .link-text {
-    transition-delay: 0.6s;
+    transition-delay: 0.5s;
 }
 
 #burger-menu.open .menu-nav-links li:nth-child(2) .link-text {
-    transition-delay: 0.7s;
+    transition-delay: 0.6s;
 }
 
 #burger-menu.open .menu-nav-links li:nth-child(3) .link-text {
-    transition-delay: 0.8s;
+    transition-delay: 0.7s;
 }
 
 #burger-menu.open .menu-bottom .link-text,
 #burger-menu.open .menu-bottom .arrow-icon-wrapper {
-    transition-delay: 0.9s;
+    transition-delay: 0.8s;
 }
 
 #burger-menu.open .menu-bottom::before {
-    transition-delay: 0.9s;
+    transition-delay: 0.8s;
     width: 100%;
 }
 
@@ -568,7 +570,7 @@ h2 {
 /* ---------- Contact Section START ---------- */
 #contact {
     width: calc(100% - var(--side-space) * 2);
-    height: 75vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     padding: calc(var(--side-space) / 2) var(--side-space);
@@ -586,7 +588,7 @@ h2 {
 }
 
 .email-link {
-    font-size: var(--f-size-slightly-bigger);
+    font-size: var(--f-size-bigger);
 }
 
 .get-in-touch-wrapper {
@@ -792,11 +794,11 @@ h2 {
 /* medium Breackpoint: max-width 1020px */
 @media (max-width: 1020px) {
     :root {
-        --side-space: 20px;
+        --side-space: 24px;
     }
 
     html {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     header .burger-nav {
@@ -809,10 +811,6 @@ h2 {
 
     #burger-menu {
         display: flex;
-    }
-
-    #contact {
-        height: 80vh;
     }
 
     .contact-bottom-wrapper {
@@ -828,11 +826,11 @@ h2 {
 /* small  Breackpoint: max-width 500px */
 @media (max-width: 500px) {
     :root {
-        --side-space: 15px;
+        --side-space: 20px;
     }
 
     html {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     h2 {
@@ -844,10 +842,6 @@ h2 {
     #burger-menu .menu-link {
         font-size: 5rem;
         line-height: 5rem;
-    }
-
-    #contact {
-        height: 85vh;
     }
 
     .contact-bottom-wrapper {

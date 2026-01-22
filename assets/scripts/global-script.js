@@ -30,7 +30,7 @@ export function backToTopHandler() {
 
 export function toggleContactSectionVisibility() {
     // when main is scrolled up halfway through the window height past the contact section
-    contactSectionElem.classList.toggle('inview', mainElem.getBoundingClientRect().bottom <= (window.innerHeight / 2));
+    contactSectionElem.classList.toggle('inview', mainElem.getBoundingClientRect().bottom <= (window.innerHeight * 0.4));
 }
 
 export function navLinksHandler() {
