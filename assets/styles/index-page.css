@@ -39,6 +39,7 @@ header .header-back-link {
     height: calc(100vh - var(--header-height));
     overflow: hidden;
     border-radius: var(--border-radius-big) var(--border-radius-big) 0 0;
+    padding-inline: var(--side-space);
 }
 
 #home-wrapper {
@@ -84,6 +85,7 @@ body.page-loaded #home h1 .headline-text {
     position: relative;
     width: auto;
     min-height: 75vh;
+    padding-inline: var(--side-space);
 }
 
 #about-wrapper {
@@ -169,6 +171,7 @@ body.page-loaded #home h1 .headline-text {
     color: var(--page-black);
     padding-top: 48px;
     padding-bottom: 15vh;
+    padding-inline: 0;
     border-radius: var(--border-radius-big);
     transition: var(--white-elem-transition);
 }
@@ -176,6 +179,7 @@ body.page-loaded #home h1 .headline-text {
 #projects.inview {
     width: 100%;
     border-radius: 0;
+    padding-inline: var(--side-space);
 }
 
 #projects.inview h2 .headline-text {
@@ -277,6 +281,14 @@ body.page-loaded #home h1 .headline-text {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     row-gap: var(--side-space);
     column-gap: calc(var(--side-space) / 2);
+    transition: var(--white-elem-transition);
+    opacity: 0;
+    transform: scaleX(0.95);
+}
+
+#projects.inview #project-wrapper {
+    opacity: 1;
+    transform: scaleX(1);
 }
 
 #project-wrapper:hover .project-card img {
@@ -296,13 +308,13 @@ body.page-loaded #home h1 .headline-text {
     min-height: 40vh;
     max-height: 90vh;
     gap: 6px;
-    transform: scale(0.95);
+    transform: translateY(50px);
     opacity: 0.5;
 }
 
 .project-card.inview {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
 }
 
 .project-card-img-wrapper {

@@ -11,6 +11,7 @@ export const backToTopLink = document.querySelector(".back-to-top-wrapper");
 
 // observer options for the white section element (index: projects, project: main)
 export const whiteSectionElemOptions = { root: null, threshold: 0.0, rootMargin: "-40% 0% -20% 0%" };
+export const slideInOptions = { root: null, threshold: 0.0, rootMargin: "10% 0% 0% 0%" };
 
 export function onPageLoad() {
 

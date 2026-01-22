@@ -1,8 +1,11 @@
 import * as g from "./global-script.js";
 
 const nextPrevSectionElem = document.getElementById("project-next-prev-section");
+const projectImgElems = document.querySelectorAll(".project-img");
 
 const nextPrevOptions = { root: null, threshold: 0.0, rootMargin: "-5% 0% -5% 0%" };
+
+let projectImgsObserver = new IntersectionObserver(onEntry, g.slideInOptions);
 
 document.addEventListener("DOMContentLoaded", () => {
     // ---------- global functionalities for every page START ----------
@@ -29,16 +32,25 @@ document.addEventListener("DOMContentLoaded", () => {
     if (g.mainElem) {
         mainElemObserver.observe(g.mainElem);
     }
-    
+
     nextPrevObserver.observe(nextPrevSectionElem);
+
+    if (projectImgElems) {
+        for (let img of projectImgElems) {
+            projectImgsObserver.observe(img);
+        }
+    }
+
 });
 
-function onEntry(entry) {
-    entry.forEach((change) => {
-        if (change.isIntersecting) {
-            change.target.classList.add('inview');
+function onEntry(entries) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('inview');
         } else {
-            change.target.classList.remove('inview');
+            if (entry.boundingClientRect.top > 0) {
+                entry.target.classList.remove('inview');
+            }
         }
     });
 }

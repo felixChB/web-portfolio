@@ -109,14 +109,6 @@ li {
     display: block;
 }
 
-.margin-sides {
-    margin-inline: var(--side-space);
-}
-
-.padding-sides {
-    padding-inline: var(--side-space);
-}
-
 .has-project-number {
     padding-right: 0.4em !important;
 }
