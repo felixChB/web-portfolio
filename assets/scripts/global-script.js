@@ -179,37 +179,35 @@ export function splitTextIntoLines(container) {
     // Step 2: Group words into lines based on their vertical offset
     const lines = [];
     let currentLine = [];
-    let lastOffset = 0;
+    let lastOffset = -1;
 
     const wordSpans = container.querySelectorAll('span');
     wordSpans.forEach(span => {
         if (span.offsetTop !== lastOffset) {
-            if (currentLine.length > 0) lines.push(currentLine.join(' '));
+            console.log(span.offsetTop, lastOffset);
+            if (currentLine.length > 0) lines.push(currentLine.join(''));
             currentLine = [];
+            console.log(currentLine);
             lastOffset = span.offsetTop;
         }
         currentLine.push(span.innerText);
     });
 
-    console.log(lines);
+    if (currentLine.length > 0) lines.push(currentLine.join(''));
 
-    // if (currentLine.length > 0) lines.push(currentLine.join(' '));
+    // Step 3: Rebuild the HTML with your specific classes
+    container.innerHTML = ''; // Clear temp spans
+    lines.forEach((lineText, index) => {
+        const lineMask = document.createElement('div');
+        lineMask.classList.add('appear-text-line');
 
-    // // Step 3: Rebuild the HTML with your specific classes
-    // container.innerHTML = ''; // Clear temp spans
-    // lines.forEach((lineText, index) => {
-    //     const lineMask = document.createElement('div');
-    //     lineMask.classList.add('appear-text-line');
-    //     lineMask.style.transitionDelay = `${index * 0.1}s`;
+        const wordContent = document.createElement('div');
+        wordContent.classList.add('appear-text-word');
+        wordContent.innerText = lineText;
+        wordContent.style.transitionDelay = `${index * 0.1}s`;
 
-    //     const wordContent = document.createElement('div');
-    //     wordContent.classList.add('appear-text-word');
-    //     wordContent.innerText = lineText;
-        
-    //     // Staggered delay: each line waits 0.1s longer than the previous
-    //     wordContent.style.transitionDelay = `${index * 0.1}s`;
 
-    //     lineMask.appendChild(wordContent);
-    //     container.appendChild(lineMask);
-    // });
+        lineMask.appendChild(wordContent);
+        container.appendChild(lineMask);
+    });
 }
