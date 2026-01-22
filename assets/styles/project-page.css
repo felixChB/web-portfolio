@@ -136,13 +136,13 @@ main.inview .project-text-wrapper {
     font-weight: normal;
 }
 
-#project-imgs-section, #project-next-prev-section {
+#project-imgs-section, #other-project-section {
     transition: var(--white-elem-transition);
     opacity: 0;
     transform: scaleX(0.95);
 }
 
-main.inview #project-imgs-section, main.inview #project-next-prev-section {
+main.inview #project-imgs-section, main.inview #other-project-section {
     opacity: 1;
     transform: scaleX(1);
 }
@@ -174,7 +174,7 @@ main.inview #project-imgs-section, main.inview #project-next-prev-section {
     z-index: 0;
 }
 
-.project-next-prev-wrapper {
+.other-project-wrapper {
     display: flex;
     flex-direction: row;
     gap: 10vw;
@@ -185,7 +185,7 @@ main.inview #project-imgs-section, main.inview #project-next-prev-section {
     position: relative;
 }
 
-.project-next-prev-wrapper::before {
+.other-project-wrapper::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -197,17 +197,17 @@ main.inview #project-imgs-section, main.inview #project-next-prev-section {
     transition: var(--appear-transition);
 }
 
-#project-next-prev-section.inview .project-next-prev-wrapper::before {
+#other-project-section.inview .other-project-wrapper::before {
     width: 100%;
 }
 
-.project-next-prev-wrapper .prev-project {
+.other-project-wrapper .prev-project {
     display: flex;
     flex-direction: column;
     align-items: end;
 }
 
-.project-next-prev-wrapper .next-project {
+.other-project-wrapper .next-project {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -218,8 +218,8 @@ main.inview #project-imgs-section, main.inview #project-next-prev-section {
     cursor: pointer;
 }
 
-.project-next-prev-wrapper .prev-project-title,
-.project-next-prev-wrapper .next-project-title {
+.other-project-wrapper .prev-project-title,
+.other-project-wrapper .next-project-title {
     font-size: var(--f-size-bigger);
 }
 
@@ -250,7 +250,7 @@ main.inview #project-imgs-section, main.inview #project-next-prev-section {
         width: 80%
     }
 
-    .project-next-prev-wrapper {
+    .other-project-wrapper {
         padding-top: 40px;
     }
 }
@@ -265,7 +265,7 @@ main.inview #project-imgs-section, main.inview #project-next-prev-section {
         width: 100%
     }
 
-    .project-next-prev-wrapper {
+    .other-project-wrapper {
         padding-top: 32px;
     }
 }

@@ -1,7 +1,8 @@
 import * as g from "./global-script.js";
 
-const nextPrevSectionElem = document.getElementById("project-next-prev-section");
+const otherProjectSectionElem = document.getElementById("other-project-section");
 const projectImgElems = document.querySelectorAll(".project-img");
+const otherProjectLinkElems = document.querySelectorAll(".other-project-link");
 
 const nextPrevOptions = { root: null, threshold: 0.0, rootMargin: "-5% 0% -5% 0%" };
 
@@ -18,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleHeadImg();
     g.toggleContactSectionVisibility();
 
+    g.customCursorHandler(g.cursor, otherProjectLinkElems);
+
     // Scroll event listener
     window.addEventListener("scroll", () => {
         toggleHeadImg();
@@ -33,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mainElemObserver.observe(g.mainElem);
     }
 
-    nextPrevObserver.observe(nextPrevSectionElem);
+    nextPrevObserver.observe(otherProjectSectionElem);
 
     if (projectImgElems) {
         for (let img of projectImgElems) {
