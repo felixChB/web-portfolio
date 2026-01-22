@@ -9,9 +9,9 @@ const projectCardElems = document.querySelectorAll(".project-card");
 const appearTextOptions = { root: null, threshold: 0.5, rootMargin: "10% 0% -10% 0%" };
 
 // create all Oberservers
-let appearTextObserver = new IntersectionObserver(onEntry, appearTextOptions);
+let appearTextObserver = new IntersectionObserver(g.onSlideInEntry, appearTextOptions);
 let projectsElemObserver = new IntersectionObserver(onEntry, g.whiteSectionElemOptions);
-let projectCardsObserver = new IntersectionObserver(onEntry, g.slideInOptions);
+let projectCardsObserver = new IntersectionObserver(g.onSlideInEntry, g.slideInOptions);
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -59,9 +59,7 @@ function onEntry(entry) {
 
             // change body background to black for the footer when below or within projects section
             if (change.target == projectsSectionElem) {
-                if (!g.bodyElem.classList.contains("black-body")) {
-                    g.bodyElem.classList.add("black-body");
-                }
+                g.bodyElem.classList.add("black-body");
             }
         } else {
             change.target.classList.remove('inview');
@@ -69,9 +67,7 @@ function onEntry(entry) {
             // change body background back to white for home border when above projects section
             if (change.target == projectsSectionElem) {
                 if (change.target.getBoundingClientRect().top > 0)
-                    if (g.bodyElem.classList.contains("black-body")) {
-                        g.bodyElem.classList.remove("black-body");
-                    }
+                    g.bodyElem.classList.remove("black-body");
             }
         }
     });

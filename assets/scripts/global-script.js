@@ -137,3 +137,15 @@ export function customCursorHandler(cursor, targets) {
         });
     }
 }
+
+export function onSlideInEntry(entries) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('inview');
+        } else {
+            if (entry.boundingClientRect.top > 0) {
+                entry.target.classList.remove('inview');
+            }
+        }
+    });
+}

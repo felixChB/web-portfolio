@@ -5,7 +5,7 @@ const projectImgElems = document.querySelectorAll(".project-img");
 
 const nextPrevOptions = { root: null, threshold: 0.0, rootMargin: "-5% 0% -5% 0%" };
 
-let projectImgsObserver = new IntersectionObserver(onEntry, g.slideInOptions);
+let projectImgsObserver = new IntersectionObserver(g.onSlideInEntry, g.slideInOptions);
 
 document.addEventListener("DOMContentLoaded", () => {
     // ---------- global functionalities for every page START ----------
@@ -48,9 +48,8 @@ function onEntry(entries) {
         if (entry.isIntersecting) {
             entry.target.classList.add('inview');
         } else {
-            if (entry.boundingClientRect.top > 0) {
-                entry.target.classList.remove('inview');
-            }
+            entry.target.classList.remove('inview');
+
         }
     });
 }

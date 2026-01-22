@@ -308,7 +308,7 @@ body.page-loaded #home h1 .headline-text {
     min-height: 40vh;
     max-height: 90vh;
     gap: 6px;
-    transform: translateY(50px);
+    transform: translateY(10vh);
     opacity: 0.5;
 }
 
