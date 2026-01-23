@@ -215,7 +215,7 @@ body.scrolled-enough #about {
 }
 
 .projects-headline-wrapper .projects-headline-line-2 {
-    width: 11rem;
+    width: 164px;
 }
 
 /* projects headline lines styling END */
@@ -402,9 +402,9 @@ body.scrolled-enough #about {
     }
 
     .projects-headline-wrapper .projects-headline-line-2 {
-        width: 7rem;
+        width: 83px;
     }
-    
+
     #project-wrapper {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -429,7 +429,7 @@ body.scrolled-enough #about {
     }
 
     .projects-headline-wrapper .projects-headline-line-2 {
-        width: 2rem;
+        width: 25px;
     }
 
     #project-wrapper {

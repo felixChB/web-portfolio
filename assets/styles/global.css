@@ -856,6 +856,11 @@ body.scrolled-enough #contact {
         display: flex;
     }
 
+    #contact h2 {
+        font-size: 10vw;
+        line-height: 10vw;
+    }
+
     .contact-bottom-wrapper {
         padding-top: 20px;
         padding-bottom: 40px;
@@ -875,6 +880,15 @@ body.scrolled-enough #contact {
 
     html {
         font-size: 12px;
+    }
+
+    .email-link-wrapper .brackets-headline {
+        font-size: var(--f-size-smallest);
+    }
+
+    .email-link {
+        font-size: 1rem;
+        line-height: 1rem;
     }
 
     .contact-bottom-wrapper {
