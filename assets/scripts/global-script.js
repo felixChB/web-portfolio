@@ -111,7 +111,7 @@ export function scrollToSection(sectionId) {
     }
 }
 
-export function customCursorHandler(cursor, targets) {
+export function customCursorHandler(cursor, targets, smoothness = 300) {
 
     // 1. Only run logic if the device has a mouse (fine pointer)
     const hasMouse = window.matchMedia('(pointer: fine)').matches;
@@ -123,7 +123,7 @@ export function customCursorHandler(cursor, targets) {
             cursor.animate({
                 transform: `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
             }, {
-                duration: 300,
+                duration: smoothness,
                 fill: "forwards"
             });
         });

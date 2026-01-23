@@ -382,7 +382,7 @@ body.scrolled-enough #about {
 }
 
 .index-page #cursor .cursor-wrapper {
-    transform: translate(20px, 20px);
+    transform: translate(10px, -30px);
 }
 
 .index-page #cursor .cursor-img-wrapper {

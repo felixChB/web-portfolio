@@ -238,7 +238,11 @@ main.inview #project-imgs-section, main.inview #other-project-section {
 }
 
 .project-page #cursor .cursor-view-project {
-    display: none;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .project-page #cursor .cursor-wrapper {

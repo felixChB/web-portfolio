@@ -790,6 +790,10 @@ body.scrolled-enough #contact {
     display: block;
 }
 
+#cursor .cursor-wrapper {
+    position: relative;
+}
+
 #cursor .cursor-view-project {
     font-family: var(--type-font);
     text-transform: uppercase;
@@ -802,7 +806,7 @@ body.scrolled-enough #contact {
     color: var(--page-white);
 }
 
-#cursor .view-project-text {
+#cursor .view-project-text, #cursor .arrow-icon-wrapper {
     transition: var(--hover-transition);
     opacity: 0;
 }
@@ -838,7 +842,7 @@ body.scrolled-enough #contact {
     width: 100%;
 }
 
-#cursor.is-active .view-project-text {
+#cursor.is-active .view-project-text, #cursor.is-active .arrow-icon-wrapper {
     opacity: 1;
 }
 

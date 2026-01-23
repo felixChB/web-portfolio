@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     g.toggleContactSectionVisibility();
 
-    g.customCursorHandler(g.cursor, projectCardElems);
+    g.customCursorHandler(g.cursor, projectCardElems, 300);
 
     window.addEventListener("scroll", () => {
         g.toggleContactSectionVisibility();
