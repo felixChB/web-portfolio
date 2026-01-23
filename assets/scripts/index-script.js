@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     g.navLinksHandler();
     // ---------- global functionalities for every page END ----------
 
+    scrolledEnoughIndexTrigger();
 
     g.splitTextIntoLines(aboutTextElem);
     g.appearTextObserver.observe(aboutTextElem);
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", () => {
         g.toggleContactSectionVisibility();
-        g.bodyElem.classList.toggle('scrolled-enough', window.scrollY > g.mainHeaderElem.getBoundingClientRect().height);
+        scrolledEnoughIndexTrigger();
     });
 
 
@@ -52,6 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
         projectsElemObserver.observe(projectsSectionElem);
     }
 });
+
+function scrolledEnoughIndexTrigger() {
+    g.bodyElem.classList.toggle('scrolled-enough', window.scrollY > g.mainHeaderElem.getBoundingClientRect().height);
+}
 
 function onEntry(entry) {
     entry.forEach((change) => {

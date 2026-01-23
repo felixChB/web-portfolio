@@ -526,11 +526,13 @@ h2 {
     transition: var(--appear-transition);
     will-change: transform, filter;
     filter: blur(2px);
+    transition-delay: 0s;
 }
 
 .appear-text-wrapper.inview .appear-text-line .appear-text-word {
     transform: translateY(0%);
     filter: blur(0px);
+    transition-delay: inherit;
 }
 
 .headline-text {

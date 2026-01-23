@@ -25,14 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
         g.splitTextIntoLines(aboutTextElem);
     });
 
-    toggleHeadImg();
+    scrolledEnoughProjectTrigger();
     g.toggleContactSectionVisibility();
 
     g.customCursorHandler(g.cursor, otherProjectLinkElems);
 
     // Scroll event listener
     window.addEventListener("scroll", () => {
-        toggleHeadImg();
+        scrolledEnoughProjectTrigger();
         g.toggleContactSectionVisibility();
     });
 
@@ -66,7 +66,8 @@ function onEntry(entries) {
     });
 }
 
-function toggleHeadImg() {
+// trigger to toggle the head image visibility
+function scrolledEnoughProjectTrigger() {
     g.bodyElem.classList.toggle('scrolled-enough', g.mainElem.getBoundingClientRect().top <= -(window.innerHeight / 2));
 }
 

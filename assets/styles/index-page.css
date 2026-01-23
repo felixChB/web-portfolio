@@ -401,6 +401,10 @@ body.scrolled-enough #about {
 /* medium Breackpoint: max-width 1020px */
 @media (max-width: 1020px) {
 
+    .about-text-wrapper {
+        width: 80%;
+    }
+
     #projects {
         padding-top: 40px;
     }
@@ -427,6 +431,10 @@ body.scrolled-enough #about {
 
 /* small  Breackpoint: max-width 500px */
 @media (max-width: 500px) {
+
+    .about-text-wrapper {
+        width: 100%;
+    }
 
     #projects {
         padding-top: 32px;

@@ -199,12 +199,13 @@ export function splitTextIntoLines(container) {
     lines.forEach((lineText, index) => {
         const lineMask = document.createElement('div');
         lineMask.classList.add('appear-text-line');
+        lineMask.style.transitionDelay = `${index * 0.07}s`;
 
         for (let i = 0; i < lineText.length; i++) {
             const span = document.createElement('span');
             span.innerHTML = lineText[i];
             span.classList.add('appear-text-word');
-            span.style.transitionDelay = `${index * 0.1}s`;
+            // span.style.transitionDelay = `${index * 0.1}s`;
             lineMask.appendChild(span);
         }
 
