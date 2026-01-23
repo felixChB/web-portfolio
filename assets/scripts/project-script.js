@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     scrolledEnoughProjectTrigger();
     g.toggleContactSectionVisibility();
 
-    g.customCursorHandler(g.cursor, otherProjectLinkElems);
+    g.customCursorHandler(g.cursorViewProjectElem, otherProjectLinkElems);
+    g.customCursorHandler(g.cursorImgElem, otherProjectLinkElems, 200);
 
     // Scroll event listener
     window.addEventListener("scroll", () => {

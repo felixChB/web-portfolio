@@ -4,7 +4,8 @@ export const mainElem = document.querySelector("main");
 export const mainHeaderElem = document.getElementById("main-header");
 export const burgerMenuElem = document.getElementById("burger-menu");
 export const contactSectionElem = document.getElementById("contact");
-export const cursor = document.getElementById('cursor');
+export const cursorViewProjectElem = document.getElementById('cursor-view-project');
+export const cursorImgElem = document.getElementById('cursor-img');
 
 export const navLinks = document.querySelectorAll(".nav-link");
 export const backToTopLink = document.querySelector(".back-to-top-wrapper");

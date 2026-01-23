@@ -777,7 +777,7 @@ body.scrolled-enough #contact {
 /* ---------- Contact Section END ---------- */
 
 /* ---------- Cursor Section START ---------- */
-#cursor {
+.cursor {
     position: fixed;
     top: 0;
     left: 0;
@@ -790,28 +790,44 @@ body.scrolled-enough #contact {
     display: block;
 }
 
-#cursor .cursor-wrapper {
+.cursor .cursor-wrapper {
     position: relative;
 }
 
-#cursor .cursor-view-project {
+#cursor-view-project {
+    z-index: 9000;
+}
+
+#cursor-view-project .cursor-wrapper {
+    transform: translate(10px, -30px);
+}
+
+#cursor-img .cursor-wrapper {
+    transform: translate(-50%, -50%);
+}
+
+#cursor-img {
+    z-index: 8000;
+}
+
+.cursor .cursor-view-project {
     font-family: var(--type-font);
     text-transform: uppercase;
     color: var(--page-white);
 }
 
-#cursor .cursor-view-project::after {
+.cursor .cursor-view-project::after {
     font-family: var(--type-font);
     text-transform: uppercase;
     color: var(--page-white);
 }
 
-#cursor .view-project-text, #cursor .arrow-icon-wrapper {
+.cursor .view-project-text, .cursor .arrow-icon-wrapper {
     transition: var(--hover-transition);
     opacity: 0;
 }
 
-#cursor .cursor-img-wrapper {
+.cursor .cursor-img-wrapper {
     width: 400px;
     aspect-ratio: 4 / 3;
     overflow: hidden;
@@ -821,12 +837,12 @@ body.scrolled-enough #contact {
     transition: var(--hover-transition);
 }
 
-#cursor.is-active .cursor-img-wrapper {
+.cursor.is-active .cursor-img-wrapper {
     opacity: 1;
     transform: scale(1);
 }
 
-#cursor .cursor-img {
+.cursor .cursor-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -834,15 +850,15 @@ body.scrolled-enough #contact {
 }
 
 /* Class to show the cursor */
-#cursor.is-active {
+.cursor.is-active {
     visibility: visible;
 }
 
-#cursor.is-active .view-project::after {
+.cursor.is-active .view-project::after {
     width: 100%;
 }
 
-#cursor.is-active .view-project-text, #cursor.is-active .arrow-icon-wrapper {
+.cursor.is-active .view-project-text, .cursor.is-active .arrow-icon-wrapper {
     opacity: 1;
 }
 

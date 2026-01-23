@@ -381,11 +381,7 @@ body.scrolled-enough #about {
     visibility: visible;
 }
 
-.index-page #cursor .cursor-wrapper {
-    transform: translate(10px, -30px);
-}
-
-.index-page #cursor .cursor-img-wrapper {
+.index-page #cursor-img {
     display: none;
 }
 

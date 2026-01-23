@@ -200,9 +200,10 @@
         </section>
         <section id="other-project-section">
             <div class="other-project-wrapper">
-                <a class="other-project-link prev-project">
-                    <span class="prev-project-title">VR-Pong</span>
-                    <span class="prev-project-link nav-link view-project">
+                <a href="" class="other-project-link-wrapper prev-project">
+                    <span class="brackets-headline">[Previous Project]</span>
+                    <div class="other-project-link nav-link">
+                        <span class="other-project-title link-text">VR-Pong</span>
                         <div class="arrow-icon-wrapper">
                             <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                                 height="24">
@@ -215,14 +216,12 @@
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <span class="view-project-text">[Previous project]</span>
-                    </span>
+                    </div>
                 </a>
-
-                <a class="other-project-link next-project">
-                    <span class="next-project-title">VR-Pong</span>
-                    <span class="next-project-link nav-link view-project">
-                        <span class="view-project-text">[Next project]</span>
+                <a href="" class="other-project-link-wrapper next-project">
+                    <span class="brackets-headline">[Next Project]</span>
+                    <div class="other-project-link nav-link">
+                        <span class="other-project-title link-text">VR-Pong</span>
                         <div class="arrow-icon-wrapper">
                             <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                                 height="24">
@@ -235,7 +234,7 @@
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
-                    </span>
+                    </div>
                 </a>
             </div>
         </section>
@@ -339,7 +338,8 @@
     </footer>
     <!------------Global Footer END------------>
 
-    <div id="cursor">
+    <!-- View Project Cursor -->
+    <div id="cursor-view-project" class="cursor">
         <div class="cursor-wrapper">
             <span class="cursor-view-project view-project">
                 <span class="cursor-text view-project-text">[View project]</span>
@@ -356,11 +356,18 @@
                     </svg>
                 </div>
             </span>
+        </div>
+    </div>
+
+    <!-- IMG Cursor -->
+    <div id="cursor-img" class="cursor">
+        <div class="cursor-wrapper">
             <div class="cursor-img-wrapper">
                 <img class="cursor-img" src="../assets/project-assets/vrpong-thumbnail.png" alt="">
             </div>
         </div>
     </div>
+    <!-- ----------custom cursors END------------ -->
 </body>
 
 </html>
