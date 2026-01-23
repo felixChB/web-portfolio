@@ -160,13 +160,11 @@ main.inview #project-imgs-section, main.inview #other-project-section {
     aspect-ratio: 16 / 9;
     border-radius: var(--border-radius-small);
     transition: var(--appear-transition);
-    transform: translateY(10vh);
-    opacity: 0.5;
+    transform: translateY(8vh);
 }
 
 .project-img.inview {
     transform: translateY(0);
-    opacity: 1;
 }
 
 .project-page #contact {

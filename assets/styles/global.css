@@ -601,6 +601,14 @@ h2 {
     visibility: hidden;
 }
 
+#contact .nav-link::after {
+    opacity: 0;
+}
+
+#contact.inview .nav-link::after {
+    opacity: 1;
+}
+
 body.scrolled-enough #contact {
     visibility: visible;
 }
