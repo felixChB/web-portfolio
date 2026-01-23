@@ -55,9 +55,10 @@ export function toggleContactSectionVisibility() {
 export function navLinksHandler() {
     navLinks.forEach(link => {
         link.addEventListener("click", (e) => {
-            e.preventDefault();
             const sectionId = link.getAttribute("nav-section-value");
             if (!sectionId) return;
+
+            e.preventDefault();
 
             if (link.classList.contains("menu-link")) {
                 burgerMenuElem.classList.remove("open");

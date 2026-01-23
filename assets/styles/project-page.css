@@ -217,15 +217,17 @@ main.inview #project-imgs-section, main.inview #other-project-section {
 
 .prev-project {
     align-items: end;
+    margin-left: auto;
+}
+
+.next-project {
+    align-items: start;
+    margin-right: auto;
 }
 
 .prev-project .arrow-icon-wrapper {
     margin-inline: 0.1em 0.2em;
     transform: rotate(-90deg);
-}
-
-.next-project {
-    align-items: start;
 }
 
 .other-project-link-wrapper:hover .arrow-icon-wrapper .arrow-icon {
