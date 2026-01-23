@@ -3,7 +3,7 @@ import * as g from "./global-script.js";
 const aboutTextElem = document.querySelector(".appear-text-wrapper");
 const otherProjectSectionElem = document.getElementById("other-project-section");
 const projectImgElems = document.querySelectorAll(".project-img");
-const otherProjectLinkElems = document.querySelectorAll(".other-project-link");
+const otherProjectLinkElems = document.querySelectorAll(".other-project-link-wrapper");
 
 const nextPrevOptions = { root: null, threshold: 0.0, rootMargin: "-5% 0% -5% 0%" };
 

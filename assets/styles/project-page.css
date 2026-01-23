@@ -207,23 +207,29 @@ main.inview #project-imgs-section, main.inview #other-project-section {
 }
 
 .other-project-link {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    align-items: center;
+    font-size: var(--f-size-bigger);
+    line-height: var(--f-size-bigger);
 }
 
-.other-project-wrapper .prev-project {
+.other-project-link .nav-link {
+    padding: 0;
+}
+
+.prev-project {
     align-items: end;
 }
 
-.other-project-wrapper .next-project {
+.prev-project .arrow-icon-wrapper {
+    margin-inline: 0.1em 0.2em;
+    transform: rotate(-90deg);
+}
+
+.next-project {
     align-items: start;
 }
 
-.other-project-title {
-    font-size: var(--f-size-bigger);
-    line-height: var(--f-size-bigger);
+.other-project-link-wrapper:hover .arrow-icon-wrapper .arrow-icon {
+    translate: 1em -1em;
 }
 
 .project-page #contact {
