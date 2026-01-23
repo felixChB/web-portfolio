@@ -136,13 +136,15 @@ main.inview .project-text-wrapper {
     font-weight: normal;
 }
 
-#project-imgs-section, #other-project-section {
+#project-imgs-section,
+#other-project-section {
     transition: var(--white-elem-transition);
     opacity: 0;
     transform: scaleX(0.95);
 }
 
-main.inview #project-imgs-section, main.inview #other-project-section {
+main.inview #project-imgs-section,
+main.inview #other-project-section {
     opacity: 1;
     transform: scaleX(1);
 }
@@ -175,7 +177,7 @@ main.inview #project-imgs-section, main.inview #other-project-section {
 .other-project-wrapper {
     display: flex;
     flex-direction: row;
-    gap: 10vw;
+    gap: 200px;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -203,7 +205,7 @@ main.inview #project-imgs-section, main.inview #other-project-section {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    padding: 1em;
+    padding: 0.5em;
 }
 
 .other-project-link {
@@ -218,6 +220,10 @@ main.inview #project-imgs-section, main.inview #other-project-section {
 .prev-project {
     align-items: end;
     margin-left: auto;
+}
+
+.prev-project .brackets-headline {
+    text-align: right;
 }
 
 .next-project {
@@ -259,6 +265,7 @@ main.inview #project-imgs-section, main.inview #other-project-section {
 
     .other-project-wrapper {
         padding-top: 40px;
+        gap: 100px;
     }
 }
 
@@ -274,6 +281,7 @@ main.inview #project-imgs-section, main.inview #other-project-section {
 
     .other-project-wrapper {
         padding-top: 32px;
+        gap: 0px;
     }
 }
 
