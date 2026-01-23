@@ -381,6 +381,14 @@ body.scrolled-enough #about {
     visibility: visible;
 }
 
+.index-page #cursor .cursor-wrapper {
+    transform: translate(20px, 20px);
+}
+
+.index-page #cursor .cursor-img-wrapper {
+    display: none;
+}
+
 /* ---------- MEDIA QUERIES START ---------- */
 
 /* earlier breakpoint for certain elements */

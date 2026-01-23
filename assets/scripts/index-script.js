@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // ---------- global functionalities for every page END ----------
 
 
-    // Initial split
     g.splitTextIntoLines(aboutTextElem);
     g.appearTextObserver.observe(aboutTextElem);
 

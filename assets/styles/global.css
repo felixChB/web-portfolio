@@ -783,19 +783,18 @@ body.scrolled-enough #contact {
     height: auto;
     pointer-events: none;
     z-index: 9999;
-    transform: translate(10px);
     will-change: transform;
     visibility: hidden;
     display: block;
 }
 
-#cursor .view-project {
+#cursor .cursor-view-project {
     font-family: var(--type-font);
     text-transform: uppercase;
     color: var(--page-white);
 }
 
-#cursor .view-project::after {
+#cursor .cursor-view-project::after {
     font-family: var(--type-font);
     text-transform: uppercase;
     color: var(--page-white);
@@ -807,15 +806,18 @@ body.scrolled-enough #contact {
 }
 
 #cursor .cursor-img-wrapper {
-    width: 150px;
+    width: 400px;
     aspect-ratio: 4 / 3;
     overflow: hidden;
     border-radius: var(--border-radius-small);
     opacity: 0;
+    transform: scale(0);
+    transition: var(--hover-transition);
 }
 
 #cursor.is-active .cursor-img-wrapper {
     opacity: 1;
+    transform: scale(1);
 }
 
 #cursor .cursor-img {

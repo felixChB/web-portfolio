@@ -237,6 +237,14 @@ main.inview #project-imgs-section, main.inview #other-project-section {
     visibility: visible;
 }
 
+.project-page #cursor .cursor-view-project {
+    display: none;
+}
+
+.project-page #cursor .cursor-wrapper {
+    transform: translate(-50%, -50%);
+}
+
 /* ---------- MEDIA QUERIES START ---------- */
 /* medium Breackpoint: max-width 1020px */
 @media (max-width: 1020px) {

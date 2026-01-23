@@ -121,9 +121,9 @@ export function customCursorHandler(cursor, targets) {
         window.addEventListener('mousemove', (e) => {
 
             cursor.animate({
-                transform: `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(20px, 20px)`
+                transform: `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
             }, {
-                duration: 200,
+                duration: 300,
                 fill: "forwards"
             });
         });

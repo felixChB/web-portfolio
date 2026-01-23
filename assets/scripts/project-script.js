@@ -1,5 +1,6 @@
 import * as g from "./global-script.js";
 
+const aboutTextElem = document.querySelector(".appear-text-wrapper");
 const otherProjectSectionElem = document.getElementById("other-project-section");
 const projectImgElems = document.querySelectorAll(".project-img");
 const otherProjectLinkElems = document.querySelectorAll(".other-project-link");
@@ -15,6 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
     g.backToTopHandler();
     g.navLinksHandler();
     // ---------- global functionalities for every page END ----------
+
+    g.splitTextIntoLines(aboutTextElem);
+    g.appearTextObserver.observe(aboutTextElem);
+
+    window.addEventListener('resize', () => {
+        // Re-split the text to calculate new line breaks
+        g.splitTextIntoLines(aboutTextElem);
+    });
 
     toggleHeadImg();
     g.toggleContactSectionVisibility();
