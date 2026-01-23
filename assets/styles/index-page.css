@@ -261,11 +261,9 @@ body.scrolled-enough #about {
     max-height: 90vh;
     gap: 6px;
     transform: translateY(10vh);
-    opacity: 0.5;
 }
 
 .project-card.inview {
-    opacity: 1;
     transform: translateY(0);
 }
 
@@ -384,6 +382,14 @@ body.scrolled-enough #about {
 }
 
 /* ---------- MEDIA QUERIES START ---------- */
+
+/* earlier breakpoint for certain elements */
+@media (max-width: 1200px) {
+    #project-wrapper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 /* medium Breackpoint: max-width 1020px */
 @media (max-width: 1020px) {
 
@@ -398,9 +404,16 @@ body.scrolled-enough #about {
     .projects-headline-wrapper .projects-headline-line-2 {
         width: 7rem;
     }
-
+    
     #project-wrapper {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* earlier breakpoint for certain elements */
+@media (max-width: 700px) {
+    #project-wrapper {
+        grid-template-columns: minmax(0, 1fr);
     }
 }
 

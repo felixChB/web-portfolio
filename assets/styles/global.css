@@ -587,17 +587,22 @@ h2 {
 /* ---------- Contact Section START ---------- */
 #contact {
     width: calc(100% - var(--side-space) * 2);
-    height: 85vh;
+    height: 95vh;
     display: flex;
     flex-direction: column;
     padding: calc(var(--side-space) / 2) var(--side-space);
     background-color: var(--page-black);
     color: var(--page-white);
     justify-content: end;
-    transition: var(--white-elem-transition);
+    transition: var(--white-elem-transition), visibility 0s linear;
     position: sticky;
     bottom: 0;
     z-index: 0;
+    visibility: hidden;
+}
+
+body.scrolled-enough #contact {
+    visibility: visible;
 }
 
 .email-link-wrapper {
