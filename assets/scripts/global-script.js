@@ -29,15 +29,17 @@ export function onPageLoad() {
     updateLocalTime();
     setInterval(updateLocalTime, 1000);
 
-    // Check if the URL has a hash (e.g., index.html#projects)
-    if (window.location.hash) {
-        const sectionId = window.location.hash.substring(1);
-        // Exclude menu commands from auto-scrolling on load
-        if (sectionId !== "open-menu" && sectionId !== "close-menu") {
-            setTimeout(() => {
-                scrollToSection(sectionId);
-            }, 600);
-        }
+    // 1. Check if a scroll target was passed via sessionStorage
+    const pendingTarget = sessionStorage.getItem('pendingScrollTarget');
+
+    if (pendingTarget) {
+        // 2. Clear it immediately so a refresh doesn't trigger it again
+        sessionStorage.removeItem('pendingScrollTarget');
+
+        // 3. Perform the delayed scroll
+        setTimeout(() => {
+            scrollToSection(pendingTarget);
+        }, 400);
     }
 }
 
@@ -96,9 +98,11 @@ export function navLinksHandler() {
                     scrollToSection(linkAttribute);
                 }
             } else {
-                // We are on a subpage (e.g., /projects/project-1.html)
-                // Redirect to root index.html with the hash
-                window.location.href = window.location.origin + "/index.html#" + linkAttribute;
+                // 1. Save the target section to session storage
+                sessionStorage.setItem('pendingScrollTarget', linkAttribute);
+
+                // 2. Navigate to the clean home page URL
+                window.location.href = window.location.origin + "/index.html";
             }
         });
     });
