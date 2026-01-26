@@ -4,6 +4,7 @@ const aboutTextElem = document.querySelector(".appear-text-wrapper");
 const otherProjectSectionElem = document.getElementById("other-project-section");
 const projectImgElems = document.querySelectorAll(".project-img");
 const otherProjectLinkElems = document.querySelectorAll(".other-project-link-wrapper");
+const projectDetailsElem = document.querySelector(".project-details");
 
 const nextPrevOptions = { root: null, threshold: 0.0, rootMargin: "-5% 0% -5% 0%" };
 
@@ -19,6 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     g.splitTextIntoLines(aboutTextElem);
     g.appearTextObserver.observe(aboutTextElem);
+
+    // Auto-scroll to project details if it's out of viewport (that headline is always inview on load)
+    if (projectDetailsElem.getBoundingClientRect().bottom > window.innerHeight) {
+        window.scrollTo({
+            top: projectDetailsElem.getBoundingClientRect().bottom - window.innerHeight
+        });
+    }
+
 
     window.addEventListener('resize', () => {
         // Re-split the text to calculate new line breaks
