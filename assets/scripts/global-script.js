@@ -24,6 +24,10 @@ export function onPageLoad() {
 
     // Start up stuff
     bodyElem.classList.add("page-loaded");
+
+    // Update the clock immediately, then every 1 second
+    updateLocalTime();
+    setInterval(updateLocalTime, 1000);
 }
 
 export function backToTopHandler() {
@@ -212,5 +216,35 @@ export function splitTextIntoLines(container) {
         }
 
         container.appendChild(lineMask);
+    });
+}
+
+export function updateLocalTime() {
+    const now = new Date();
+
+    // Options to format the date according to the Germany timezone
+    const options = {
+        timeZone: 'Europe/Berlin',
+        weekday: 'long',   // e.g., "Friday"
+        hour: '2-digit',   // e.g., "11"
+        minute: '2-digit', // e.g., "00"
+        second: '2-digit', // e.g., "05"
+        hour12: false      // Use 24-hour format (standard in Germany)
+    };
+
+    // Create the formatter
+    const formatter = new Intl.DateTimeFormat('en-GB', options);
+
+    // Get the formatted parts
+    const parts = formatter.formatToParts(now);
+    const timeValues = {};
+    parts.forEach(({ type, value }) => timeValues[type] = value);
+
+    // Build the string: "Friday 11:00:05 GER"
+    // Note: We manually add "GER" or "BER" to match the style of your example site
+    const timeString = `${timeValues.weekday} ${timeValues.hour}:${timeValues.minute}:${timeValues.second} GER`;
+
+    document.querySelectorAll('.local-time').forEach(elem => {
+        elem.textContent = timeString;
     });
 }
