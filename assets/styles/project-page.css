@@ -66,6 +66,12 @@ main.inview {
     padding-inline: var(--side-space);
 }
 
+#project-detail-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .project-detail-wrapper .brackets-headline {
     font-size: var(--f-size-smallest);
 }
@@ -112,6 +118,7 @@ body.page-loaded .project-title .headline-text {
     transition: var(--white-elem-transition);
     transform: translateX(var(--side-space));
     opacity: 0;
+    max-width: var(--max-width);
 }
 
 main.inview .project-text-wrapper {
@@ -121,7 +128,6 @@ main.inview .project-text-wrapper {
 
 .project-description-wrapper {
     width: 70%;
-    max-width: 1000px;
     padding-bottom: 3.2rem;
 }
 
@@ -276,7 +282,7 @@ main.inview #other-project-section {
     }
 
     .project-description-wrapper {
-        width: 80%
+        width: 85%
     }
 
     .other-project-wrapper {

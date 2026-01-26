@@ -104,7 +104,7 @@ body.scrolled-enough #about {
 
 .about-text-wrapper {
     margin: 20vh 0;
-    width: 60%;
+    width: 70%;
 }
 
 #about-text.appear-text-wrapper {
@@ -399,7 +399,7 @@ body.scrolled-enough #about {
 @media (max-width: 1020px) {
 
     .about-text-wrapper {
-        width: 80%;
+        width: 85%;
     }
 
     #projects {
