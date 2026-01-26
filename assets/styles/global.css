@@ -22,6 +22,7 @@
     --border-radius-big: 25px;
     --hover-transition: all 400ms cubic-bezier(.45, .19, .36, 1);
     --appear-transition: width 0.7s cubic-bezier(.25, .46, .45, .94),
+        height 0.7s cubic-bezier(.25, .46, .45, .94),
         opacity 0.7s cubic-bezier(.25, .46, .45, .94),
         transform 0.7s cubic-bezier(.25, .46, .45, .94),
         filter 0.7s cubic-bezier(.25, .46, .45, .94);
@@ -822,7 +823,8 @@ body.scrolled-enough #contact {
     color: var(--page-white);
 }
 
-.cursor .view-project-text, .cursor .arrow-icon-wrapper {
+.cursor .view-project-text,
+.cursor .arrow-icon-wrapper {
     transition: var(--hover-transition);
     opacity: 0;
 }
@@ -858,7 +860,8 @@ body.scrolled-enough #contact {
     width: 100%;
 }
 
-.cursor.is-active .view-project-text, .cursor.is-active .arrow-icon-wrapper {
+.cursor.is-active .view-project-text,
+.cursor.is-active .arrow-icon-wrapper {
     opacity: 1;
 }
 

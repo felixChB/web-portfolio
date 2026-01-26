@@ -174,18 +174,7 @@ main.inview #other-project-section {
     z-index: 0;
 }
 
-.other-project-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 200px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding-top: 48px;
-    position: relative;
-}
-
-.other-project-wrapper::before {
+#other-project-section::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -197,8 +186,36 @@ main.inview #other-project-section {
     transition: var(--appear-transition);
 }
 
-#other-project-section.inview .other-project-wrapper::before {
+.other-project-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+    position: relative;
+}
+
+.other-project-wrapper::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    content: '';
+    display: block;
+    width: 1px;
+    height: 0%;
+    background: var(--grey-color);
+    transition: var(--appear-transition);
+}
+
+#other-project-section.inview::before {
+    width: 100%;
+}
+
+#other-project-section.inview .other-project-wrapper::after {
+    height: 100%;
+    transition-delay: 0.2s;
 }
 
 .other-project-link-wrapper {
@@ -206,6 +223,7 @@ main.inview #other-project-section {
     flex-direction: column;
     cursor: pointer;
     padding: 0.5em;
+    width: 100%;
 }
 
 .other-project-link {
@@ -219,7 +237,6 @@ main.inview #other-project-section {
 
 .prev-project {
     align-items: end;
-    margin-left: auto;
 }
 
 .prev-project .brackets-headline {
@@ -228,7 +245,6 @@ main.inview #other-project-section {
 
 .next-project {
     align-items: start;
-    margin-right: auto;
 }
 
 .prev-project .arrow-icon-wrapper {
@@ -264,7 +280,7 @@ main.inview #other-project-section {
     }
 
     .other-project-wrapper {
-        padding-top: 40px;
+        margin-top: 40px;
         gap: 100px;
     }
 }
@@ -280,7 +296,7 @@ main.inview #other-project-section {
     }
 
     .other-project-wrapper {
-        padding-top: 32px;
+        margin-top: 32px;
         gap: 0px;
     }
 }
