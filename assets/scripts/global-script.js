@@ -28,6 +28,17 @@ export function onPageLoad() {
     // Update the clock immediately, then every 1 second
     updateLocalTime();
     setInterval(updateLocalTime, 1000);
+
+    // Check if the URL has a hash (e.g., index.html#projects)
+    if (window.location.hash) {
+        const sectionId = window.location.hash.substring(1);
+        // Exclude menu commands from auto-scrolling on load
+        if (sectionId !== "open-menu" && sectionId !== "close-menu") {
+            setTimeout(() => {
+                scrollToSection(sectionId);
+            }, 600);
+        }
+    }
 }
 
 export function backToTopHandler() {
@@ -59,51 +70,42 @@ export function toggleContactSectionVisibility() {
 export function navLinksHandler() {
     navLinks.forEach(link => {
         link.addEventListener("click", (e) => {
-            const sectionId = link.getAttribute("nav-section-value");
-            if (!sectionId) return;
+            const linkAttribute = link.getAttribute("nav-section-value");
+            if (!linkAttribute) return;
 
             e.preventDefault();
 
-            if (link.classList.contains("menu-link")) {
-                burgerMenuElem.classList.remove("open");
-                bodyElem.classList.remove("menu-open");
-                setTimeout(() => {
-                    scrollToSection(sectionId);
-                }, 600);
-                return;
+            // 1. Handle UI Actions first (Menu Open/Close)
+            if (linkAttribute === "open-menu" || linkAttribute === "close-menu") {
+                handleUiAction(linkAttribute);
+                return; // Stop here, don't try to scroll or navigate
+            }
+
+            // 2. Determine if we are on the Home Page
+            // Check if the element exists OR if the pathname is basically the root
+            const isHomePage = !!document.getElementById(linkAttribute) ||
+                window.location.pathname === "/" ||
+                window.location.pathname.endsWith("index.html");
+
+            if (isHomePage && document.getElementById(linkAttribute)) {
+                // We are on the home page and the section exists -> Scroll
+                if (link.classList.contains("menu-link")) {
+                    handleUiAction("close-menu");
+                    setTimeout(() => scrollToSection(linkAttribute), 600);
+                } else {
+                    scrollToSection(linkAttribute);
+                }
             } else {
-                scrollToSection(sectionId);
+                // We are on a subpage (e.g., /projects/project-1.html)
+                // Redirect to root index.html with the hash
+                window.location.href = window.location.origin + "/index.html#" + linkAttribute;
             }
         });
     });
 }
 
-export function scrollToSection(sectionId) {
-    switch (sectionId) {
-        case "about":
-            window.scrollTo({
-                top: document.getElementById("about").offsetTop,
-                behavior: "smooth"
-            });
-            break;
-        case "projects":
-            window.scrollTo({
-                top: document.getElementById("projects").offsetTop,
-                behavior: "smooth"
-            });
-            break;
-        case "contact":
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: "smooth"
-            });
-            break;
-        case "top":
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-            break;
+export function handleUiAction(action) {
+    switch (action) {
         case "open-menu":
             burgerMenuElem.classList.add("open");
             bodyElem.classList.add("menu-open");
@@ -112,9 +114,29 @@ export function scrollToSection(sectionId) {
             burgerMenuElem.classList.remove("open");
             bodyElem.classList.remove("menu-open");
             break;
-        default:
-            break;
     }
+}
+
+export function scrollToSection(sectionId) {
+    let topPosition = 0;
+
+    if (sectionId === "top") {
+        topPosition = 0;
+    } else if (sectionId === "contact") {
+        topPosition = document.body.scrollHeight;
+    } else {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            topPosition = element.offsetTop;
+        } else {
+            return; // Safety exit
+        }
+    }
+
+    window.scrollTo({
+        top: topPosition,
+        behavior: "smooth"
+    });
 }
 
 export function customCursorHandler(cursor, targets, smoothness = 300) {
