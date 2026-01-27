@@ -1,9 +1,9 @@
 import * as g from "./global-script.js";
 
 const aboutTextElem = document.querySelector(".appear-text-wrapper");
-const otherProjectSectionElem = document.getElementById("other-project-section");
+const nextProjectSectionElem = document.getElementById("next-project-section");
 const projectImgElems = document.querySelectorAll(".project-img");
-const otherProjectLinkElems = document.querySelectorAll(".other-project-link-wrapper");
+const nextProjectLinkElems = document.querySelectorAll(".next-project-link-wrapper");
 const projectDetailsElem = document.querySelector(".project-details");
 
 const nextPrevOptions = { root: null, threshold: 0.0, rootMargin: "-5% 0% -5% 0%" };
@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
     scrolledEnoughProjectTrigger();
     g.toggleContactSectionVisibility();
 
-    g.customCursorHandler(g.cursorViewProjectElem, otherProjectLinkElems);
-    g.customCursorHandler(g.cursorImgElem, otherProjectLinkElems, 200);
+    g.customCursorHandler(g.cursorViewProjectElem, nextProjectLinkElems);
+    g.customCursorHandler(g.cursorImgElem, nextProjectLinkElems, 200);
 
     // Scroll event listener
     window.addEventListener("scroll", () => {
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mainElemObserver.observe(g.mainElem);
     }
 
-    nextPrevObserver.observe(otherProjectSectionElem);
+    nextPrevObserver.observe(nextProjectSectionElem);
 
     if (projectImgElems) {
         for (let img of projectImgElems) {

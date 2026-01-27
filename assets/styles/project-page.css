@@ -143,14 +143,14 @@ main.inview .project-text-wrapper {
 }
 
 #project-imgs-section,
-#other-project-section {
+#next-project-section {
     transition: var(--white-elem-transition);
     opacity: 0;
     transform: scaleX(0.95);
 }
 
 main.inview #project-imgs-section,
-main.inview #other-project-section {
+main.inview #next-project-section {
     opacity: 1;
     transform: scaleX(1);
 }
@@ -180,7 +180,7 @@ main.inview #other-project-section {
     z-index: 0;
 }
 
-#other-project-section::before {
+#next-project-section::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -192,7 +192,7 @@ main.inview #other-project-section {
     transition: var(--appear-transition);
 }
 
-.other-project-wrapper {
+.next-project-wrapper {
     display: flex;
     flex-direction: row;
     gap: 200px;
@@ -203,62 +203,35 @@ main.inview #other-project-section {
     position: relative;
 }
 
-.other-project-wrapper::after {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    content: '';
-    display: block;
-    width: 1px;
-    height: 0%;
-    background: var(--grey-color);
-    transition: var(--appear-transition);
-}
-
-#other-project-section.inview::before {
+#next-project-section.inview::before {
     width: 100%;
 }
 
-#other-project-section.inview .other-project-wrapper::after {
-    height: 100%;
-    transition-delay: 0.2s;
-}
-
-.other-project-link-wrapper {
+.next-project-link-wrapper {
     display: flex;
     flex-direction: column;
     cursor: pointer;
     padding: 0.5em;
-    width: 100%;
+    align-items: center;
+    transition: var(--appear-transition);
+    opacity: 0;
+    transform: translateY(50px);
+}
+#next-project-section.inview .next-project-link-wrapper {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.other-project-link {
+.next-project-link {
     font-size: var(--f-size-bigger);
     line-height: var(--f-size-bigger);
 }
 
-.other-project-link .nav-link {
+.next-project-link .nav-link {
     padding: 0;
 }
 
-.prev-project {
-    align-items: end;
-}
-
-.prev-project .brackets-headline {
-    text-align: right;
-}
-
-.next-project {
-    align-items: start;
-}
-
-.prev-project .arrow-icon-wrapper {
-    margin-inline: 0.1em 0.2em;
-    transform: rotate(-90deg);
-}
-
-.other-project-link-wrapper:hover .arrow-icon-wrapper .arrow-icon {
+.next-project-link-wrapper:hover .arrow-icon-wrapper .arrow-icon {
     translate: 1em -1em;
 }
 
@@ -285,7 +258,7 @@ main.inview #other-project-section {
         width: 85%
     }
 
-    .other-project-wrapper {
+    .next-project-wrapper {
         margin-top: 40px;
         gap: 100px;
     }
@@ -301,7 +274,7 @@ main.inview #other-project-section {
         width: 100%
     }
 
-    .other-project-wrapper {
+    .next-project-wrapper {
         margin-top: 32px;
         gap: 0px;
     }
