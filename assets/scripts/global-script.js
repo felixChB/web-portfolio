@@ -20,7 +20,7 @@ export const appearTextObserver = new IntersectionObserver(onSlideInEntry, appea
 export function onPageLoad() {
 
     console.log("DOM fully loaded and parsed");
-    console.log("Initial scrollY:", window.scrollY);
+    console.log(window.location.pathname);
 
     // Start up stuff
     bodyElem.classList.add("page-loaded");
@@ -102,7 +102,7 @@ export function navLinksHandler() {
                 sessionStorage.setItem('pendingScrollTarget', linkAttribute);
 
                 // 2. Navigate to the clean home page URL
-                window.location.href = window.location.origin + "/index.html";
+                window.location.href = window.location.origin + "/web-portfolio" + "/index.html";
             }
         });
     });
@@ -216,7 +216,7 @@ export function splitTextIntoLines(container) {
     const wordSpans = container.querySelectorAll('span');
     wordSpans.forEach(span => {
         if (span.offsetTop !== lastOffset) {
-            console.log(span.offsetTop, lastOffset);
+            // console.log(span.offsetTop, lastOffset);
             if (currentLine.length > 0) lines.push(currentLine);
             currentLine = [];
             lastOffset = span.offsetTop;
