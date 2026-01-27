@@ -424,6 +424,10 @@ header .nav-link {
     transition-delay: 0.7s;
 }
 
+#burger-menu.open .menu-nav-links li:nth-child(4) .link-text {
+    transition-delay: 0.8s;
+}
+
 #burger-menu.open .menu-bottom .link-text,
 #burger-menu.open .menu-bottom .arrow-icon-wrapper {
     transition-delay: 0.8s;
