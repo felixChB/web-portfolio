@@ -452,7 +452,7 @@ header .nav-link {
     height: 100%;
     display: flex;
     align-items: end;
-    padding-bottom: 15vh;
+    padding-bottom: 10vh;
 }
 
 #burger-menu .menu-nav-links {
