@@ -199,7 +199,6 @@ export function onSlideInEntry(entries) {
                 if (el.tagName === 'VIDEO') {
                     try {
                         if (!el.paused) el.pause();
-                        el.currentTime = 0;
                     } catch (e) { /* ignore */ }
                 }
             }
