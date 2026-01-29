@@ -22,30 +22,6 @@ a co-located Multiplayer VR Web-Game
 
 ---
 
-# UI-verse
-UI-verse
-
-## Site-details
-### Id
-ui-verse
-
-### URL
-/projects/ui-verse.html
-
-### Folder
-/ui-verse
-
-### Tags
-[web-design, interactive, timeline]
-
-## Description
-UI-verse entstand während meinem Bachelor-Studium. Bei dem Projekt handelt es sich um ein Prototyp für eine Webseite oder Installation für Museen. Der Nutzer soll auf einem Zeitstrahl interaktiv die Entstehungsgeschichte des Universums erkunden können. Der Prototyp wurde als Webseite umgesetzt.
-
-### short Description
-an interactive timeline about the origin of the universe
-
----
-
 # Rising Weather
 Rising Weather
 
@@ -91,3 +67,27 @@ Dieses Projekt stellt das “Masterpiece” für das Fach Asset Creation in mein
 
 ### short Description
 a hand-painted 3D-model of a modified Borderlands 3 Constructor-Character
+
+---
+
+# UI-verse
+UI-verse
+
+## Site-details
+### Id
+ui-verse
+
+### URL
+/projects/ui-verse.html
+
+### Folder
+/ui-verse
+
+### Tags
+[web-design, interactive, timeline]
+
+## Description
+UI-verse entstand während meinem Bachelor-Studium. Bei dem Projekt handelt es sich um ein Prototyp für eine Webseite oder Installation für Museen. Der Nutzer soll auf einem Zeitstrahl interaktiv die Entstehungsgeschichte des Universums erkunden können. Der Prototyp wurde als Webseite umgesetzt.
+
+### short Description
+an interactive timeline about the origin of the universe
