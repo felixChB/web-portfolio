@@ -5,12 +5,6 @@ VR-Pong
 ### Id
 vr-pong
 
-### URL
-/projects/vr-pong.html
-
-### Folder
-/vr-pong
-
 ### Year
 2025
 
@@ -34,12 +28,6 @@ Rising Weather
 ## Site-details
 ### Id
 rising-weather
-
-### URL
-/projects/rising-weather.html
-
-### Folder
-/rising-weather
 
 ### Year
 2022
@@ -65,12 +53,6 @@ Constructor
 ### Id
 constructor
 
-### URL
-/projects/constructor.html
-
-### Folder
-/constructor
-
 ### Year
 2023
 
@@ -94,12 +76,6 @@ UI-verse
 ## Site-details
 ### Id
 ui-verse
-
-### URL
-/projects/ui-verse.html
-
-### Folder
-/ui-verse
 
 ### Year
 2020
