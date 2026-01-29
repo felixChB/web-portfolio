@@ -231,6 +231,10 @@ main.inview #next-project-section {
     padding: 0;
 }
 
+.next-project .arrow-icon-wrapper {
+    margin-left: 0.5em;
+}
+
 .next-project-link-wrapper:hover .arrow-icon-wrapper .arrow-icon {
     translate: 1em -1em;
 }

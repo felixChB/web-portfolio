@@ -110,7 +110,6 @@ body.scrolled-enough #about {
 #about-text.appear-text-wrapper {
     font-size: var(--f-size-bigger);
     font-weight: var(--text-font-weight);
-    line-height: var(--f-size-bigger);
 }
 
 /*---------- About Section END----------*/

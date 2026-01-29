@@ -5,6 +5,7 @@ const nextProjectSectionElem = document.getElementById("next-project-section");
 const projectImgElems = document.querySelectorAll(".project-img");
 const nextProjectLinkElems = document.querySelectorAll(".next-project-link-wrapper");
 const projectDetailsElem = document.querySelector(".project-details");
+const projectTopSpacerElem = document.querySelector(".project-top-spacer");
 
 const nextPrevOptions = { root: null, threshold: 0.0, rootMargin: "-5% 0% -5% 0%" };
 
@@ -23,15 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Auto-scroll to project details if it's out of viewport (that headline is always inview on load)
     if (projectDetailsElem.getBoundingClientRect().bottom > window.innerHeight) {
-        window.scrollTo({
-            top: projectDetailsElem.getBoundingClientRect().bottom - window.innerHeight
-        });
+        // window.scrollTo({
+        //     top: projectDetailsElem.getBoundingClientRect().bottom - window.innerHeight
+        // });
+        changeTopSpacerHeight();
     }
 
 
     window.addEventListener('resize', () => {
         // Re-split the text to calculate new line breaks
         g.splitTextIntoLines(aboutTextElem);
+        changeTopSpacerHeight();
     });
 
     scrolledEnoughProjectTrigger();
@@ -64,6 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+function changeTopSpacerHeight() {
+    let detailsRectHeght = projectDetailsElem.getBoundingClientRect().height;
+    let paddingTopMain = parseFloat(window.getComputedStyle(g.mainElem).getPropertyValue('padding-top'));
+
+    projectTopSpacerElem.style.height = `calc(100vh - ${detailsRectHeght}px - ${paddingTopMain}px)`;
+}
 
 function onEntry(entries) {
     entries.forEach((entry) => {

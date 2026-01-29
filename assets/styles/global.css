@@ -520,6 +520,7 @@ h2 {
 .appear-text-wrapper {
     display: block;
     overflow: hidden;
+    line-height: normal;
 }
 
 .appear-text-line {
