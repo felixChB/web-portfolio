@@ -348,11 +348,11 @@ body.scrolled-enough #about {
     transform: scale(1.05);
 }
 
-#vrpong-card>.project-card-img-wrapper {
+#vr-pong-card>.project-card-img-wrapper {
     background-color: #313957;
 }
 
-#uiverse-card>.project-card-img-wrapper {
+#ui-verse-card>.project-card-img-wrapper {
     background-color: #927a00;
 }
 

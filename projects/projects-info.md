@@ -11,6 +11,9 @@ vr-pong
 ### Folder
 /vr-pong
 
+### Year
+2025
+
 ### Tags
 [webXR, VR, co-located, multiplayer]
 
@@ -34,6 +37,9 @@ rising-weather
 
 ### Folder
 /rising-weather
+
+### Year
+2022
 
 ### Tags
 [installation, interactive, visualisation, data-driven]
@@ -59,6 +65,9 @@ constructor
 ### Folder
 /constructor
 
+### Year
+2023
+
 ### Tags
 [game-asset, 3D-modelling, texture-painting]
 
@@ -82,6 +91,9 @@ ui-verse
 
 ### Folder
 /ui-verse
+
+### Year
+2020
 
 ### Tags
 [web-design, interactive, timeline]
