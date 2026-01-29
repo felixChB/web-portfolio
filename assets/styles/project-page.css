@@ -154,8 +154,9 @@ main.inview #next-project-section {
 }
 
 .project-img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
+    width: auto;
+    max-width: 100%;
+    max-height: 90vh;
     border-radius: var(--border-radius-small);
     transition: var(--appear-transition);
     transform: translateY(8vh);
@@ -207,6 +208,7 @@ main.inview #next-project-section {
     opacity: 0;
     transform: translateY(50px);
 }
+
 #next-project-section.inview .next-project-link-wrapper {
     opacity: 1;
     transform: translateY(0);
@@ -255,6 +257,11 @@ main.inview #next-project-section {
     .next-project-wrapper {
         margin-top: 40px;
         gap: 100px;
+    }
+
+    .project-img {
+        width: 100%;
+        max-height: none;
     }
 }
 

@@ -22,14 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     g.splitTextIntoLines(aboutTextElem);
     g.appearTextObserver.observe(aboutTextElem);
 
-    // Auto-scroll to project details if it's out of viewport (that headline is always inview on load)
-    if (projectDetailsElem.getBoundingClientRect().bottom > window.innerHeight) {
-        // window.scrollTo({
-        //     top: projectDetailsElem.getBoundingClientRect().bottom - window.innerHeight
-        // });
-        changeTopSpacerHeight();
-    }
-
+    changeTopSpacerHeight();
 
     window.addEventListener('resize', () => {
         // Re-split the text to calculate new line breaks

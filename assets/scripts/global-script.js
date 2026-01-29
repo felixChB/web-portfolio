@@ -175,11 +175,33 @@ export function customCursorHandler(cursor, targets, smoothness = 300) {
 
 export function onSlideInEntry(entries) {
     entries.forEach((entry) => {
+        const el = entry.target;
+
         if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
-            entry.target.classList.add('inview');
+            el.classList.add('inview');
+
+            // If element is a video, attempt to play when it comes into view
+            if (el.tagName === 'VIDEO') {
+                try {
+                    // Ensure muted so autoplay is allowed by browsers
+                    if (!el.muted) el.muted = true;
+                    const p = el.play();
+                    if (p && p.catch) p.catch(() => { /* ignore play rejection */ });
+                } catch (e) {
+                    /* ignore */
+                }
+            }
         } else {
             if (entry.boundingClientRect.top > 0) {
-                entry.target.classList.remove('inview');
+                el.classList.remove('inview');
+
+                // Pause video when it leaves view
+                if (el.tagName === 'VIDEO') {
+                    try {
+                        if (!el.paused) el.pause();
+                        el.currentTime = 0;
+                    } catch (e) { /* ignore */ }
+                }
             }
         }
     });
