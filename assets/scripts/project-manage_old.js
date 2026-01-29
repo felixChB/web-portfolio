@@ -31,7 +31,7 @@ export const projects = [
     },
     {
         id: "constructor",
-        title: "3D-Constructor",
+        title: "Constructor",
         url: "/projects/constructor.html",
         folder: "/constructor",
         thumbnail: "constructor-thumbnail.jpg",

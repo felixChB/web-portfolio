@@ -58,8 +58,8 @@ an interactive data-driven media installation
 
 ---
 
-# 3D-Constructor
-3D-Constructor
+# Constructor
+Constructor
 
 ## Site-details
 ### Id
