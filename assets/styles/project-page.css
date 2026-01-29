@@ -104,6 +104,10 @@ body.page-loaded .project-title .headline-text {
     transition-delay: var(--page-load-delay);
 }
 
+.project-page .headline-text {
+    overflow-wrap: anywhere;
+}
+
 .project-text-wrapper {
     transition: var(--white-elem-transition);
     transform: translateX(var(--side-space));
