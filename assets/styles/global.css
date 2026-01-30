@@ -698,7 +698,6 @@ body.scrolled-enough #contact {
 #contact.inview h2 .headline-text {
     transform: translateY(0px);
     filter: blur(0);
-    transition-delay: 0.1s;
 }
 
 #contact .nav-link .link-text,
@@ -717,12 +716,12 @@ body.scrolled-enough #contact {
 #contact.inview .nav-link .arrow-icon-wrapper {
     transform: translateY(0);
     filter: blur(0);
-    transition-delay: 0.2s;
+    transition-delay: 0.08s;
 }
 
 #contact.inview .email-link-wrapper .link-text,
 #contact.inview .email-link-wrapper .arrow-icon-wrapper {
-    transition-delay: 0.3s;
+    transition-delay: 0.16s;
 }
 
 #contact.inview .back-to-top-wrapper .arrow-icon-wrapper {
@@ -733,12 +732,12 @@ body.scrolled-enough #contact {
 
 #contact.inview .contact-bottom-wrapper .link-text,
 #contact.inview .contact-bottom-wrapper .arrow-icon-wrapper {
-    transition-delay: 0.4s;
+    transition-delay: 0.24s;
 }
 
 #contact.inview .contact-bottom-wrapper::before {
     width: 100%;
-    transition-delay: 0.5s;
+    transition-delay: 0.32s;
 }
 
 /* ---------- Contact Section END ---------- */
