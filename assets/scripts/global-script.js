@@ -102,7 +102,7 @@ export function navLinksHandler() {
                 sessionStorage.setItem('pendingScrollTarget', linkAttribute);
 
                 // 2. Navigate to the clean home page URL
-                window.location.href = window.location.origin + "/web-portfolio" + "/index.html";
+                window.location.href = window.location.origin + "/web-portfolio" + "/";
             }
         });
     });

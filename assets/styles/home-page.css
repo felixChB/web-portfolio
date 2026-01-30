@@ -1,4 +1,4 @@
-body.index-page main {
+body.home-page main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,7 @@ body.index-page main {
     position: relative;
 }
 
-body.index-page.scrolled-enough main {
+body.home-page.scrolled-enough main {
     width: 100%;
     border-radius: 0;
 }
@@ -367,17 +367,17 @@ body.scrolled-enough #about {
 /* project cards styling END */
 /*---------- Projects Section END----------*/
 
-.index-page #contact {
+.home-page #contact {
     visibility: hidden;
     width: calc(100% - var(--side-space) * 2);
 }
 
-.index-page.scrolled-enough #contact {
+.home-page.scrolled-enough #contact {
     width: 100%;
     visibility: visible;
 }
 
-.index-page #cursor-img {
+.home-page #cursor-img {
     display: none;
 }
 
