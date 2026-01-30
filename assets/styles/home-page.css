@@ -227,7 +227,7 @@ body.scrolled-enough #about {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    row-gap: var(--side-space);
+    row-gap: calc(var(--side-space) * 1.5);
     column-gap: calc(var(--side-space) / 2);
     transition: var(--white-elem-transition);
     opacity: 0;

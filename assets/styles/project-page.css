@@ -40,7 +40,7 @@ main {
     display: flex;
     flex-direction: column;
     padding-top: 50px;
-    gap: 8rem;
+    gap: 10rem;
     width: calc(100% - (var(--side-space) * 2));
     background-color: var(--page-white);
     border-radius: var(--border-radius-big);
@@ -255,6 +255,10 @@ main.inview #next-project-section {
 /* ---------- MEDIA QUERIES START ---------- */
 /* medium Breackpoint: max-width 1020px */
 @media (max-width: 1020px) {
+    main {
+        gap: 6rem;
+    }
+
     .project-infos {
         gap: 50px;
     }
