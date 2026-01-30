@@ -17,6 +17,9 @@ export const appearTextOptions = { root: null, threshold: 0.0, rootMargin: "10% 
 
 export const appearTextObserver = new IntersectionObserver(onSlideInEntry, appearTextOptions);
 
+// check if desktop // > 1020px like in css media query
+export const isDesktop = window.matchMedia('(min-width: 1021px)').matches;
+
 export function onPageLoad() {
 
     console.log("DOM fully loaded and parsed");
@@ -209,6 +212,10 @@ export function onSlideInEntry(entries) {
 // split text content of an element into lines wrapped in divs for line-by-line animation
 // gemini made
 export function splitTextIntoLines(container) {
+
+    // Only run on desktop for performance reasons
+    if (!isDesktop) return;
+
     // Save original text on first run to prevent losing words on repeated resizes
     if (!container.dataset.originalText) {
         container.dataset.originalText = container.innerText;
