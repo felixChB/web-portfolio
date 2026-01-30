@@ -231,10 +231,6 @@ main.inview #next-project-section {
     margin-left: 0.5em;
 }
 
-.next-project-link-wrapper:hover .arrow-icon-wrapper .arrow-icon {
-    translate: 1em -1em;
-}
-
 .project-page #contact {
     visibility: hidden;
 }
@@ -246,6 +242,15 @@ main.inview #next-project-section {
 #cursor-view-project .cursor-wrapper {
     transform: translate(-50%, -100%);
 }
+
+/* ---------- HOVER EFFECTS START ---------- */
+@media (hover: hover) {
+    .next-project-link-wrapper:hover .arrow-icon-wrapper .arrow-icon {
+        translate: 1em -1em;
+    }
+}
+
+/* ---------- HOVER EFFECTS END ---------- */
 
 /* ---------- MEDIA QUERIES START ---------- */
 /* medium Breackpoint: max-width 1020px */

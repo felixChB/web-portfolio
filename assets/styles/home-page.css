@@ -239,14 +239,6 @@ body.scrolled-enough #about {
     transform: scaleX(1);
 }
 
-#project-wrapper:hover .project-card img {
-    filter: blur(4px);
-}
-
-#project-wrapper:hover .project-card:hover img {
-    filter: blur(0);
-}
-
 .project-card {
     display: flex;
     flex-direction: column;
@@ -328,26 +320,6 @@ body.scrolled-enough #about {
     color: var(--grey-color);
 }
 
-.project-card:hover .view-project::after {
-    width: 100%;
-}
-
-.project-card:hover .view-project {
-    color: var(--page-white);
-}
-
-.project-card:hover .project-card-title .arrow-icon-wrapper .arrow-icon {
-    translate: 0.5em -0.5em;
-}
-
-.project-card:hover .view-project .arrow-icon-wrapper .arrow-icon {
-    translate: 1em -1em;
-}
-
-.project-card:hover .project-card-img-wrapper img {
-    transform: scale(1.05);
-}
-
 #vr-pong-card>.project-card-img-wrapper {
     background-color: #313957;
 }
@@ -380,6 +352,39 @@ body.scrolled-enough #about {
 .home-page #cursor-img {
     display: none;
 }
+
+/* ---------- HOVER EFFECTS START ---------- */
+@media (hover: hover) {
+    #project-wrapper:hover .project-card img {
+        filter: blur(4px);
+    }
+
+    #project-wrapper:hover .project-card:hover img {
+        filter: blur(0);
+    }
+
+    .project-card:hover .view-project::after {
+        width: 100%;
+    }
+
+    .project-card:hover .view-project {
+        color: var(--page-white);
+    }
+
+    .project-card:hover .project-card-title .arrow-icon-wrapper .arrow-icon {
+        translate: 0.5em -0.5em;
+    }
+
+    .project-card:hover .view-project .arrow-icon-wrapper .arrow-icon {
+        translate: 1em -1em;
+    }
+
+    .project-card:hover .project-card-img-wrapper img {
+        transform: scale(1.05);
+    }
+}
+
+/* ---------- HOVER EFFECTS END ---------- */
 
 /* ---------- MEDIA QUERIES START ---------- */
 

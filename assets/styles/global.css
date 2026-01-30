@@ -100,7 +100,8 @@ li {
     list-style: none;
 }
 
-img, video {
+img,
+video {
     background-color: var(--grey-color);
 }
 
@@ -202,14 +203,6 @@ body.scrolled-enough #main-header {
     align-items: center;
 }
 
-.nav-link:hover {
-    color: var(--page-black);
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
 .nav-link .arrow-icon-wrapper {
     margin-right: 0.1em;
 }
@@ -228,10 +221,6 @@ body.scrolled-enough #main-header {
 
 .arrow-icon-wrapper .arrow-icon path {
     stroke-width: 3;
-}
-
-.nav-link:hover .arrow-icon-wrapper .arrow-icon {
-    translate: 1em -1em;
 }
 
 .arrow-icon-wrapper .arrow-icon:first-child {
@@ -310,14 +299,6 @@ header .nav-link {
     left: -1em;
 }
 
-.open-menu-link:hover .burger-icon span {
-    background-color: var(--page-black);
-}
-
-.open-menu-link:hover .burger-icon {
-    translate: 1em 0em;
-}
-
 #burger-menu {
     display: none;
     position: fixed;
@@ -369,11 +350,6 @@ header .nav-link {
 
 .close-icon path {
     stroke-width: 2.8;
-}
-
-.close-menu-link:hover .close-icon {
-    color: var(--page-white);
-    transform: rotate(180deg);
 }
 
 #burger-menu .email-link {
@@ -434,10 +410,6 @@ header .nav-link {
 
 #burger-menu .nav-link::after {
     background-color: var(--page-black);
-}
-
-#burger-menu .nav-link:hover {
-    color: var(--page-white);
 }
 
 #burger-menu .menu-nav-wrapper {
@@ -707,18 +679,6 @@ body.scrolled-enough #contact {
     overflow: hidden;
 }
 
-.back-to-top-wrapper:hover .nav-link {
-    color: var(--page-black);
-}
-
-.back-to-top-wrapper:hover .nav-link::after {
-    width: 100%;
-}
-
-.back-to-top-wrapper:hover .arrow-icon-wrapper .arrow-icon {
-    translate: 3.5rem -3.5rem;
-}
-
 .back-to-top-wrapper .arrow-icon-wrapper {
     height: 3.5rem;
     width: 3.5rem;
@@ -845,11 +805,6 @@ body.scrolled-enough #contact {
     transition: var(--hover-transition);
 }
 
-.cursor.is-active .cursor-img-wrapper {
-    opacity: 1;
-    transform: scale(1);
-}
-
 .cursor .cursor-img {
     width: 100%;
     height: 100%;
@@ -857,21 +812,72 @@ body.scrolled-enough #contact {
     object-position: 50% 50%;
 }
 
-/* Class to show the cursor */
-.cursor.is-active {
-    visibility: visible;
-}
-
-.cursor.is-active .view-project::after {
-    width: 100%;
-}
-
-.cursor.is-active .view-project-text,
-.cursor.is-active .arrow-icon-wrapper {
-    opacity: 1;
-}
-
 /* ---------- Cursor Section END ---------- */
+
+/* ---------- HOVER EFFECTS START ---------- */
+@media (hover: hover) {
+    .nav-link:hover {
+        color: var(--page-black);
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+    .nav-link:hover .arrow-icon-wrapper .arrow-icon {
+        translate: 1em -1em;
+    }
+
+    .open-menu-link:hover .burger-icon span {
+        background-color: var(--page-black);
+    }
+
+    .open-menu-link:hover .burger-icon {
+        translate: 1em 0em;
+    }
+
+    .close-menu-link:hover .close-icon {
+        color: var(--page-white);
+        transform: rotate(180deg);
+    }
+
+    #burger-menu .nav-link:hover {
+        color: var(--page-white);
+    }
+
+    .back-to-top-wrapper:hover .nav-link {
+        color: var(--page-black);
+    }
+
+    .back-to-top-wrapper:hover .nav-link::after {
+        width: 100%;
+    }
+
+    .back-to-top-wrapper:hover .arrow-icon-wrapper .arrow-icon {
+        translate: 3.5rem -3.5rem;
+    }
+
+    /* cursor active styling also only on hover devies */
+    .cursor.is-active .cursor-img-wrapper {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .cursor.is-active {
+        visibility: visible;
+    }
+
+    .cursor.is-active .view-project::after {
+        width: 100%;
+    }
+
+    .cursor.is-active .view-project-text,
+    .cursor.is-active .arrow-icon-wrapper {
+        opacity: 1;
+    }
+}
+
+/* ---------- HOVER EFFECTS END ---------- */
 
 /* ---------- MEDIA QUERIES START ---------- */
 /* medium Breackpoint: max-width 1020px */
