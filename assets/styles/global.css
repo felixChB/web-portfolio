@@ -23,11 +23,11 @@
     --border-radius-small: 5px;
     --border-radius-big: 25px;
     --hover-transition: all 400ms cubic-bezier(.45, .19, .36, 1);
-    --appear-transition: width 0.7s cubic-bezier(.25, .46, .45, .94),
-        height 0.7s cubic-bezier(.25, .46, .45, .94),
-        opacity 0.7s cubic-bezier(.25, .46, .45, .94),
-        transform 0.7s cubic-bezier(.25, .46, .45, .94),
-        filter 0.7s cubic-bezier(.25, .46, .45, .94);
+    --appear-transition: width 0.6s cubic-bezier(.25, .46, .45, .94),
+        height 0.6s cubic-bezier(.25, .46, .45, .94),
+        opacity 0.6s cubic-bezier(.25, .46, .45, .94),
+        transform 0.6s cubic-bezier(.25, .46, .45, .94),
+        filter 0.6s cubic-bezier(.25, .46, .45, .94);
 
     --white-elem-transition: all 0.5s ease;
     --page-load-delay: 0.2s;
@@ -307,7 +307,7 @@ header .nav-link {
     width: 100%;
     height: 100vh;
     background-color: var(--highlight-color);
-    transition: all 0.7s cubic-bezier(.65, .05, .36, 1);
+    transition: all 0.6s cubic-bezier(.65, .05, .36, 1);
     /* speacial curve for menu slide-in */
     z-index: 200;
     flex-direction: column;
@@ -370,41 +370,41 @@ header .nav-link {
 #burger-menu.open .nav-link .close-icon-wrapper {
     transform: translateY(0);
     filter: blur(0);
-    transition-delay: 0.4s;
+    transition-delay: 0.05s;
 }
 
 #burger-menu.open .nav-link .close-icon-wrapper {
-    transition-delay: 0.4s;
+    transition-delay: 0.05s;
 }
 
 #burger-menu.open .menu-contact .link-text,
 #burger-menu.open .menu-contact .arrow-icon-wrapper {
-    transition-delay: 0.4s;
+    transition-delay: 0.05s;
 }
 
 #burger-menu.open .menu-nav-links li:nth-child(1) .link-text {
-    transition-delay: 0.5s;
+    transition-delay: 0.06s;
 }
 
 #burger-menu.open .menu-nav-links li:nth-child(2) .link-text {
-    transition-delay: 0.6s;
+    transition-delay: 0.14s;
 }
 
 #burger-menu.open .menu-nav-links li:nth-child(3) .link-text {
-    transition-delay: 0.7s;
+    transition-delay: 0.22s;
 }
 
 #burger-menu.open .menu-nav-links li:nth-child(4) .link-text {
-    transition-delay: 0.8s;
+    transition-delay: 0.3s;
 }
 
 #burger-menu.open .menu-bottom .link-text,
 #burger-menu.open .menu-bottom .arrow-icon-wrapper {
-    transition-delay: 0.8s;
+    transition-delay: 0.3s;
 }
 
 #burger-menu.open .menu-bottom::before {
-    transition-delay: 0.8s;
+    transition-delay: 0.3s;
     width: 100%;
 }
 
