@@ -303,7 +303,7 @@ header .nav-link {
     display: none;
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 100%;
     height: 100vh;
     background-color: var(--highlight-color);
@@ -312,13 +312,14 @@ header .nav-link {
     z-index: 200;
     flex-direction: column;
     padding: var(--side-space);
-    transform: translateX(100%);
+    /* transform: translateX(100%); */
     justify-content: space-between;
 }
 
 #burger-menu.open {
     display: flex;
-    transform: translateX(0%);
+    /* transform: translateX(0%); */
+    right: 0;
 }
 
 #burger-menu .brackets-headline {
@@ -879,6 +880,12 @@ body.scrolled-enough #contact {
 /* ---------- HOVER EFFECTS END ---------- */
 
 /* ---------- MEDIA QUERIES START ---------- */
+
+/* breakpoint to get the fancy effects on larger screens only */
+@media (min-width: 1021px) {
+    
+}
+
 /* medium Breackpoint: max-width 1020px */
 @media (max-width: 1020px) {
     :root {
@@ -935,6 +942,12 @@ body.scrolled-enough #contact {
     .email-link {
         font-size: 1rem;
         line-height: 1rem;
+    }
+
+    /* contact not sticky on small screens */
+    #contact {
+        position: initial;
+        visibility: visible;
     }
 
     .contact-bottom-wrapper {
