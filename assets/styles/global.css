@@ -591,6 +591,7 @@ h2 {
     transition: none;
     transform: none;
     filter: none;
+    overflow-wrap: anywhere;
 }
 
 .email-link-wrapper {
