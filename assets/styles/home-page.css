@@ -113,21 +113,19 @@ body.scrolled-enough #about {
 /*---------- Projects Section START----------*/
 #projects {
     position: relative;
-    width: calc(100% - (var(--side-space) * 2));
+    width: 100%;
     height: auto;
     background-color: var(--page-white);
     color: var(--page-black);
     padding-top: 48px;
     padding-bottom: 15vh;
-    padding-inline: 0;
+    padding-inline: var(--side-space);
     border-radius: var(--border-radius-big);
     transition: var(--white-elem-transition);
 }
 
 #projects.inview {
-    width: 100%;
     border-radius: 0;
-    padding-inline: var(--side-space);
 }
 
 #projects.inview h2 .headline-text {
@@ -230,13 +228,8 @@ body.scrolled-enough #about {
     row-gap: calc(var(--side-space) * 1.5);
     column-gap: calc(var(--side-space) / 2);
     transition: var(--white-elem-transition);
-    opacity: 0;
-    transform: scaleX(0.95);
-}
-
-#projects.inview #project-wrapper {
     opacity: 1;
-    transform: scaleX(1);
+    transform: none;
 }
 
 .project-card {
@@ -244,15 +237,10 @@ body.scrolled-enough #about {
     flex-direction: column;
     cursor: pointer;
     width: 100%;
-    transition: var(--appear-transition);
     min-height: 40vh;
     max-height: 90vh;
     gap: 6px;
-    transform: translateY(8vh);
-}
-
-.project-card.inview {
-    transform: translateY(0);
+    transform: none;
 }
 
 .project-card-img-wrapper {
@@ -353,6 +341,7 @@ body.scrolled-enough #about {
     display: none;
 }
 
+
 /* ---------- HOVER EFFECTS START ---------- */
 @media (hover: hover) {
     #project-wrapper:hover .project-card img {
@@ -387,6 +376,40 @@ body.scrolled-enough #about {
 /* ---------- HOVER EFFECTS END ---------- */
 
 /* ---------- MEDIA QUERIES START ---------- */
+
+@media (min-width: 501px) {
+
+    #projects {
+        width: calc(100% - (var(--side-space) * 2));
+        padding-inline: 0;
+    }
+
+    #projects.inview {
+        width: 100%;
+        border-radius: 0;
+        padding-inline: var(--side-space);
+    }
+
+    #project-wrapper {
+        transition: var(--white-elem-transition);
+        opacity: 0;
+        transform: scaleX(0.95);
+    }
+
+    #projects.inview #project-wrapper {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    .project-card {
+        transition: var(--appear-transition);
+        transform: translateY(8vh);
+    }
+
+    .project-card.inview {
+        transform: translateY(0);
+    }
+}
 
 /* earlier breakpoint for certain elements */
 @media (max-width: 1200px) {
