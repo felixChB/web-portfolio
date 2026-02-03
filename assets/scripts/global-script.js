@@ -18,7 +18,7 @@ export const appearTextOptions = { root: null, threshold: 0.0, rootMargin: "10% 
 export const appearTextObserver = new IntersectionObserver(onSlideInEntry, appearTextOptions);
 
 // check if desktop // > 1020px like in css media query
-export const isDesktop = window.matchMedia('(min-width: 1021px)').matches;
+export let isNotPhone = window.matchMedia('(min-width: 501px)').matches;
 
 export function onPageLoad() {
 
@@ -44,6 +44,11 @@ export function onPageLoad() {
             scrollToSection(pendingTarget);
         }, 400);
     }
+
+    window.addEventListener('resize', () => {
+        // update isNotPhone on resize
+        isNotPhone = window.matchMedia('(min-width: 501px)').matches;
+    });
 }
 
 export function backToTopHandler() {
@@ -54,20 +59,23 @@ export function backToTopHandler() {
 }
 
 export function toggleContactSectionVisibility() {
-    // when main is scrolled up halfway through the window height past the contact section
-    if (mainElem.getBoundingClientRect().bottom <= (window.innerHeight * 0.4)) {
-        if (!contactSectionElem.classList.contains('inview')) {
-            contactSectionElem.classList.add('inview');
+    // only on desktop and tablets
+    if (isNotPhone) {
+        // when main is scrolled up halfway through the window height past the contact section
+        if (mainElem.getBoundingClientRect().bottom <= (window.innerHeight * 0.4)) {
+            if (!contactSectionElem.classList.contains('inview')) {
+                contactSectionElem.classList.add('inview');
 
-            //scroll to the bottom when contact inview is triggered
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: "smooth"
-            });
-        }
-    } else {
-        if (contactSectionElem.classList.contains('inview')) {
-            contactSectionElem.classList.remove('inview');
+                //scroll to the bottom when contact inview is triggered
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: "smooth"
+                });
+            }
+        } else {
+            if (contactSectionElem.classList.contains('inview')) {
+                contactSectionElem.classList.remove('inview');
+            }
         }
     }
 }
@@ -214,7 +222,7 @@ export function onSlideInEntry(entries) {
 export function splitTextIntoLines(container) {
 
     // Only run on desktop for performance reasons
-    if (!isDesktop) return;
+    if (!isNotPhone) return;
 
     // Save original text on first run to prevent losing words on repeated resizes
     if (!container.dataset.originalText) {

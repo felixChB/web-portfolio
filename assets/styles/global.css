@@ -563,7 +563,7 @@ h2 {
 
 /* ---------- Contact Section START ---------- */
 #contact {
-    width: calc(100% - var(--side-space) * 2);
+    width: 100%;
     height: calc(100vh - (var(--header-height) * 1.1));
     display: flex;
     flex-direction: column;
@@ -571,23 +571,10 @@ h2 {
     background-color: var(--page-black);
     color: var(--page-white);
     justify-content: end;
-    transition: var(--white-elem-transition), visibility 0s linear;
-    position: sticky;
-    bottom: 0;
-    z-index: 0;
-    visibility: hidden;
 }
 
 #contact .nav-link::after {
-    opacity: 0;
-}
-
-#contact.inview .nav-link::after {
     opacity: 1;
-}
-
-body.scrolled-enough #contact {
-    visibility: visible;
 }
 
 .get-in-touch-wrapper {
@@ -598,6 +585,12 @@ body.scrolled-enough #contact {
     align-items: center;
     gap: 20px;
     flex-grow: 1;
+}
+
+#contact h2 .headline-text {
+    transition: none;
+    transform: none;
+    filter: none;
 }
 
 .email-link-wrapper {
@@ -629,11 +622,9 @@ body.scrolled-enough #contact {
     left: 0;
     content: '';
     display: block;
-    width: 0%;
+    width: 100%;
     height: 1px;
     background: var(--grey-color);
-    transition: var(--appear-transition);
-    transition-delay: 0s;
 }
 
 .contact-bottom-wrapper .contact-left {
@@ -687,58 +678,12 @@ body.scrolled-enough #contact {
     transform: rotate(-45deg);
     border-radius: var(--border-radius-small);
     transition: var(--appear-transition);
-    opacity: 0;
+    opacity: 1;
 }
 
 .back-to-top-wrapper .arrow-icon-wrapper .arrow-icon:last-child {
     top: 3.5rem;
     left: -3.5rem;
-}
-
-/* contact inview style and animations */
-#contact.inview h2 .headline-text {
-    transform: translateY(0px);
-    filter: blur(0);
-}
-
-#contact .nav-link .link-text,
-#contact .nav-link .arrow-icon-wrapper {
-    transform: translateY(1.5em);
-    filter: blur(2px);
-    transition: var(--appear-transition);
-}
-
-#contact .back-to-top-wrapper .arrow-icon-wrapper {
-    transform: translateY(150%) rotate(-45deg);
-    filter: blur(2px);
-}
-
-#contact.inview .nav-link .link-text,
-#contact.inview .nav-link .arrow-icon-wrapper {
-    transform: translateY(0);
-    filter: blur(0);
-    transition-delay: 0.08s;
-}
-
-#contact.inview .email-link-wrapper .link-text,
-#contact.inview .email-link-wrapper .arrow-icon-wrapper {
-    transition-delay: 0.16s;
-}
-
-#contact.inview .back-to-top-wrapper .arrow-icon-wrapper {
-    transform: translateY(0) rotate(-45deg);
-    filter: blur(0);
-    opacity: 1;
-}
-
-#contact.inview .contact-bottom-wrapper .link-text,
-#contact.inview .contact-bottom-wrapper .arrow-icon-wrapper {
-    transition-delay: 0.24s;
-}
-
-#contact.inview .contact-bottom-wrapper::before {
-    width: 100%;
-    transition-delay: 0.32s;
 }
 
 /* ---------- Contact Section END ---------- */
@@ -882,8 +827,91 @@ body.scrolled-enough #contact {
 /* ---------- MEDIA QUERIES START ---------- */
 
 /* breakpoint to get the fancy effects on larger screens only */
-@media (min-width: 1021px) {
-    
+@media (min-width: 501px) {
+
+    body.scrolled-enough #contact {
+        visibility: visible;
+    }
+
+    #contact {
+        width: calc(100% - var(--side-space) * 2);
+        transition: var(--white-elem-transition), visibility 0s linear;
+        position: sticky;
+        bottom: 0;
+        z-index: 0;
+        visibility: hidden;
+    }
+
+    #contact h2 .headline-text {
+        transition: var(--appear-transition);
+        transform: translateY(1.5em);
+        filter: blur(2px);
+    }
+
+    #contact .nav-link::after {
+        opacity: 0;
+    }
+
+    #contact.inview .nav-link::after {
+        opacity: 1;
+    }
+
+    .contact-bottom-wrapper::before {
+        width: 0%;
+        transition: var(--appear-transition);
+        transition-delay: 0s;
+    }
+
+    .back-to-top-wrapper .arrow-icon-wrapper {
+        transition: var(--appear-transition);
+        opacity: 0;
+    }
+
+    /* contact inview style and animations */
+    #contact.inview h2 .headline-text {
+        transform: translateY(0px);
+        filter: blur(0);
+    }
+
+    #contact .nav-link .link-text,
+    #contact .nav-link .arrow-icon-wrapper {
+        transform: translateY(1.5em);
+        filter: blur(2px);
+        transition: var(--appear-transition);
+    }
+
+    #contact .back-to-top-wrapper .arrow-icon-wrapper {
+        transform: translateY(150%) rotate(-45deg);
+        filter: blur(2px);
+    }
+
+    #contact.inview .nav-link .link-text,
+    #contact.inview .nav-link .arrow-icon-wrapper {
+        transform: translateY(0);
+        filter: blur(0);
+        transition-delay: 0.08s;
+    }
+
+    #contact.inview .email-link-wrapper .link-text,
+    #contact.inview .email-link-wrapper .arrow-icon-wrapper {
+        transition-delay: 0.16s;
+    }
+
+    #contact.inview .back-to-top-wrapper .arrow-icon-wrapper {
+        transform: translateY(0) rotate(-45deg);
+        filter: blur(0);
+        opacity: 1;
+    }
+
+    #contact.inview .contact-bottom-wrapper .link-text,
+    #contact.inview .contact-bottom-wrapper .arrow-icon-wrapper {
+        transition-delay: 0.24s;
+    }
+
+    #contact.inview .contact-bottom-wrapper::before {
+        width: 100%;
+        transition-delay: 0.32s;
+    }
 }
 
 /* medium Breackpoint: max-width 1020px */

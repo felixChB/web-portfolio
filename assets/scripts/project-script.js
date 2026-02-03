@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Re-split the text to calculate new line breaks
         g.splitTextIntoLines(aboutTextElem);
         changeTopSpacerHeight();
+        g.toggleContactSectionVisibility();
     });
 
     scrolledEnoughProjectTrigger();

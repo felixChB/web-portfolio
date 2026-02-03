@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('resize', () => {
         // Re-split the text to calculate new line breaks
         g.splitTextIntoLines(aboutTextElem);
+        g.toggleContactSectionVisibility();
     });
 
     g.toggleContactSectionVisibility();
