@@ -9,7 +9,10 @@ const projectTopSpacerElem = document.querySelector(".project-top-spacer");
 
 const nextPrevOptions = { root: null, threshold: 0.0, rootMargin: "-5% 0% -5% 0%" };
 
+// create all Oberservers
 let projectImgsObserver = new IntersectionObserver(g.onSlideInEntry, g.slideInOptions);
+let mainElemObserver = new IntersectionObserver(onEntry, g.whiteSectionElemOptions);
+let nextPrevObserver = new IntersectionObserver(onEntry, nextPrevOptions);
 
 document.addEventListener("DOMContentLoaded", () => {
     // ---------- global functionalities for every page START ----------
@@ -44,19 +47,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ////// Inview appear Events //////
-    // // create all Oberservers
-    let mainElemObserver = new IntersectionObserver(onEntry, g.whiteSectionElemOptions);
-    let nextPrevObserver = new IntersectionObserver(onEntry, nextPrevOptions);
 
     if (g.mainElem) {
         mainElemObserver.observe(g.mainElem);
     }
 
-    nextPrevObserver.observe(nextProjectSectionElem);
+    if (g.isNotPhone) {
+        nextPrevObserver.observe(nextProjectSectionElem);
+    }
 
-    if (projectImgElems) {
-        for (let img of projectImgElems) {
-            projectImgsObserver.observe(img);
+    if (g.isNotPhone) {
+        if (projectImgElems) {
+            for (let img of projectImgElems) {
+                projectImgsObserver.observe(img);
+            }
         }
     }
 
