@@ -27,6 +27,7 @@
     height: 85vh;
     background: transparent;
     pointer-events: none;
+    transition: var(--appear-transition);
 }
 
 .head-img-wrapper .project-head-img {
@@ -64,10 +65,6 @@ main.inview {
     font-size: var(--f-size-smallest);
 }
 
-.project-details {
-    padding-inline: 0;
-}
-
 .project-infos {
     display: flex;
     flex-direction: row;
@@ -102,8 +99,6 @@ body.page-loaded .project-title .headline-text {
 }
 
 .project-text-wrapper {
-    transform: none;
-    opacity: 1;
     max-width: var(--max-width);
 }
 
@@ -220,37 +215,6 @@ body.page-loaded .project-title .headline-text {
 
 /* breakpoint to get the fancy effects on larger screens only */
 @media (min-width: 501px) {
-
-    main {
-        width: calc(100% - (var(--side-space) * 2));
-        padding-inline: 0;
-    }
-
-    main.inview {
-        width: 100%;
-        border-radius: 0px;
-        padding-inline: var(--side-space);
-    }
-
-    .project-details {
-        padding-inline: var(--side-space);
-        transition: var(--white-elem-transition);
-    }
-
-    main.inview .project-details {
-        padding-inline: 0;
-    }
-
-    .project-text-wrapper {
-        transition: var(--white-elem-transition);
-        transform: translateX(var(--side-space));
-        opacity: 0;
-    }
-
-    main.inview .project-text-wrapper {
-        transform: translateX(0);
-        opacity: 1;
-    }
 
     .project-img {
         transition: var(--appear-transition);
