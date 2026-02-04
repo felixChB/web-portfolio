@@ -67,10 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function changeTopSpacerHeight() {
-    let detailsRectHeght = projectDetailsElem.getBoundingClientRect().height;
+    let detailsRectHeight = projectDetailsElem.getBoundingClientRect().height;
     let paddingTopMain = parseFloat(window.getComputedStyle(g.mainElem).getPropertyValue('padding-top'));
 
-    projectTopSpacerElem.style.height = `calc(100svh - ${detailsRectHeght}px - ${paddingTopMain}px)`;
+    projectTopSpacerElem.style.height = `calc(100svh - ${detailsRectHeight}px - ${paddingTopMain}px)`;
 }
 
 function onEntry(entries) {
