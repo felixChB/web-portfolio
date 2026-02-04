@@ -301,4 +301,31 @@ body.page-loaded .project-title .headline-text {
     }
 }
 
+/* specific styling for the unique project-pages (mostly on mobile to avoid line-wrap */
+
+@media (max-width: 272px) {
+    #vr-pong .project-title .headline-text {
+        font-size: 16vw;
+        line-height: 16vw;
+    }
+
+    #ui-verse .project-title .headline-text {
+        font-size: 16vw;
+        line-height: 16vw;
+    }
+}
+
+@media (max-width: 674px) {
+    #rising-weather .project-title .headline-text {
+        font-size: 9vw;
+        line-height: 9vw;
+    }
+}
+
+@media (max-width: 600px) {
+    #constructor .project-title .headline-text {
+        font-size: 11vw;
+        line-height: 11vw;
+    }
+}
 /* ---------- MEDIA QUERIES END ---------- */

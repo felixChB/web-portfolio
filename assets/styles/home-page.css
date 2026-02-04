@@ -479,4 +479,13 @@ body.scrolled-enough #about {
     }
 }
 
+/* specific styling for the unique project-pages (mostly on mobile to avoid line-wrap */
+
+@media (max-width: 340px) {
+    .projects-headline .headline-text {
+        font-size: 13vw;
+        line-height: 13vw;
+    }
+}
+
 /* ---------- MEDIA QUERIES END ---------- */
