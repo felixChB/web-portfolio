@@ -33,6 +33,7 @@ body.scrolled-enough #home-header {
     position: relative;
     width: 100%;
     height: calc(100vh - var(--header-height));
+    height: calc(100dvh - var(--header-height));
     overflow: hidden;
     border-radius: var(--border-radius-big) var(--border-radius-big) 0 0;
     padding-inline: var(--side-space);
