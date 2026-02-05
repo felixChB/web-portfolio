@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // });
         changeTopSpacerHeight();
         g.toggleContactSectionVisibility();
+        g.initScrollReveal(aboutWrapper, aboutWords, {});
     });
 
     scrolledEnoughProjectTrigger();

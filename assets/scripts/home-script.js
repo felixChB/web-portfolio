@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //     g.splitTextIntoLines(elem);
         // });
         g.toggleContactSectionVisibility();
+        g.initScrollReveal(aboutWrapper, aboutWords, {});
     });
 
     g.toggleContactSectionVisibility();
