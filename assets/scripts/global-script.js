@@ -222,7 +222,13 @@ export function onSlideInEntry(entries) {
 export function splitTextIntoLines(container) {
 
     // Only run on desktop for performance reasons
-    if (!isNotPhone) return;
+    if (!isNotPhone) {
+        // restore original text if the split was previously applied
+        if (container.dataset.originalText) {
+            container.innerText = container.dataset.originalText;
+        }
+        return;
+    }
 
     // Save original text on first run to prevent losing words on repeated resizes
     if (!container.dataset.originalText) {
