@@ -56,11 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
         nextPrevObserver.observe(nextProjectSectionElem);
     }
 
-    if (g.isNotPhone) {
-        if (projectImgElems) {
-            for (let img of projectImgElems) {
-                projectImgsObserver.observe(img);
-            }
+    if (projectImgElems) {
+        for (let img of projectImgElems) {
+            projectImgsObserver.observe(img);
         }
     }
 
