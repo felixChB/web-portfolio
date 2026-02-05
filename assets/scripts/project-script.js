@@ -1,6 +1,7 @@
 import * as g from "./global-script.js";
 
 const aboutTextElem = document.querySelector(".appear-text-wrapper");
+const aboutTextPartElems = document.querySelectorAll(".appear-text-part");
 const nextProjectSectionElem = document.getElementById("next-project-section");
 const projectImgElems = document.querySelectorAll(".project-img");
 const nextProjectLinkElems = document.querySelectorAll(".next-project-link-wrapper");
@@ -22,14 +23,18 @@ document.addEventListener("DOMContentLoaded", () => {
     g.navLinksHandler();
     // ---------- global functionalities for every page END ----------
 
-    g.splitTextIntoLines(aboutTextElem);
     g.appearTextObserver.observe(aboutTextElem);
+    aboutTextPartElems.forEach(elem => {
+        g.splitTextIntoLines(elem);
+    });
 
     changeTopSpacerHeight();
 
     window.addEventListener('resize', () => {
         // Re-split the text to calculate new line breaks
-        g.splitTextIntoLines(aboutTextElem);
+        aboutTextPartElems.forEach(elem => {
+            g.splitTextIntoLines(elem);
+        });
         changeTopSpacerHeight();
         g.toggleContactSectionVisibility();
     });
