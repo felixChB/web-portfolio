@@ -287,6 +287,81 @@ export function splitTextIntoLines(container) {
     });
 }
 
+export function prepareRevealText(container) {
+    if (!container) return [];
+    
+    const parts = container.querySelectorAll('.appear-text-part');
+    let allWords = [];
+
+    parts.forEach((part) => {
+        const text = part.innerText;
+        const words = text.split(/\s+/);
+        part.innerHTML = ''; 
+
+        words.forEach((wordText) => {
+            if (wordText.length === 0) return;
+            const span = document.createElement('span');
+            span.className = 'single-word';
+            span.innerText = wordText + '\u00A0';
+            part.appendChild(span);
+            allWords.push(span);
+        });
+    });
+
+    return allWords;
+}
+
+export function initScrollReveal(wrapper, wordsArray, options = {}) {
+    const {
+        windowSize = 10,
+        floatDistance = 20,
+        endTriggerPercent = 0.6 // 0.5 = 50% of screen height
+    } = options;
+
+    if (!wrapper || wordsArray.length === 0) return;
+
+    const handleScroll = () => {
+        const rect = wrapper.getBoundingClientRect();
+        const vh = window.innerHeight;
+
+        const startTrigger = vh;
+        const endTrigger = vh * endTriggerPercent;
+        
+        // Progress formula
+        // $$Progress = \frac{Start - RectTop}{Height + Start - End}$$
+        let progress = (startTrigger - rect.top) / (rect.height + startTrigger - endTrigger);
+        progress = Math.max(0, Math.min(1, progress));
+
+        const activeIndex = progress * (wordsArray.length + windowSize);
+
+        wordsArray.forEach((word, i) => {
+            const distance = activeIndex - i;
+            const normalizedProgress = Math.max(0, Math.min(1, distance / windowSize));
+            
+            // Apply Opacity
+            word.style.opacity = 0.25 + (normalizedProgress * 0.75);
+            
+            // Apply Float
+            // const yOffset = floatDistance - (normalizedProgress * floatDistance);
+            // word.style.transform = `translate3d(0, ${yOffset}px, 0)`;
+        });
+    };
+
+    // Optimization: Only animate when scrolling
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    handleScroll(); // Initialize state
+}
+
 export function updateLocalTime() {
     const now = new Date();
 

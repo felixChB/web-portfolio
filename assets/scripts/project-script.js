@@ -15,6 +15,8 @@ let projectImgsObserver = new IntersectionObserver(g.onSlideInEntry, g.slideInOp
 let mainElemObserver = new IntersectionObserver(onEntry, g.whiteSectionElemOptions);
 let nextPrevObserver = new IntersectionObserver(onEntry, nextPrevOptions);
 
+let ticking = false;
+
 document.addEventListener("DOMContentLoaded", () => {
     // ---------- global functionalities for every page START ----------
     g.onPageLoad();
@@ -23,18 +25,25 @@ document.addEventListener("DOMContentLoaded", () => {
     g.navLinksHandler();
     // ---------- global functionalities for every page END ----------
 
-    g.appearTextObserver.observe(aboutTextElem);
-    aboutTextPartElems.forEach(elem => {
-        g.splitTextIntoLines(elem);
-    });
+    // g.appearTextObserver.observe(aboutTextElem);
+    // aboutTextPartElems.forEach(elem => {
+    //     g.splitTextIntoLines(elem);
+    // });
 
     changeTopSpacerHeight();
 
+
+    // gemini code for alternative appear-text animation on scroll
+    const aboutWrapper = document.querySelector('.appear-text-wrapper');
+    const aboutWords = g.prepareRevealText(aboutWrapper);
+    g.initScrollReveal(aboutWrapper, aboutWords, {});
+    // end of gemini code
+
     window.addEventListener('resize', () => {
         // Re-split the text to calculate new line breaks
-        aboutTextPartElems.forEach(elem => {
-            g.splitTextIntoLines(elem);
-        });
+        // aboutTextPartElems.forEach(elem => {
+        //     g.splitTextIntoLines(elem);
+        // });
         changeTopSpacerHeight();
         g.toggleContactSectionVisibility();
     });
@@ -50,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scrolledEnoughProjectTrigger();
         g.toggleContactSectionVisibility();
     });
+
 
     // ////// Inview appear Events //////
 

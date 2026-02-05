@@ -511,6 +511,15 @@ h2 {
     transition-delay: inherit;
 }
 
+/* for alternative appear-text animation on scroll */
+.single-word {
+    display: inline-block;
+    opacity: 0.25;
+    /* Start 20px lower */
+    transition: opacity 0.2s ease-out;
+    will-change: opacity;
+}
+
 .headline-text {
     position: relative;
     display: block;

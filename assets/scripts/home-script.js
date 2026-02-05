@@ -24,16 +24,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     scrolledEnoughIndexTrigger();
 
-    g.appearTextObserver.observe(aboutTextElem);
-    aboutTextPartElems.forEach(elem => {
-        g.splitTextIntoLines(elem);
-    });
+    // g.appearTextObserver.observe(aboutTextElem);
+    // aboutTextPartElems.forEach(elem => {
+    //     g.splitTextIntoLines(elem);
+    // });
+
+    // gemini code for alternative appear-text animation on scroll
+    const aboutWrapper = document.querySelector('.appear-text-wrapper');
+    const aboutWords = g.prepareRevealText(aboutWrapper);
+    g.initScrollReveal(aboutWrapper, aboutWords, {});
+    // end of gemini code
 
     window.addEventListener('resize', () => {
         // Re-split the text to calculate new line breaks
-        aboutTextPartElems.forEach(elem => {
-            g.splitTextIntoLines(elem);
-        });
+        // aboutTextPartElems.forEach(elem => {
+        //     g.splitTextIntoLines(elem);
+        // });
         g.toggleContactSectionVisibility();
     });
 
