@@ -489,6 +489,8 @@ h2 {
     display: block;
     /* overflow: hidden; */
     line-height: normal;
+    width: 100%;
+    height: fit-content;
 }
 
 .appear-text-line {
