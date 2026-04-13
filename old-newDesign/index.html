@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>//Felix´ Portfolio - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap" rel="stylesheet">
+    <script src="./assets/scripts/home-script.js" type="module" defer></script>
+    <link rel="stylesheet" href="./assets/styles/global.css">
+    <link rel="stylesheet" href="./assets/styles/home-page.css">
+
+    <link rel="icon" type="image/png" href="./assets/general-assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./assets/general-assets/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/general-assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/general-assets/apple-touch-icon.png" />
+    <link rel="manifest" href="./assets/general-assets/site.webmanifest" />
+</head>
+
+<body class="home-page">
+    <!------------Global Header and Burger-Menu START------------>
+    <!-- The floating header -->
+    <header id="main-header">
+        <span id="logo">
+            <a href="/web-portfolio/">
+                <p>// Felix´</p>
+                <p>Portfolio</p>
+            </a>
+        </span>
+        <nav id="main-nav" class="text-nav">
+            <a class="nav-link" nav-section-value="about"><span class="link-text">[About]</span></a><a class="nav-link"
+                nav-section-value="projects"><span class="link-text">[Projects]</span></a><a class="nav-link"
+                nav-section-value="contact"><span class="link-text">[Contact]</span></a>
+        </nav>
+        <nav class="burger-nav">
+            <a class="open-menu-link nav-link" nav-section-value="open-menu">
+                <div class="burger-icon-wrapper">
+                    <div class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <span class="link-text">[Menu]</span>
+            </a>
+        </nav>
+    </header>
+    <div id="burger-menu">
+        <div class="close-menu-wrapper">
+            <a class="close-menu-link nav-link" nav-section-value="close-menu">
+                <span class="link-text">[Close]</span>
+                <div class="close-icon-wrapper">
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        height="24">
+                        <path d="M22 2L2 22M2 2l20 20" fill="none" stroke="currentColor" stroke-width="1"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class="menu-contact">
+            <span class="brackets-headline">[Contact me]</span>
+            <a href="mailto:Lix.brunn@gmail.com" class="email-link nav-link link">
+                <span class="link-text">Lix.brunn@gmail.com</span>
+                <div class="arrow-icon-wrapper">
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        height="24">
+                        <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        height="24">
+                        <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class="menu-nav-wrapper">
+            <ul class="menu-nav-links">
+                <li><a class="menu-link nav-link" nav-section-value="home"><span class="link-text">Home</span></a>
+                </li>
+                <li><a class="menu-link nav-link" nav-section-value="about"><span class="link-text">About</span></a>
+                </li>
+                <li><a class="menu-link nav-link has-project-number" nav-section-value="projects"><span
+                            class="link-text">Projects<span class="projects-number">[4]</span></span></a></li>
+                <li><a class="menu-link nav-link" nav-section-value="contact"><span class="link-text">Contact</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="menu-bottom">
+            <div class="menu-bottom-links">
+                <span class="brackets-headline">[Connect]</span>
+                <ul class="social-links">
+                    <li><a href="https://github.com/felixChB" target="_blank" class="nav-link link"><span
+                                class="link-text">Github</span>
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a></li>
+                    <li><a href="https://www.linkedin.com/in/felix-brunn-0a32313a3/" target="_blank"
+                            class="nav-link link"><span class="link-text">LinkedIn</span>
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="legals">
+                <span class="legal-info">© 2026</span>
+                <span class="local-time">///</span>
+            </div>
+        </div>
+    </div>
+    <!------------Global Header and Burger-Menu END------------>
+    <header id="home-header">
+        <span id="logo">
+            <a href="">
+                <p>// Felix´</p>
+                <p>Portfolio</p>
+            </a>
+        </span>
+        <nav id="home-nav" class="text-nav">
+            <a class="nav-link" nav-section-value="about"><span class="link-text">[About]</span></a><a class="nav-link"
+                nav-section-value="projects"><span class="link-text">[Projects]</span></a><a class="nav-link"
+                nav-section-value="contact"><span class="link-text">[Contact]</span></a>
+        </nav>
+        <nav class="burger-nav">
+            <a class="open-menu-link nav-link" nav-section-value="open-menu">
+                <div class="burger-icon-wrapper">
+                    <div class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <span class="link-text">[Menu]</span>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <div id="home-wrapper">
+                <h1 class="home-headline">
+                    <span class="headline-text">Portfolio</span>
+                </h1>
+                <div class="scroll-to-explore">
+                    <span>scroll to explore</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div id="about-wrapper" class="appear-elem text-font">
+                <div class="about-text-wrapper">
+                    <span class="brackets-headline">[about me]</span>
+                    <div id="about-text" class="appear-text-wrapper">
+                        <p class="appear-text-part" style="margin-bottom: 1em;">
+                            Hey, I‘m Felix. I‘m a creative designer and developer and recently graduated with a masters
+                            degree from the HFU in the black forest in germany. My works spread through various fields
+                            from web-design and development to interaction and game design. I also did some projects
+                            working with VR, creating 3D assets and animations. Mostly I‘m home in the web, where I also
+                            did my last project for my master thesis: a multiplayer VR pong game.
+                        </p>
+                        <p class="appear-text-part">
+                            I´m always striving to learn new things and improve my skills, where I can combine my
+                            passion for design and technology to create engaging and innovative experiences.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="projects-headline-wrapper">
+                <div>
+                    <h2 class="projects-headline">
+                        <span class="headline-text">selected</span>
+                    </h2>
+                    <span class="projects-headline-line-1"></span>
+                </div>
+                <div>
+                    <span class="projects-headline-line-2"></span>
+                    <h2 class="projects-headline  has-project-number">
+                        <span class="headline-text">projects<span class="projects-number">[4]</span></span>
+                    </h2>
+                </div>
+            </div>
+            <div id="project-wrapper">
+                <!-- VR-Pong Card -->
+                <a href="./projects/vr-pong/" id="vr-pong-card" class="project-card">
+                    <div class="project-card-img-wrapper">
+                        <img src="./assets/project-assets/vr-pong/vr-pong-thumbnail.webp" alt="">
+                    </div>
+                    <div class="project-card-details">
+                        <div class="project-card-infos">
+                            <span class="project-card-year">2025</span>
+                            <span class="project-card-tags type-font">[webXR, VR, co-located, multiplayer]</span>
+                        </div>
+                        <span class="project-card-title">
+                            <span>VR-Pong</span>
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </span>
+                    </div>
+                </a>
+                <!-- Rising Weather Card -->
+                <a href="./projects/rising-weather/" id="rising-weather-card" class="project-card">
+                    <div class="project-card-img-wrapper">
+                        <img src="./assets/project-assets/rising-weather/rising-weather-thumbnail.webp" alt="">
+                    </div>
+                    <div class="project-card-details">
+                        <div class="project-card-infos">
+                            <span class="project-card-year">2022</span>
+                            <span class="project-card-tags type-font">[installation, interactive, visualisation,
+                                data-driven]</span>
+                        </div>
+                        <span class="project-card-title">
+                            <span>Rising Weather</span>
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </span>
+                    </div>
+                </a>
+                <!-- Constructor Card -->
+                <a href="./projects/constructor/" id="constructor-card" class="project-card">
+                    <div class="project-card-img-wrapper">
+                        <img src="./assets/project-assets/constructor/constructor-thumbnail.webp" alt="">
+                    </div>
+                    <div class="project-card-details">
+                        <div class="project-card-infos">
+                            <span class="project-card-year">2023</span>
+                            <span class="project-card-tags type-font">[game-asset, 3D-modelling,
+                                texture-painting]</span>
+                        </div>
+                        <span class="project-card-title">
+                            <span>Constructor</span>
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </span>
+                    </div>
+                </a>
+                <!-- UI-verse Card -->
+                <a href="./projects/ui-verse/" id="ui-verse-card" class="project-card">
+                    <div class="project-card-img-wrapper">
+                        <img src="./assets/project-assets/ui-verse/ui-verse-thumbnail.webp" alt="">
+                    </div>
+                    <div class="project-card-details">
+                        <div class="project-card-infos">
+                            <span class="project-card-year">2020</span>
+                            <span class="project-card-tags type-font">[web-design, interactive, timeline]</span>
+                        </div>
+                        <span class="project-card-title">
+                            <span>UI-verse</span>
+                            <div class="arrow-icon-wrapper">
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    <!------------Global Footer START------------>
+    <footer id="contact">
+        <div class="get-in-touch-wrapper">
+            <h2 class="contact-headline">
+                <span class="headline-text">Get in Touch</span>
+            </h2>
+            <div class="email-link-wrapper">
+                <span class="brackets-headline">[Contact me]</span>
+                <a href="mailto:Lix.brunn@gmail.com" class="email-link nav-link link">
+                    <span class="link-text">Lix.brunn@gmail.com</span>
+                    <div class="arrow-icon-wrapper">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="contact-bottom-wrapper">
+            <nav class="contact-left">
+                <div>
+                    <span class="brackets-headline">[Navigation]</span>
+                    <ul class="sitemap">
+                        <li><a nav-section-value="home" class="nav-link"><span class="link-text">Home</span></a>
+                        </li>
+                        <li><a nav-section-value="about" class="nav-link"><span class="link-text">About</span></a>
+                        </li>
+                        <li><a nav-section-value="projects" class="nav-link"><span class="link-text">Projects</span></a>
+                        </li>
+                        <li><a nav-section-value="contact" class="nav-link"><span class="link-text">Contact</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="brackets-headline">[Connect]</span>
+                    <ul class="social-links">
+                        <li><a href="https://github.com/felixChB" target="_blank" class="nav-link link"><span
+                                    class="link-text">Github</span>
+                                <div class="arrow-icon-wrapper">
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        width="24" height="24">
+                                        <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        width="24" height="24">
+                                        <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </a></li>
+                        <li><a href="https://www.linkedin.com/in/felix-brunn-0a32313a3/" target="_blank"
+                                class="nav-link link"><span class="link-text">LinkedIn</span>
+                                <div class="arrow-icon-wrapper">
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        width="24" height="24">
+                                        <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        width="24" height="24">
+                                        <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
+                                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="contact-right">
+                <a class="back-to-top-wrapper">
+                    <div class="arrow-icon-wrapper">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <span class="back-to-top-text nav-link"><span class="link-text">[Back to Top]</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="legals">
+            <span class="legal-info">© 2026</span>
+            <span class="local-time">///</span>
+        </div>
+    </footer>
+    <!------------Global Footer END------------>
+
+    <!-- View Project Cursor -->
+    <div id="cursor-view-project" class="cursor">
+        <div class="cursor-wrapper">
+            <span class="cursor-view-project view-project">
+                <span class="cursor-text view-project-text">[View project]</span>
+                <div class="arrow-icon-wrapper">
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        height="24">
+                        <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        height="24">
+                        <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </span>
+        </div>
+    </div>
+
+    <!-- IMG Cursor -->
+    <div id="cursor-img" class="cursor">
+        <div class="cursor-wrapper">
+            <div class="cursor-img-wrapper">
+                <img class="cursor-img" src="" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- ----------custom cursors END------------ -->
+</body>
+
+</html>
