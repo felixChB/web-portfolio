@@ -4,6 +4,7 @@ import './styles/global.css'
 import './styles/home-page.css'
 import { Header } from './components/Header'
 import { BurgerMenu } from './components/BurgerMenu'
+import { Footer } from './components/Footer'
 
 function App() {
   const [section, setSection] = useState('Home')
@@ -12,6 +13,7 @@ function App() {
     <>
       <Header />
       <BurgerMenu />
+      <Footer />
     </>
       
   )
