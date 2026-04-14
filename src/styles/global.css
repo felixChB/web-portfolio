@@ -161,10 +161,14 @@ body.scrolled-enough #main-header {
     padding: 0.25em 0.15em;
 }
 
-.text-nav {
+.text-nav ul{
     display: flex;
     align-items: center;
     gap: 40px;
+}
+
+.text-nav ul li {
+    display: inline-block;
 }
 
 .nav-link {
