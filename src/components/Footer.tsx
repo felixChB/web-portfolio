@@ -1,4 +1,5 @@
 import { globalVariables } from "../global-variables";
+import { ArrowIconWrapper } from "./SvgIcons";
 
 export function Footer() {
     return (
@@ -11,18 +12,7 @@ export function Footer() {
                     <span className="brackets-headline">[Contact me]</span>
                     <a href="mailto:Lix.brunn@gmail.com" className="email-link nav-link link">
                         <span className="link-text">Lix.brunn@gmail.com</span>
-                        <div className="arrow-icon-wrapper">
-                            <svg className="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                height="24">
-                                <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <svg className="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                height="24">
-                                <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
+                        <ArrowIconWrapper />
                     </a>
                 </div>
             </div>
@@ -33,18 +23,7 @@ export function Footer() {
                 </nav>
                 <div className="contact-right">
                     <a className="back-to-top-wrapper">
-                        <div className="arrow-icon-wrapper">
-                            <svg className="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                height="24">
-                                <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <svg className="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                height="24">
-                                <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor" stroke-width="1"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
+                        <ArrowIconWrapper />
                         <span className="back-to-top-text nav-link"><span className="link-text">[Back to Top]</span>
                         </span>
                     </a>
@@ -89,33 +68,11 @@ export function SocialLinks() {
             <ul className="social-links">
                 <li><a href={globalVariables.githubUrl} target="_blank" className="nav-link link"><span
                     className="link-text">Github</span>
-                    <div className="arrow-icon-wrapper">
-                        <svg className="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            width="24" height="24">
-                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
-                                stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <svg className="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            width="24" height="24">
-                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
-                                stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
+                    <ArrowIconWrapper />
                 </a></li>
                 <li><a href={globalVariables.linkedinUrl} target="_blank"
                     className="nav-link link"><span className="link-text">LinkedIn</span>
-                    <div className="arrow-icon-wrapper">
-                        <svg className="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            width="24" height="24">
-                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
-                                stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <svg className="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            width="24" height="24">
-                            <path d="M2 2h20M22 22v-20M2 22L22 2" fill="none" stroke="currentColor"
-                                stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
+                    <ArrowIconWrapper />
                 </a></li>
             </ul>
         </div>
