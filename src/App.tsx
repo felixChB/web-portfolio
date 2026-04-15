@@ -6,6 +6,7 @@ import { Header } from './components/Header'
 import { BurgerMenu } from './components/BurgerMenu'
 import { Footer } from './components/Footer'
 import { ImageCursor, TextCursor } from './components/CustomCursor'
+import { ProjectCard } from './components/ProjectCard'
 
 function App() {
   const [section, setSection] = useState('Home')
@@ -18,6 +19,7 @@ function App() {
       <main>
         <Home />
         <About />
+        <Projects />
       </main>
 
       <Footer />
@@ -63,6 +65,32 @@ function About() {
             </p>
           </div>
         </div>
+      </div>
+    </section>
+  )
+}
+
+function Projects() {
+  return (
+    <section id="projects">
+      <div className="projects-headline-wrapper">
+        <div>
+          <h2 className="projects-headline">
+            <span className="headline-text">selected</span>
+          </h2>
+          <span className="projects-headline-line-1" />
+        </div>
+        <div>
+          <span className="projects-headline-line-2" />
+          <h2 className="projects-headline  has-project-number">
+            <span className="headline-text">
+              projects<span className="projects-number">[4]</span>
+            </span>
+          </h2>
+        </div>
+      </div>
+      <div id="project-wrapper">
+        <ProjectCard title='VR-Pong' year='2023' tags={['VR', 'Game Design']} imageUrl='./assets/project-assets/vr-pong.jpg' projectUrl='fef' />
       </div>
     </section>
   )
