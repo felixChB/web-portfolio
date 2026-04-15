@@ -1,11 +1,12 @@
+import type { ProjectCardProps } from "../data/projects";
 import { ArrowIconWrapper } from "./SvgIcons";
 
 
-export function ProjectCard({ title, year, tags, imageUrl, projectUrl }: { title: string, year: string, tags: string[], imageUrl: string, projectUrl: string }) {
+export function ProjectCard({ id, title, year, tags, thumbnail, url }: ProjectCardProps) {
     return (
-        <a href={projectUrl} id="ui-verse-card" className="project-card">
+        <a href={url} id={id + "-card"} className="project-card">
             <div className="project-card-img-wrapper">
-                <img src={imageUrl} alt={title + " project thumbnail"} />
+                <img src={thumbnail} alt={title + " project thumbnail"} />
             </div>
             <div className="project-card-details">
                 <div className="project-card-infos">

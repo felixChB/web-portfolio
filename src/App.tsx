@@ -7,6 +7,8 @@ import { BurgerMenu } from './components/BurgerMenu'
 import { Footer } from './components/Footer'
 import { ImageCursor, TextCursor } from './components/CustomCursor'
 import { ProjectCard } from './components/ProjectCard'
+import { projectData } from './data/projects'
+import type { ProjectCardProps } from './data/projects'
 
 function App() {
   const [section, setSection] = useState('Home')
@@ -90,7 +92,17 @@ function Projects() {
         </div>
       </div>
       <div id="project-wrapper">
-        <ProjectCard title='VR-Pong' year='2023' tags={['VR', 'Game Design']} imageUrl='./assets/project-assets/vr-pong.jpg' projectUrl='fef' />
+        {projectData.map((project: ProjectCardProps) => (
+          <ProjectCard
+            key={project.id}
+            id={project.id}
+            title={project.title}
+            year={project.year}
+            tags={project.tags}
+            thumbnail={project.thumbnail}
+            url={project.url}
+          />
+        ))}
       </div>
     </section>
   )
