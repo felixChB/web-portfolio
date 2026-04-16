@@ -1,11 +1,11 @@
 import { useState } from 'react'
-// import './App.css'
-import './styles/home-page.css'
+
 import { Header } from './components/Header'
 import { BurgerMenu } from './components/BurgerMenu'
 import { Footer } from './components/Footer'
 import { ImageCursor, TextCursor } from './components/CustomCursor'
 import { ProjectCard } from './components/ProjectCard'
+
 import { projectData } from './data/projects'
 import type { ProjectCardProps } from './data/projects'
 

@@ -1,4 +1,4 @@
-import { globalVariables } from "../global-variables";
+import { globalVariables } from "../data/global-variables";
 import { ArrowIconWrapper } from "./SvgIcons";
 
 export function Footer() {

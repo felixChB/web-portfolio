@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@import "./home-page.css";
+@import "./project-page.css";
+
 :root {
     --highlight-color: #EEEEEE;
     --page-white: #EEEEEE;
