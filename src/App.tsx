@@ -1,6 +1,5 @@
 import { useState } from 'react'
 // import './App.css'
-import './styles/global.css'
 import './styles/home-page.css'
 import { Header } from './components/Header'
 import { BurgerMenu } from './components/BurgerMenu'
@@ -37,7 +36,7 @@ function Home() {
     <section id="home">
       <div id="home-wrapper">
         <h1 className="home-headline">
-          <span className="headline-text">Portfolio</span>
+          <span className="headline-text text-orange-500">Portfolio</span>
         </h1>
         <div className="scroll-to-explore">
           <span>scroll to explore</span>
