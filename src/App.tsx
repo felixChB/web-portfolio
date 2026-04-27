@@ -8,6 +8,7 @@ import { ProjectCard } from './components/ProjectCard'
 
 import { projectData } from './data/projects'
 import type { ProjectCardProps } from './data/projects'
+import { BracketsHeadline, H1 } from './components/Headlines'
 
 function App() {
   const [section, setSection] = useState('Home')
@@ -33,12 +34,10 @@ function App() {
 
 function Home() {
   return (
-    <section id="home">
-      <div id="home-wrapper">
-        <h1 className="home-headline">
-          <span className="headline-text text-orange-500">Portfolio</span>
-        </h1>
-        <div className="scroll-to-explore">
+    <section id="home" className='relative w-full h-[calc(100vh-var(--header-height))] overflow-hidden rounded-[var(--border-radius-big)_var(--border-radius-big)_0_0]'>
+      <div id="home-wrapper" className='relative w-auto h-full flex flex-col justify-center items-center'>
+        <H1 h1Text="Portfolio" />
+        <div className="absolute w-full bottom-(--side-space) flex justify-center text-page.white uppercase">
           <span>scroll to explore</span>
         </div>
       </div>
@@ -51,7 +50,7 @@ function About() {
     <section id="about">
       <div id="about-wrapper" className="appear-elem text-font">
         <div className="about-text-wrapper">
-          <span className="brackets-headline">[about me]</span>
+          <BracketsHeadline BracketsHeadlineText="about me" />
           <div id="about-text" className="appear-text-wrapper">
             <p className="appear-text-part" style={{ marginBottom: '1em' }}>
               Hey, I‘m Felix. I‘m a creative designer and developer and recently graduated with a masters
@@ -73,7 +72,7 @@ function About() {
 
 function Projects() {
   return (
-    <section id="projects">
+    <section id="projects" className="relative w-full h-auto bg-page-white text-page-black pt-[48px] pb-[15vh] px-(--side-space) rounded-3xl">
       <div className="projects-headline-wrapper">
         <div>
           <h2 className="projects-headline">

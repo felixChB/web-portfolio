@@ -1,6 +1,6 @@
 export function Header() {
     return (
-        <header id="main-header">
+        <header id="main-header" className="h-(--header-height) w-full flex justify-between items-center bg-transparent transition-all duration-300 ease-[ease] mix-blend-difference text-page-white m-0">
             <Logo />
             <MainNav />
             <BurgerNav />

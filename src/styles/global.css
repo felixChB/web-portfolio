@@ -3,6 +3,15 @@
 @import "./home-page.css";
 @import "./project-page.css";
 
+@theme {
+    --color-page-white: #EEEEEE;
+    --color-page-black: #0B0B0B;
+    --color-page-grey: #5D5D5D;
+
+    --font-sans: 'Alexandria', 'Arial', sans-serif;
+    --font-mono: 'Azeret Mono', monospace;
+}
+
 :root {
     --highlight-color: #EEEEEE;
     --page-white: #EEEEEE;
@@ -112,7 +121,7 @@ video {
 
 /* end - general Element styling */
 
-.brackets-headline {
+/* .brackets-headline {
     font-family: var(--type-font);
     font-weight: normal;
     text-transform: uppercase;
@@ -120,13 +129,13 @@ video {
     margin-bottom: 4px;
     margin-left: -1px;
     display: block;
-}
+} */
 
 .has-project-number {
     padding-right: 0.4em !important;
 }
 
-header {
+/* header {
     height: var(--header-height);
     width: 100%;
     margin: 0;
@@ -138,7 +147,7 @@ header {
     padding-inline: var(--side-space);
     mix-blend-mode: difference;
     color: var(--page-white);
-}
+} */
 
 #main-header {
     position: fixed;

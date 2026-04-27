@@ -29,7 +29,7 @@ body.scrolled-enough #home-header {
 }
 
 /*---------- Home Section START----------*/
-#home {
+/* #home {
     position: relative;
     width: 100%;
     height: calc(100vh - var(--header-height));
@@ -37,9 +37,9 @@ body.scrolled-enough #home-header {
     overflow: hidden;
     border-radius: var(--border-radius-big) var(--border-radius-big) 0 0;
     padding-inline: var(--side-space);
-}
+} */
 
-#home-wrapper {
+/* #home-wrapper {
     position: relative;
     width: auto;
     height: 100%;
@@ -47,9 +47,9 @@ body.scrolled-enough #home-header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
 
-.scroll-to-explore {
+/* .scroll-to-explore {
     position: absolute;
     width: 100%;
     bottom: var(--side-space);
@@ -57,7 +57,7 @@ body.scrolled-enough #home-header {
     justify-content: center;
     color: var(--page-white);
     text-transform: uppercase;
-}
+} */
 
 #home h1 {
     font-size: 12vw;
@@ -113,7 +113,7 @@ body.scrolled-enough #about {
 
 /*---------- Projects Section START----------*/
 #projects {
-    position: relative;
+    /* position: relative;
     width: 100%;
     height: auto;
     background-color: var(--page-white);
@@ -121,7 +121,7 @@ body.scrolled-enough #about {
     padding-top: 48px;
     padding-bottom: 15vh;
     padding-inline: var(--side-space);
-    border-radius: var(--border-radius-big);
+    border-radius: var(--border-radius-big); */
     transition: var(--white-elem-transition);
 }
 

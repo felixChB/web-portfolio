@@ -1,4 +1,5 @@
 import { globalVariables } from "../data/global-variables";
+import { BracketsHeadline } from "./Headlines";
 import { ArrowIconWrapper } from "./SvgIcons";
 
 export function Footer() {
@@ -46,7 +47,7 @@ export function Legals() {
 export function Sitemap() {
     return (
         <div className="sitemap-wrapper">
-            <span className="brackets-headline">[Navigation]</span>
+            <BracketsHeadline BracketsHeadlineText="navigation" />
             <ul className="sitemap">
                 <li><a nav-section-value="home" className="nav-link"><span className="link-text">Home</span></a>
                 </li>
@@ -64,7 +65,7 @@ export function Sitemap() {
 export function SocialLinks() {
     return (
         <div className="social-links-wrapper">
-            <span className="brackets-headline">[Connect]</span>
+            <BracketsHeadline BracketsHeadlineText="connect" />
             <ul className="social-links">
                 <li><a href={globalVariables.githubUrl} target="_blank" className="nav-link link"><span
                     className="link-text">Github</span>
